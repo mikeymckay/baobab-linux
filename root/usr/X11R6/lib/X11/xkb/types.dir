@@ -1,0 +1,8 @@
+-d------ -------- basic(basic)
+-dp----- -------- cancel(Shift_Cancels_Caps)
+-d------ -------- complete(complete)
+-d------ -------- default(default)
+-dp----- -------- iso9995(default)
+-dp----- -------- mousekeys(default)
+-dp----- -------- nocancel(nocancel)
+-dp----- -------- pc(default)

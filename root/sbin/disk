@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ -x /sbin/fsck -a -f /etc/fstab ] ; then 
+	/sbin/fsck -A -C -R -T -a 
+fi
+

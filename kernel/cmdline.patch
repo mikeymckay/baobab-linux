@@ -1,0 +1,73 @@
+diff -Nur linux-2.4.20.orig/arch/i386/defconfig linux-2.4.20/arch/i386/defconfig
+--- linux-2.4.20.orig/arch/i386/defconfig	Fri Jul 20 04:17:02 2001
++++ linux-2.4.20/arch/i386/defconfig	Fri Jul 20 04:24:31 2001
+@@ -96,6 +96,7 @@
+ CONFIG_BINFMT_MISC=y
+ CONFIG_PM=y
+ # CONFIG_APM is not set
++# CONFIG_CMDLINE_BOOL is not set
+ 
+ #
+ # Memory Technology Devices (MTD)
+diff -Nur linux-2.4.20.orig/arch/i386/config.in linux-2.4.20/arch/i386/config.in
+--- linux-2.4.20.orig/arch/i386/config.in	Fri Apr 20 18:26:15 2001
++++ linux-2.4.20/arch/i386/config.in	Tue Jun 26 15:22:47 2001
+@@ -262,6 +262,11 @@
+    bool '    Use real mode APM BIOS call to power off' CONFIG_APM_REAL_MODE_POWER_OFF
+ fi
+ 
++bool 'Default bootloader kernel arguments' CONFIG_CMDLINE_BOOL
++if [ "$CONFIG_CMDLINE_BOOL" = "y" ] ; then
++  string 'Initial kernel command string' CONFIG_CMDLINE "console=tty0"
++fi
++
+ endmenu
+ 
+ source drivers/mtd/Config.in
+diff -Nur linux-2.4.20.orig/arch/i386/kernel/setup.c linux-2.4.20/arch/i386/kernel/setup.c
+--- linux-2.4.20.orig/arch/i386/kernel/setup.c	Fri May 25 17:07:09 2001
++++ linux-2.4.20/arch/i386/kernel/setup.c	Fri Jul 20 15:40:21 2001
+@@ -306,8 +306,12 @@
+ #endif
+ 
+ 
+-static char command_line[COMMAND_LINE_SIZE];
+-       char saved_command_line[COMMAND_LINE_SIZE];
++#ifdef CONFIG_CMDLINE_BOOL
++static char command_line[COMMAND_LINE_SIZE] = CONFIG_CMDLINE;
++#else
++static char command_line[COMMAND_LINE_SIZE] = "";
++#endif
++char saved_command_line[COMMAND_LINE_SIZE];
+ 
+ struct resource standard_io_resources[] = {
+ 	{ "dma1", 0x00, 0x1f, IORESOURCE_BUSY },
+@@ -698,11 +702,27 @@
+ static void __init parse_cmdline_early (char ** cmdline_p)
+ {
+ 	char c = ' ', *to = command_line, *from = COMMAND_LINE;
++	char *saved = saved_command_line;
+ 	int len = 0;
+ 	int userdef = 0;
+ 
++	/* if command_line is already populated, we don't want to overwrite it,
++	 * so have 'to' skip over it 
++	 * We also need to save it for future reference
++	 */
++	if ((len = strlen(command_line))) {
++	     /* add a space at the end, just to make sure there is one there */
++	     command_line[len++] = ' ';
++	     command_line[len] = '\0';
++
++	     to += len;
++
++	     strcpy(saved,command_line);
++	     saved += len;
++	}
++
+ 	/* Save unparsed command line copy for /proc/cmdline */
+-	memcpy(saved_command_line, COMMAND_LINE, COMMAND_LINE_SIZE);
++	memcpy(saved, COMMAND_LINE, COMMAND_LINE_SIZE);
+ 	saved_command_line[COMMAND_LINE_SIZE-1] = '\0';
+ 
+ 	for (;;) {

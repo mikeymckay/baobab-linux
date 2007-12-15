@@ -1,0 +1,40 @@
+Selecting the boot device
+
+You can build an image to boot from the built-in flash disk (which is 
+actually the second IDE device, so Linux recognizes it as 'hdb'), or you
+can boot from a Flash card or disk attached to the IDE port, which will 
+be recognized as hda. To change the boot device, you must do the following:
+
+* Recompile the kernel after setting the following options in the kernel 
+config file (replace [DEVICE] with either /dev/hda or /dev/hdb):
+   CONFIG_CMDLINE_BOOL=Y
+   CONFIG_CMDLINE="root=[BOOT DEV] max_loop=16"
+
+* In root/sbin/init file, change '/dev/hdb4' or '/dev/hda4', as necessary.
+
+* In root/sbin/upgrade, change '/dev/hdb4' or '/dev/hda4', as necessary.
+
+* In root/sbin/freezesh, change '/dev/hdb3' or '/dev/hda3', as necessary.
+
+* In root/sbin/thaw, change '/dev/hdb3' or '/dev/hda3', as necessary.
+
+TO DO:
+
+* Test icecast listening on xmms or mpg123 (www.icecast.org/getstarted.html)
+
+
+LIBRARIES:
+
+libpcd.a, libjpeg.a & libungif.a are for fbi (frame-buffer image viewer)
+
+
+WEIRDNESS:
+
+v2.1- I seem to have introduced a strange, sporatic bug. Symptom is that X 
+launches, but icewm never comes up (just get the X background with the 'X'
+cursor). Investigation reveals that the problem is the LD_LIBRARY_CONFIG env
+var is not set properly for /usr/X11R6/sbin/init. However, setting this var
+DOESN'T WORK. I can set (and verify) other env vars, but when I set 
+LD_LIBRARY_PATH and the test it with a call to 'env', it doesn't appear to 
+be set! Very weird & annoying.
+

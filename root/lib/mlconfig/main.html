@@ -1,0 +1,54 @@
+<html><body bgcolor=ffffff>
+<center><h1>Welcome to M4I!</h1></center>
+<p>M4I is a customized version of 
+<a href="http://midori.transmeta.com" target="Resource Window">Midori Linux</a>
+specifically designed for the Iopener and IA-1 platforms. The customization 
+was begun by 
+<a href="http://tengu.homeip.net/midori/" target="Resource Window">Ingo Paschke</a>
+and has been taken up by 
+<a href="http://m4i.homeip.net" target="Resource Window">Bob Dougherty</a>.
+This version also includes binaries made available by wildwildwes and Sevenn.
+(See the 
+<a href="http://www.ia1hacking.com/">ia1hacking site</a> for more info.)
+</p>
+
+<p>This location (http://127.0.0.1) is your web browser based 
+configuration system. You can configure most aspects of your
+system through these pages. Note that you must do 'store configuration'
+to save your current configuration in flash memory. This will also save
+the current state of your applications, such as you web browser and xmms.</p>
+
+<p>Some random notes:
+<ul>
+<li>You have access to a root console, which you might need for running
+commands that require root permission. Hit ctrl-alt-F1 (F1 is the 'back' key
+on the stock Iopener keyboard) to get to the root console. To get back to 
+the X console (this screen), hit ctrl-alt-F2.</li>
+
+<li>To see your system log messages, hit ctrl-alt-F4, or type 'dmesg | more' 
+on any terminal window.</li>
+
+<li>You can adjust most of the configurable options from this web interface.
+However, you can also add stuff that you want run each time you boot up
+(such as NFS mounts) to /usr/local/sbin/init. To permanently save 
+your configuration, select the 'store configuration' 
+option in the web config; or, equivalently, run the 'freezesh' command 
+as root.</li>
+
+<li>To use a USB storage device, just plug it in and mount it. If it's the 
+first device that you plugged in, it will be available as /dev/sda. (See the 
+system log after you plug it in to verify this.) You will, of course, need a 
+mount point: 'mkdir /tmp/stuff'. Then you can mount: 'mount /dev/sda1 
+/tmp/stuff'. (Note that Zip drives mount on partition 4: 
+'mount /dev/sda4 /tmp/stuff'.) Once mounted, look in /tmp/stuff to see if it 
+worked.</li>
+
+<li>To make an electronic slide show, first get access to your
+photos (USB zip drive, compact flash card reader, NFS mount, etc). Then,
+go to the root console and run something like 
+'fbi -ut 10 /path/to/your/photos/*' (run fbi without args to get help).
+You can also try xli from an xterm, but fbi has some nicer slideshow options
+(like on the fly zoom while the show's running).</li>
+</ul> 
+</body>
+</html>

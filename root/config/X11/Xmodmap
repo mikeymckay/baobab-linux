@@ -1,0 +1,7 @@
+# On the iopener, 115,106,103 are pizza, prev ch, and next ch and
+# 117 is the blank key next to ctrl on the left.
+keycode 106 = XF86AudioLowerVolume
+keycode 103 = XF86AudioRaiseVolume
+keycode 115 = XF86AudioMute
+keycode 22 = BackSpace
+keycode 117 = Escape

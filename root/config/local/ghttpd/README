@@ -1,0 +1,25 @@
+1. unpack the archive:
+      tar -xzf ghttpd.tgz
+2. install the config file:
+      mv ghttpd/ghttpd.conf /etc
+3. move the rest to /usr/local: 
+      mv ghttpd /usr/local
+4. launch the server:
+      /usr/local/ghttpd/ghttpd
+
+You'll probably want to put some docs for it to serve in 
+/usr/local/ghttpd/htdocs and cgi scripts in /usr/local/ghttpd/cgi-bin.
+To get it to start at boot-up, add '/usr/local/ghttpd/ghttpd' to 
+/usr/local/sbin/init, then freeze your configuration (run 'freezesh').
+Note that you can't use port 80, since the config httpd uses that. The
+default port is 81, so to connect to your new server, use:
+
+   http://your.ip.address:81
+
+You can change this in /etc/ghttpd.conf. You can also kill the config
+httpd if you don't need it and use port 80.
+
+cheers,
+bob
+2003.02.06
+

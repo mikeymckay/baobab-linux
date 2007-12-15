@@ -1,0 +1,12 @@
+#!/bin/sh
+
+chan=`/sbin/wlanctl-ng wlan0 dot11req_mibget mibattribute=p2CurrentChannel | \
+sed -ne 's/.*p2CurrentChannel=\(.*\)/  channel=\1/p'`
+
+qual=`/sbin/wlanctl-ng wlan0 dot11req_mibget mibattribute=p2CommsQuality | \
+sed -ne 's/.*p2CommsQuality=\(.*\),\(.*\),\(.*\).*/quality=\1  signal=\2  noise=\3/p'`
+
+echo "wlan link:  $chan  $qual"
+
+exit 0
+

@@ -1,0 +1,12 @@
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/X11R6/lib
+export XDPI=75
+[ -d /etc/profile ] && . /etc/profile
+# ln -sf /dev/null /tmp/XFree86.0.log
+#su 0 0 /usr/X11R6/bin/xinit /usr/X11R6/xinitrc -- /usr/X11R6/bin/X -dpi 75 -allowMouseOpenFail > /dev/null 2>&1 &
+if [ -f /tmp/config/net/eth0 ] ; then
+  su 0 0 /usr/X11R6/bin/xinit /usr/X11R6/xinitrc -- /usr/X11R6/bin/X -dpi 75 -allowMouseOpenFail 
+else
+   echo "Network not configured, run 'setIP.sh 192.168.1.1' to set the IP address"
+fi
+#sleep 4
+#mpg123 /tmp/config/start.mp3

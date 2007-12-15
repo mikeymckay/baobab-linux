@@ -1,0 +1,7 @@
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/X11:/bin:/usr/sbin:/sbin
+
+LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:/usr/X11R6/lib
+
+SHELL=/bin/ash
+
+export PATH LD_LIBRARY_PATH SHELL

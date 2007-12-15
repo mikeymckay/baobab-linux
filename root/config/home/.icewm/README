@@ -1,0 +1,8 @@
+You can customize your ICE Window Manager by copying the system
+defaults to this dir, and then modifying them. Eg:
+
+  cp /usr/X11R6/lib/X11/icewm/preferences /tmp/config/.icewm/
+  xpad /tmp/config/.icewm/preferences
+  [Make your changes]
+  [Store configuration]
+

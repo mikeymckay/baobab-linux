@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# upgrade a standard partition
+# Assumes that no program is currently using the packed partition
+# and that it has been unmounted
+# Arguments: $1 = mount point
+#            $2 = cramfs partition
+
+set -e
+
+DEVICE=@IMAGE_DEVICE@@PACKED_PARTITION@
+DIRECTORY=/cramfs
+
+# abort if there is a problem
+set -e
+
+PATH=/sbin:/bin
+export PATH
+
+
+# we only use force if necessary (to avoid writing more 
+# to the flash than is needed)
+if ./packcramfs -s -q -P  $DEVICE $1 $2
+then
+        :
+else
+        if ./packcramfs -s -q -P -f $DEVICE $1 $2
+        then 
+                :
+        else
+                echo "upgrade failed"
+                exit 1
+        fi
+fi
+
+# it worked! (the script would have stopped otherwise)
+# now activiate partition
+
+if ./packcramfs -A -q $DEVICE $1
+then   
+        echo "upgrade worked!"
+else
+        echo "upgrade failed!"
+        exit 1
+fi
+
+exit 0
+
+
+

@@ -1,0 +1,20 @@
+key "Alt+Ctrl+t" xterm
+key "Alt+Ctrl+c" xcalc
+key "Alt+Ctrl+f" fte
+key "XF86AudioLowerVolume" aumix -w -5
+key "XF86AudioRaiseVolume" aumix -w +5
+key "XF86AudioMute" aumix -w 0
+key "Alt+Ctrl+F1" chvt "1"
+key "Alt+Ctrl+F2" chvt "2"
+key "Alt+Ctrl+F3" chvt "3"
+key "Alt+Ctrl+F4" chvt "4"
+key "Alt+Ctrl+F5" chvt "5"
+key "Alt+Ctrl+F6" chvt "6"
+key "Alt+Ctrl+F7" chvt "7"
+key "Alt+Ctrl+F8" chvt "8"
+key "Alt+Ctrl+F9" chvt "9"
+key "Alt+Ctrl+o" opera -noraise -remote
+key "Alt+Ctrl+m" opera -noraise -remote openURL(mailto:,new-window) 
+key "Alt+Ctrl+h" opera -noraise -remote openURL(http://127.0.0.1/,new-window) 
+key "Alt+Ctrl+l" wmalms
+

@@ -1,0 +1,255 @@
+
+Macromedia
+Flash Player 5
+Netscape Plug-in for Linux
+15 February 2001 
+
+
+Macromedia is proud to release the Macromedia Flash Player 5 Netscape 
+plug-in for the Linux operating system.
+
+
+Supported Distributions
+-----------------------
+
+The Macromedia Flash Player plug-in requires an Intel x86-based Linux
+distribution with ELF binary support. The distribution must
+support the GNU C library (glibc 2.0 or greater). Distributions
+that meet these requirements include:
+
+- RedHat 5.x, 6.x, 7.0
+
+The plugin should work for more recent distributions as well. 
+
+MkLinux for Power Macintosh is not currently supported.
+
+
+Supported Browsers
+------------------
+
+Netscape Navigator 4.0 or greater is required. The glibc version of
+Netscape Navigator must be used.
+
+
+Installation
+------------
+
+The following section assumes that you have unpacked the archive
+flash_linux.tar.gz into the top level of your user directory. Your
+user directory is referred to as $HOME.
+
+The Macromedia Flash Player can be installed in two ways:
+- Install the Flash Player system-wide, making it available
+to all users of the computer.
+or
+- Install the Macromedia Flash Player in a user account, making it
+available only to that user.
+
+
+Installing the Macromedia Flash Player System-Wide:
+
+You will need root access to the computer to install the Macromedia Flash 
+Player system-wide.
+
+1. Copy the Macromedia Flash Player (libflashplayer.so) into the Netscape 
+plug-in directory.
+
+cp $HOME/flash_linux/libflashplayer.so /usr/lib/netscape/plugins
+
+2. Copy the Macromedia Flash Player Java class file (ShockwaveFlash.class)
+into the Netscape plug-in directory.
+
+cp $HOME/flash_linux/ShockwaveFlash.class /usr/lib/netscape/plugins
+
+3. Start Netscape.
+
+netscape &
+
+4. Verify the installation by typing about:plugins in the location bar.
+You should see the Flash Player listed as "Shockwave Flash 5.0r47"
+
+5. To test the Macromedia Flash Player go to:
+
+http://www.flash.com/
+
+(NOTE: If the Web site www.flash.com does not automatically detect that
+you have the Flash Player installed, click on the link
+"If you know you have Flash, click here")
+
+
+Installing the Macromedia Flash Player in a User Account:
+
+1. If you have not already used Netscape from the user account,
+launch Netscape and close it. This will create a Netscape
+preferences directory (.netscape) in your home directory.
+The preferences directory will be named:
+
+$HOME/.netscape
+
+2. Create a plugins directory in the Netscape preferences
+directory.
+
+mkdir $HOME/.netscape/plugins
+
+If the mkdir command reports the error "cannot make directory:
+File exists", do not be alarmed. This means only that the
+directory was already present and did not need to be created.
+
+3. Copy the Macromedia Flash Player (libflashplayer.so) into the Netscape 
+plug-in directory.
+
+cp $HOME/flash_linux/libflashplayer.so $HOME/.netscape/plugins
+
+4. Copy the Macromedia Flash Player Java class file (ShockwaveFlash.class)
+into the Netscape plug-in directory.
+
+cp $HOME/flash_linux/ShockwaveFlash.class $HOME/.netscape/plugins
+
+5. Start Netscape.
+
+netscape &
+
+6. Verify the installation by typing about:plugins in the location bar.
+You should see the Macromedia Flash Player listed as "Shockwave Flash 5.0r47"
+
+7. To test the Macromedia Flash Player go to:
+
+http://www.flash.com/
+
+(NOTE: If the Web site www.flash.com does not automatically detect that
+you have the Flash Player installed, click on the link
+"If you know you have Flash, click here")
+
+
+
+Troubleshooting
+---------------
+
+Q: When I try to visit a Web site that contains Flash content, I get the
+error message "Unknown type application/octet-stream".
+
+A: The Web site you are attempting to view needs to properly configure
+their Web server with the MIME types for Flash content. Specifically,
+they must add the MIME types:
+.spl application/futuresplash
+.swf application/x-shockwave-flash
+You might want to let the Webmaster of the site know of the problem.
+
+
+Q: My Linux system is RedHat 6.0. When I browse to a Web page containing
+Flash content, the browser reports "Starting Java" and then crashes.
+
+A: This is a Java-related bug in the RedHat 6.0 distribution. Red Hat
+has documented the problem and provides a fix on their Product Support
+FAQ Web page:
+
+http://www.redhat.com/support?faq
+
+
+Optimal X Server Configuration
+------------------------------
+
+Flash Player should work with any X server configuration. However,
+optimal performance is achieved at the following color depths and
+color mask settings:
+
+Depth: 8
+Visual: PseudoColor
+
+Depth: 15
+Bits Per Pixel: 16
+Visual: TrueColor
+Red Mask: 0x00007C00
+Green Mask: 0x000003E0
+Blue Mask: 0x0000001F
+
+Depth: 16
+Bits Per Pixel: 16
+Visual: TrueColor
+Red Mask: 0x0000F800
+Green Mask: 0x000007E0
+Blue Mask: 0x0000001F
+
+Depth: 24
+Bits Per Pixel: 24
+Visual: TrueColor
+Red Mask: 0x00FF0000
+Green Mask: 0x0000FF00
+Blue Mask: 0x000000FF
+
+Depth: 32
+Bits Per Pixel: 32
+Visual: TrueColor
+Red Mask: 0x00FF0000
+Green Mask: 0x0000FF00
+Blue Mask: 0x000000FF
+
+Depth: 32
+Bits Per Pixel: 32
+Visual: TrueColor
+Red Mask: 0x000000FF
+Green Mask: 0x0000FF00
+Blue Mask: 0x00FF0000
+
+In addition, the X server's image byte order must match the host byte
+order in order to achieve optimal performance using one of the above
+configurations.
+
+Macromedia Flash Player takes advantage of the the MIT-SHM S
+hared Memory Extension. This will boost performance on supported 
+systems.
+
+
+Known Bugs
+----------
+
+Some web sites use JavaScript detection and may default to a 
+non-Flash page for users who are not on Macintosh or Windows 
+platforms. Some web sites may have a link you can click to get 
+to the Flash content. 
+
+RealFlash is not supported by RealAudio on the UNIX platform.
+
+A defect was discovered in the sound functionality of the 5.0r45 
+build of the Flash Player Netscape plug-in for Linux. Occasionally 
+and randomly, sounds in a Flash movie would fail to play. This 
+problem affected only configurations where Flash Player played 
+sounds directly through OSS (Open Sound System). 
+Configurations using Enlightened Sound Daemon (ESD) were not 
+affected. This new version of the Flash Player fixes the above 
+defect. Sounds now play properly through both OSS and ESD.
+In the old Flash Player version, one workaround to the problem 
+is to run ESD on your Linux system. ESD is installed by default in 
+several popular Linux distributions, including RedHat.
+
+
+
+Technical Issues and Reporting Bugs
+-----------------------------------
+
+The Webplayers Discussion Group provides an open forum to discuss 
+technical issues regarding Macromedia Players. Also of interest are 
+the Flash, Flash Site Design, and Generator DiscussionGroups. 
+Macromedia Technical Support actively monitors these groups, as 
+well as hosting a community of users there. Descriptions and links 
+to these discussion groups can be found at: 
+
+http://www.macromedia.com/support/forums/
+
+
+Bug reports may be sent to flashplayerunix@macromedia.com 
+To allow us to investigate reported bugs, please include the 
+following information:
+
+1) Platform and version
+2) Netscape version
+3) Reproducible steps including a URL to the web site where the 
+problem was encountered.
+
+If we need further information about a bug, you will be contacted. An
+automated reply will be sent to assure you that we have received your
+bug report. Due to the volume of mail received we are not able to
+individually respond to each report.
+
+
+

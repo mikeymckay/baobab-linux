@@ -1,0 +1,63 @@
+APMSCRIPTS=/etc/sysconfig/apm-scripts
+
+# make an entry in the logfiles whenever the percentage of
+# battery power changes below the value specified here
+LOGPERCENTCHANGE=10
+
+# warn on specified remainig battery percentage
+WARNPERCENT=5
+
+# use -W to warn all users in a critical power state
+ADDPARAMS="-W"
+
+# use -s for command execution before entering the suspend state
+PRESUSPENDCMD="-s $APMSCRIPTS/suspend"
+
+# use -r for command execution after resuming from a suspend state
+POSTRESUMECMD="-r $APMSCRIPTS/resume"
+
+# use -l for command execution on low battery
+LOWBATCMD=""
+
+# use -a for command execution on switching to ac power
+ACONCMD=""
+
+# use -b for command execution on switching to battery power
+ACOFFCMD=""
+
+# if you have problems with your X display after returning from suspend mode
+# give CHANGEVT the number of the virtual terminal your X-Server runs on
+#CHANGEVT="7"
+
+# If you set this to yes, the clock will be synced with the hardware clock
+# when the computer returns from suspend mode.
+CLOCK_SYNC="yes"
+
+# Some broken harddisks, like those found in Gericom 3xC notebooks,
+# won't wake up from suspend to disk unless they're set to PIO mode and
+# 16-bit.
+# Don't activate the following two lines unless you're getting
+# "hda: lost interrupt" after returning from a suspend to disk.
+#HDPARM_AT_SUSPEND="-q -X0 -q -c0 -q -d0 -q -u0 -q -S0"
+#HDPARM_AT_RESUME="-q -X66 -q -c1 -q -d1 -q -u1 -q -S30"
+
+# the error-beep of your terminal might be set to the default values after a
+# resume so set TERMINALBEEP to "yes" to restore the values in
+# /etc/sysconfig/keyboard
+TERMINALBEEP="no"
+
+# if your sound sometimes doesn't work after a resume set RESTORESOUND to "yes";
+# this will kill all sound applications, remove and start the $SOUNDMODULES
+# again, and, if you also set $RESTORESOUNDPROGS to "yes", restart the
+# sound applications as the correct user and on the correct display
+RESTORESOUND="no"
+RESTORESOUNDPROGS="no"
+SOUNDMODULES="sb uart401 sound soundcore"
+
+# I got frequent problems mainly with scsi-pcmcia-cards on the cardbus. Use
+# PCMCIARESTART="yes" to stop the whole pcmcia-subsystem on a suspend and
+# to start it again after a resume. This can slow down your suspend and resume
+# process. Use PCMCIAWAIT to wait with the suspend until the pccard is removed
+# from the system.
+PCMCIARESTART="no"
+PCMCIAWAIT="no"

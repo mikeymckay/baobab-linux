@@ -1,0 +1,70 @@
+ThemeDescription="MicroGUI"
+ThemeAuthor="David Mortensen <saintchoj@myrealbox.com>"
+Look=gtk
+
+# TitleButtonsLeft="s"
+# TitleButtonsRight="xmi"
+
+TitleBarHeight=19
+# BorderSizeX=4
+# BorderSizeY=4
+# CornerSizeX=19
+# CornerSizeY=19
+# DlgBorderSizeX=2
+# DlgBorderSizeY=2
+
+# ShowMenuButtonIcon=0 # 0/1
+
+# borders
+
+# ColorNormalBorder="#A0A0A0"
+# ColorActiveBorder="#5C7DBD"
+
+# titlebar
+
+# ColorActiveTitleBar="#5C7DBD"
+# ColorNormalTitleBar="rgb:A0/A0/A0"
+# ColorNormalTitleBarText="rgb:30/30/30"
+# ColorActiveTitleBarText="rgb:00/00/00"
+
+# buttons
+
+# ColorNormalButton="#C3C3C3"
+# ColorActiveButton="#4E71AD"
+
+# menus
+
+# ColorNormalMenu="#b7b7b7"
+# ColorActiveMenuItem="#5C7DBD"
+# ColorNormalMenuItemText="rgb:00/00/00"
+# ColorActiveMenuItemText="rgb:00/00/00"
+# ColorDisabledMenuItemText="rgb:80/80/80"
+
+# move / size indicator
+
+# ColorMoveSizeStatus="rgb:C0/C0/C0"
+# ColorMoveSizeStatusText="rgb:00/00/00"
+
+# taskbar
+
+# ColorDefaultTaskBar="#D7D7D7"
+# ColorNormalTaskBarApp="#C3C3C3"
+# ColorNormalTaskBarAppText="#000000"
+# ColorActiveTaskBarApp="#4E71AD"
+# ColorActiveTaskBarAppText="#000000"
+# ColorMinimizedTaskBarApp="#C3C3C3"
+# ColorMinimizedTaskBarAppText="#000000"
+
+# listbox
+
+ColorListBox="#b7b7b7"
+ColorListBoxText="#000000"
+ColorListBoxSelection="#5C7DBD"
+ColorListBoxSelectionText="#000000"
+
+# input
+
+ColorInput="#DCDCDC"
+ColorInputText="#000000"
+ColorInputSelection="#4E71AD"
+ColorInputSelectionText="#000000"

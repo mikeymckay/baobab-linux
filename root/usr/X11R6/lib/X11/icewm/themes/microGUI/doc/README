@@ -1,0 +1,26 @@
+The heritage of this theme is complex.  It is derived, in the direct
+sense, from the Sawmill theme of the same name.  That theme has a
+complex history, which is given in its README file.  In the interest
+of accuracy, it is quoted here verbatim:
+
+    This theme is based on the QNX Photon microGUI (screenshots at
+    http://www.qnx.com/amiga/delivering.html).  Many image components
+    were taken from the minEguE enlightenment theme by Ben FrantzDale
+    (frantzdb@admin.arhs.net). The rest is by Ryan Lovett
+    (ryan@ocf.berkeley.edu) with modifications from John Harper.
+
+Of course, the URL given there is no longer available, and there seems
+to be a dearth of information on this (aparently aborted) project.  In
+light of this, I took considerable liberties with the graphics I
+inherited from the Sawmill theme, adding a number of elements in a
+style which seemed to fit that of the window decorations.
+
+Regarding the ownership of these graphics, it is not clear if they are
+copyrighted (by Ben FrantzDale), or if they are available in the
+public domain.  To the best of my knowledge, they may be freely
+distributed and modified.  This permission extends to those graphics
+which I added (the ledclock display, windows.xpm, linux.xpm, and
+others).
+
+If you have any comments or suggestions regarding this theme, please
+contact David Mortensen at <saintchoj@myrealbox.com>.

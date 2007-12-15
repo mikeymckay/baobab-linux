@@ -1,0 +1,5 @@
+#!/bin/sh
+mkdir -p /tmp/flash
+mount /dev/sda1 /tmp/flash
+dd if=/tmp/flash/image of=/dev/hdb
+umount /tmp/flash

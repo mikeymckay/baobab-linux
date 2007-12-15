@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# 00 mlinit-0.2
+#function next_step { : ; }
+
+# 20 mlconfig-0.2
+#echo "Starting web config (see http://127.0.0.1/)..."
+#[ ! -x /lib/httpd ] || /lib/httpd 80 /lib/mlconfig &
+ghttpd
+
+# 25 hwclock-2.10n
+echo > /tmp/adjtime
+
+# 30 aumix-2.7
+#echo "Configuring sound..."
+#[ -x /usr/bin/aumix ] && /usr/bin/aumix -v100 -w100 -m0&
+#/usr/sbin/soundconfig
+
+# 60 X-4.0.3
+echo "Starting X..."
+/usr/X11R6/init > /dev/null

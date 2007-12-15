@@ -1,0 +1,8 @@
+wmalms*geometry:	-0-0
+wmalms*background:	dark gray
+wmalms*pageCount:	1
+wmalms*lmsValue1:	temp2,CpuT
+wmalms*lmsValue2:	temp1,SysT
+wmalms*lmsValue3:	2.0V,Vcor,2
+wmalms*lmsValue4:	3.3V,Vio ,2
+

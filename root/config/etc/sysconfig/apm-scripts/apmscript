@@ -1,0 +1,154 @@
+#!/bin/bash
+# DO NOT EDIT THIS SCRIPT, CREATE AND EDIT APMCONTINUE IN THIS DIRECTORY; you
+# can put your stuff into apmcontinue for every link you create to apmscript;
+# for a start and definitely enough for most laptops we have two links and
+# according subroutines defined here: suspend and resume; all other links
+# will be redirected directly to apmcontinue which you can create; also
+# suspend and resume call apmscript, so you can also do other things (like
+# reinitialising some PCMCIA-Card) there; apmcontinue will get the name
+# as which it was called as $1; for debugging see the logfiles
+#
+# This script can be controlled by editing /etc/sysconfig/apmd.
+
+PROG=`basename "$0"`
+LOCKFILE=/var/lock/subsys/resume
+[ -e /etc/sysconfig/keyboard ] && . /etc/sysconfig/keyboard
+[ -e /etc/sysconfig/apmd ] && . /etc/sysconfig/apmd
+[ -e /etc/sysconfig/clock ] && . /etc/sysconfig/clock
+[ "$UTC" = "" ] && UTC="no"
+[ "$CHANGEVT" = "" ] && CHANGEVT="0"
+[ "$CLOCK_SYNC" = "" ] && CLOCK_SYNC="no"
+
+case "$PROG" in
+    suspend)
+		  # Some broken disks won't return from a suspend to disk
+		  # unless they're set to 100% failsafe settings with hdparm.
+		  if test "x$HDPARM_AT_SUSPEND" != "x"; then
+			for i in /proc/ide/hd*; do
+				DRIVE=/dev/`echo $i |sed -e "s,.*/,,g"`
+				if test "x`cat $i/media`" = "xdisk"; then
+					hdparm $HDPARM_AT_SUSPEND $DRIVE
+				fi
+			done
+		  fi
+		  sync
+
+		  [ "$PCMCIARESTART" = "yes" ] && /etc/rc.d/init.d/pcmcia stop
+		  if [ "$PCMCIAWAIT" = "yes" ]; then
+		    until [ `grep "Socket .: empty" /var/run/stab|wc -l` = `grep "Socket" /var/run/stab|wc -l` ]; do
+		      logger "Waiting for pcmcia-device to be removed..."
+		      sleep 10
+		    done
+		  fi
+
+		  while [ -f "$LOCKFILE" ]; do
+		    RESUMEPID=`cat "$LOCKFILE"`
+	            logger "Waiting for resume to be finished ($LOCKFILE gives PID $RESUMEPID)..."
+		    sleep 10
+		  done
+
+		  [ "$CHANGEVT" != "0" ] && chvt 1
+		  sync
+		  [ -f /etc/sysconfig/apm-scripts/apmcontinue ] && . /etc/sysconfig/apm-scripts/apmcontinue "$PROG"
+
+		  sync
+	          ;;
+    resume)
+		  # If HDPARM_AT_RESUME is set, the user has a broken disk.
+		  # We'd better wake it up manually. :/
+		  if test "x$HDPARM_AT_RESUME" != "x"; then
+		  	for i in /proc/ide/hd*; do
+				DRIVE=/dev/`echo $i |sed -e "s,.*/,,g"`
+				if test "x`cat $i/media`" = "xdisk"; then
+					hdparm -q -S0 $DRIVE
+				fi
+			done
+		  fi
+		  # as some displays don't like being waked up from power-off
+		  # state directly into graphics mode, we can switch to console
+		  # 1 during suspend and back to console n (where we assume X11
+		  # is running) after a resume; also the setting of the console
+		  # beep and the whole sound system can be confused; see
+		  # /etc/sysconfig/apm for a detailed description of the
+		  # variables used here.
+		  
+		  echo $$ >> "$LOCKFILE"
+		  if [ "$TERMINALBEEP" != "" ]; then
+		    # first we set the beep-length
+		    for t in 1 2 3 4 5 6 7 8 9; do
+                      setterm -blength $BEEPLENGTH >/dev/tty$t
+		    done
+		  fi
+		  if [ "$RESTORESOUND" = "yes" ]; then
+		    # then we have to find all programs that use sound, because
+		    # we have to stop them in order to restart the
+		    # sound-system-driver
+		    SOUNDPROGS=""
+		    for n in `lsof |grep /dev|grep ' 14,'|sed -e 's/ \+/|/g'|cut '-d|' -f1-3`; do
+		      SOUNDPROG=`echo $n|cut '-d|' -f1`
+		      SOUNDPID=`echo $n|cut '-d|' -f2`
+		      SOUNDUSER=`echo $n|cut '-d|' -f3`
+		      SOUNDDISPLAY=`perl -e 's/\000/\n/g;' -p /proc/$SOUNDPID/environ|grep DISPLAY=|cut -d= -f2`
+		      SOUNDPROGS="$n|$SOUNDDISPLAY $SOUNDPROGS"
+		      kill "$SOUNDPID"
+		      ps -ax "$SOUNDPID" &>/dev/null
+		      [ "$?" = "0" ] && kill -9 "$SOUNDPID"
+		      logger "apmscript: Program $SOUNDPROG ($SOUNDPID) of user $SOUNDUSER on display $SOUNDDISPLAY terminated."
+		    done
+		    # let's restart the sound-system-driver now
+		    for m in $SOUNDMODULES; do
+		      rmmod $m
+		    done
+		    for m in $SOUNDMODULES; do
+		      insmod $m
+		      [ "$?" = "0" ] || modprobe $m
+		    done
+		  fi
+		  if [ "$RESTORESOUNDPROGS" = "yes" ]; then
+		    # at least we can start the soundprograms again using
+		    # the right display
+		    for n in $SOUNDPROGS; do
+		      SOUNDPROG=`echo $n|cut '-d|' -f1`
+		      SOUNDPID=`echo $n|cut '-d|' -f2`
+		      SOUNDUSER=`echo $n|cut '-d|' -f3`
+		      SOUNDDISPLAY=`echo $n|cut '-d|' -f4`
+		      su - "$SOUNDUSER" -c "source /etc/profile;[ -f ~/.bashrc ] && source ~/.bashrc;[ -f ~/.bash_profile ] && source ~/.bash_profile;export DISPLAY="$SOUNDDISPLAY";$SOUNDPROG &"
+		      logger "apmscript: Program $SOUNDPROG started as user $SOUNDUSER on display $SOUNDDISPLAY."
+		    done
+		  fi
+		  [ "$CHANGEVT" != "0" ] && chvt "$CHANGEVT"
+		  if [ "$PCMCIARESTART" = "yes" ] ; then
+			/etc/rc.d/init.d/pcmcia start
+			/etc/rc.d/init.d/network restart
+		  fi
+		  sync
+		  [ -f /etc/sysconfig/apm-scripts/apmcontinue ] && . /etc/sysconfig/apm-scripts/apmcontinue "$PROG"
+
+		  
+		  # Read the hardware clock
+		  if test $CLOCK_SYNC != "no"; then
+		  	if test $UTC = yes -o "$UTC" = true; then
+				hwclock --utc --hctosys
+			else
+				hwclock --hctosys
+			fi
+		  fi
+
+		  # Finally, run anacron to catch up cron stuff we missed...
+		  # If anacron is installed.
+		  if test -x /usr/bin/anacron; then
+		  	  /usr/bin/anacron
+		  fi
+		  
+		  rm -f "$LOCKFILE"
+                  ;;
+    *)
+		  if [ -f /etc/sysconfig/apm-scripts/apmcontinue ]; then
+		    . /etc/sysconfig/apm-scripts/apmcontinue "$PROG"
+		  else
+		    logger "FAIL: Wrong parameter \"$PROG\" in apmscript!"
+	            exit 1
+		  fi
+		  ;;
+esac
+exit 0

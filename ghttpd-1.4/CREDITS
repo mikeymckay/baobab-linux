@@ -1,0 +1,17 @@
+ghttpd credits
+--------------
+
+Gareth Owen (gaz@athene.co.uk)
+	- Thats me, I wrote the initial version and I maintain ghttpd.
+
+Mathew Pratt (mattpratt@yahoo.com)
+	- Sent me a modified version of ghttpd with inetd support, I used
+	  his code as a guide to implement inetd support.
+
+Hollis R Blanchard (hollis+@andrew.cmu.edu)
+	- Given me some general ideas and suggestions. He has also pointed
+	  out a few bugs for me and given me fixes.
+
+Thanks to everyone else that has sent me bug reports !
+-
+Gaz

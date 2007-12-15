@@ -1,0 +1,116 @@
+Content-type: text/html
+
+<HTML><HEAD><TITLE>Manpage of xvnet</TITLE>
+</HEAD><BODY>
+<H1>xvnet</H1>
+Section: User Commands  (1)<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>xvnet</B> - ATMEL Wireless Card Monitor Utility for X
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>xvnet</B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>xvnet</B>
+
+is the monitor utility for the 
+<B>ATMEL Wireless Card </B>
+
+adapters. When the pcmcia module <B> fastvnet_cs </B> or the usb module <B>vnetusba.o</B> is loaded the 
+<B>xvnet</B> application can monitor the device's statistics or change it's runtime parameters. 
+<A NAME="lbAE">&nbsp;</A>
+<H2>NOTE</H2>
+
+In order for the application to run the driver has to complete it's  initialization. If the device's initialization isn't
+finished the application won't start.
+<A NAME="lbAF">&nbsp;</A>
+<H2>Utility Tabs</H2>
+
+<DL COMPACT>
+<DT><B>Monitor Tab.<DD>
+In this tab the MAC Address</B>, <B>Driver State</B>, <B>Associated Access Point's BSSID</B>, <B>Signal Strength</B>, and <B>Link Quality</B> fields 
+are used only to display the corresponting information. All the other fields can be used for input.
+In order to change any value you have to Press the <B>Change</B> button, change any value you want to change and then press the 
+<B>Submit</B> value to enable them or the <B>Cancel</B> button to abort your changes.
+<DT><B>Statistics</B>
+
+<DD>
+In the Statistics tab you can view info for the  management and data frames. By pressing the 
+<B>Clear</B> button you can clear the statistics.
+<DT><B>Site Survey.</B>
+
+<DD>
+In this tab you can get a list of nearby access points or ad-hoc stations. After site survey finishes you can select 
+one of those (if you have the necessary information, wep key , wep mode etc) by double clicking the desired access 
+point or station. To initiate a site survey click on the <B>Re-Scan</B> button. If you want to stop an ongoing site 
+survey press the <B>Cancel</B> button. As soon as you select an access point or a station the application will switch 
+automatically to the first tab.
+<DT><B>Encryption<DD>
+In the Encryption tab you can set Encryption settings.
+</B><PRE>
+<B>Encryption Level </B>  : Disabled or 64-Bit,
+(in Usb and RFMD boards you can also set 128 bit)
+<B>WepKey 1</B>           : value of 1st wep key 
+<B>WepKey 2</B>           : value of 2nd wep key 
+<B>WepKey 3</B>           : value of 3rd wep key 
+<B>WepKey 4</B>           : value of 4th wep key 
+</PRE>
+
+
+The Wep Keys length is 10 characters when 64-bit is enabled and 26 characters for 128-bit Encryption Level.
+
+<PRE>
+<B>Wep key to Use</B>     : which wep key is going to be used,
+<B>Wep Mode</B>           : Mandatory or Optional,
+<B>Authentication Type</B>: Open System or Shared Key
+</PRE>
+
+<P>
+After you have entered the desired settings press the <B>Submit</B> button to enable them.
+<DT><B>Advanced </B>(Advanced Card Settings)<DD>
+<PRE>
+<B>Preamble Type</B>          : Long or Short,
+<B>Fragmentation Threshold</B>: 256-2346,
+<B>RTS/CTS Threshold</B>      : 256-2347,
+</PRE>
+
+<DT><B>Version<DD>
+Driver, Firmware and Application versions.
+</DL>
+</B><A NAME="lbAG">&nbsp;</A>
+<H2>BUG REPORT</H2>
+
+For any bugs contact <B><A HREF="mailto:vnetsupport@patras.atmel.com">vnetsupport@patras.atmel.com</A></B>
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+
+<B>fvnet</B>(<B>1</B>).
+
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">NOTE</A><DD>
+<DT><A HREF="#lbAF">Utility Tabs</A><DD>
+<DT><A HREF="#lbAG">BUG REPORT</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://localhost/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 23:58:23 GMT, May 20, 2002
+</BODY>
+</HTML>

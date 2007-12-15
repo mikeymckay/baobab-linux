@@ -1,0 +1,68 @@
+# Redefinitions are silently ignored.  Be careful to define last the
+# choices you want.  The order of processing is /etc/printrc and 
+# then ~/.printrc
+
+
+########################################################################
+#
+# Configurable options
+#
+#
+
+# Directory to store jobs
+job_dir "/tmp/.printjobs"
+
+# Time (in seconds) for which job files will be saved.
+# Jobs files will be cleaned up after new jobs finish.
+#job_history_duration 259200
+
+# Maximum number of times to try to connect to the printer.
+#max_send_tries 30     
+
+# Delay (in seconds) between attempting to resend 
+#delay_between_tries 10 
+
+# Default printer definition
+#default_printer pokey
+
+# Path that gets passed to driver scripts
+driver_command_path "/bin:/usr/bin:/usr/local/bin"
+
+# Path that gets passed to interface scripts
+interface_command_path "/bin:/usr/bin:/usr/local/bin"
+
+
+
+########################################################################
+#
+# Extra pieces of this config file, that define drivers and interfaces.
+#
+#
+
+try_include "/etc/pdq/interfaces/*"
+try_include "/etc/pdq/drivers/*/*"
+
+
+
+########################################################################
+#
+# Local printer definitions - Note that xpdq will create entries 
+#                             automatically.  Changes made by superuser
+#                             will be made to global config files.  To add
+#                             entries by hand, see man printrc(5) for
+#                             examples.
+#
+
+
+
+#printer "stylusc800" {
+	## Added by the wizard on Fri Apr 30 12:10:16 1999
+	#location "216 Talbot Lab"
+	#model "Epson Stylus Color 800"
+	#driver "epson-stylus-1.0"
+	#interface "bsd-lpd-1.0"
+	#driver_opts ""
+	#driver_args "720x720, fscmyk"
+	#interface_opts ""
+	#interface_args "QUEUE = raw, REMOTE_HOST = printer.foo.edu"
+#}

@@ -1,0 +1,80 @@
+GazTek HTTP Daemon
+------------------
+	by Gareth Owen
+	gaz@athene.co.uk
+	http://members.xoom.com/gaztek
+
+NOTICE: I would very much appreciate it if you would contact me before you
+	re-distribute modified code, and include credits to me in the
+	modified code. You are requried to include credit to me in any 
+	redistribution of this code by law (under the GPL) but you are not
+	required to contact me, but I would just like you to so that I know
+	about it, I won't deny you permission, since I cannot do that. 
+	(and wouldn't anyway)
+
+NEW IN VERSION 1.4:
+- This version now supports inetd and virtual hosts, see the configuration
+file (ghttpd.conf) for details on how to set these up.
+- Lots of cgi fixes and other bug fixes. 
+- Quite a few routines replaced with faster ones.
+- ghttpd now changes to user nobody after initialization.
+
+ghttpd is a fast and efficient HTTP server that has CGI support.(no post support, only get)
+ghttpd has a small memory inprint and is capable of handling thousands of
+simultanious connections. It is ideal for large and small websites. It is
+very simple to configure with only a few options to change if changing is
+needed at all. You can have ghttpd up and running within two minutes easily
+because of its very simple configuration file and installation routine.
+ghttpd will run on the majority of UNIX systems but has not been tested on
+any other platform (by me that is) other than GNU/Linux (kernel=2.2.3).
+
+Below is the Installation instructions and the usage instructions
+
+Installation
+------------
+Firstly you will need to edit ghttpd.conf that contains the few options that
+may need to be modified. After that just do this:
+
+make
+[su -] (if not already root)
+make install
+
+(ghttpd is installed into /usr/local/ghttpd)
+To execute ghttpd just type 'ghttpd' at the shell prompt, if you wish the
+computer to run ghttpd on start-up automatically then you just need to
+insert 'ghttpd' into the startup file.
+
+RedHat Startup file is: /etc/rc.d/rc.local
+Just append a line to the file with simply 'ghttpd' on it.
+
+Usage
+-----
+ghttpd will have been installed into /usr/local/ghttpd
+All you need to do to run it is go to that directory and type ghttpd, then
+just use a webbrowser to connect to your computer and then you should get
+the default page come up, if this works then everything is ok !
+
+Initially all the documents are stored in /usr/local/ghttpd/htdocs and all
+the CGI files are stored in /usr/local/ghttpd/cgi-bin.
+You can change these locations by editing /etc/ghttpd.conf if you wish.
+
+The configuration file (/etc/ghttpd.conf) has many other options for you to
+fiddle with aswell if you want to. If you want to setup ghttpd for virtual
+hosts or to use inetd then please read /etc/ghttpd.conf
+
+A log file is recorded everytime someone connects to the server, this 
+log file is /usr/local/ghttpd/ghttpd.log
+It is quite readable, unlike some others that I have seen.
+
+QUICK 'GET-UP WEBSITE INSTRUCTIONS'
+--
+1. Make your website
+2. Install ghttpd as documented above
+3. Copy your website to /usr/local/ghttpd/htdocs
+
+Thats it.
+
+-------------------------------
+Gareth Owen
+gaz@athene.co.uk
+http://members.xoom.com/gaztek/

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# 51 X-4.0.3
+(sleep 1; xset s off; sleep 1; xset dpms 0 0 0) &
+
+IP=`ifconfig | grep inet | grep -v "127.0.0.1" | cut -d ":" -f 2 | cut -d " " -f 1 | sed "s/\n//" | head -n1`
+PS1=${IP} :
+export PS1
+xmessage ${IP}&
+
+xhost +
+telnet bart 5840
+/usr/X11R6/bin/xterm &
+
+# 99 X-4.0.3
+[ ! -L /usr/X11R6/bin/wm ] || /usr/X11R6/bin/wm
+
+#export OPERA_USE_XSHM=1
+#/cramfs/usr/lib/opera/9.01-20060728.1/opera -personaldir /tmp/.opera -nomail -fullscreen

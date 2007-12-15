@@ -1,0 +1,18 @@
+To compile a recent 2.4.xx kernel, you will need the following patches:
+
+  addpart
+  cmdline
+
+The preempt-kernel patch will give you the option of compiling a pre-emtible
+kernel. This might make the GUI a little more responsive on a system
+with limited resources. I haven't done careful tests, but it does seem
+to make things a bit snappier.
+
+You probably also want to change the default video mode of the kernel 
+(SVGA_MODE). That's set in the top-level kernel Makefile. I've changed the 
+'export SVGA_MODE ...' line to this:
+
+   # RFD 2002.12.02 changed video mode to 788 (16bpp, 600x800)
+   export SVGA_MODE = -DSVGA_MODE=788 
+
+

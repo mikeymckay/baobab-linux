@@ -1,0 +1,46 @@
+#	$TOG: locale.alias /main/33 1998/05/26 13:41:50 kaleb $
+#
+#	This file contains alias name of locale.
+#	Each alias name is described within one line.
+#	The first word is the alias name (simplified locale name)
+#	the second word is full locale name.
+#
+#	$XFree86: xc/nls/locale.alias,v 1.21 2000/02/13 06:15:29 dawes Exp $
+#
+
+# These entries are in the old format (no ':')
+POSIX						C
+POSIX-UTF2					C
+C_C.C						C
+C.en						C
+C.iso88591					en_US.ISO8859-1
+Cextend						en_US.ISO8859-1
+Cextend.en					en_US.ISO8859-1
+English_United-States.437			C
+en						en_US.ISO8859-1
+en_US						en_US.ISO8859-1
+en_US.88591					en_US.ISO8859-1
+en_US.88591.en					en_US.ISO8859-1
+en_US.iso88591					en_US.ISO8859-1
+en_US.ISO_8859-1				en_US.ISO8859-1
+# Other miscellaneous locale names
+ISO8859-1					en_US.ISO8859-1
+ISO-8859-1					en_US.ISO8859-1
+
+POSIX:						C
+POSIX-UTF2:					C
+C_C.C:						C
+C.en:						C
+C.iso88591:					en_US.ISO8859-1
+Cextend:					en_US.ISO8859-1
+Cextend.en:					en_US.ISO8859-1
+English_United-States.437:			C
+
+en_US:						en_US.ISO8859-1
+en_US.88591:					en_US.ISO8859-1
+en_US.88591.en:					en_US.ISO8859-1
+en_US.iso88591:					en_US.ISO8859-1
+en_US.ISO_8859-1:				en_US.ISO8859-1
+english_us.8859:				en_US.ISO8859-1
+english_us.ascii:				en_US.ISO8859-1
+

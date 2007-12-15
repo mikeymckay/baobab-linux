@@ -1,0 +1,90 @@
+***************************************************************************
+NFS mounts:
+
+From 'jbarr', on:
+  http://www.linux-hacker.net/cgi-bin/UltraBoard/UltraBoard.pl?Action=ShowPost&Board=whatever&Post=1945
+
+Next, i tried to mount the NFS share on the iOpener, but I couldn't get it 
+to work. Then I remembered that if you go into the web-based configuration, 
+you can open a root terminal window. When I ran the mount command here, it 
+worked just fine! I did a cd to the mount point and voila! there were the 
+songs.
+
+Finally, I openerd XMMS and added the directory to the play list. Works 
+like a charm!!!
+
+Next challenge: How to automate this step so that the next time I boot, I 
+don't have to manually mount. I will try to edit fstab to see if that will 
+work.
+
+OK, I think I got it. I added the following lines to the "profile" file in 
+the /tmp/config directory:
+
+  mkdir /tmp/music
+  mount -o wsize=1024,rsize=2048 192.168.1.100:/m /tmp/music
+
+and then saved the storage space throught the web-based configuration 
+screen. A reboot auto-mounted the share and now when I bring up XMMS and 
+click on "+ dir", it auto-adds all the files! Very cool!
+
+**************************************************************************
+TIPS:
+
+If you want to get to a root console just type control-alt-F1
+  control-alt-F2 to go back to :0
+
+  Want vnc on a separate console? 
+  set your remote PC display resolution to 800x600 and run winvnc app mode on your PC
+  now at the iopener type:
+  control-alt-F1
+  X :1 &
+  export DISPLAY=:1
+  vncviewer -fullscreen 192.168.1.100 (or whatever IP address your PC is)
+  control-alt-F3 (to switch to vnc console)
+  control-alt-F2 (to switch back to midori console)
+
+
+
+*************************************************************************
+Images
+
+Ingo,
+
+  Can you add the xli (x load image) binary to the next M4I distribution?
+
+  I tested the binary from here and it works on the iopener with M4I:
+  ftp://ftp.suse.com/pub/suse/i386/6.1/full-names/i386/xli-1.16-55.i386.rpm
+  (but any xli version that works would also be fine).
+
+  This allows you to display, stretch, and rotate .jpg or .gif images onto the
+  X root console. So, a simple script using wget and xli can turn the
+  iopener into a landscape or portrait slideshow picture frame.
+
+  example:
+  wget -O /tmp/image.gif http://midori.transmeta.com/manual/midori_logo_full.gif
+  xli -onroot -fillscreen -rotate 90 /tmp/image.gif
+
+*****************************************************************************
+Here is some fun stuff to play with using Midori on the iopener (unsupported examples)
+
+  Hubble image slide show (or make your own slideshow, just change filelist)
+  cd /tmp
+  wget http://www.hunkler.com/mark/iopener/midori/hubble_slideshow.tar | tar xvf -
+  ./hubble
+  control-alt-f3 to switch to console :1
+  control-alt-f2 to switch to console :0
+  control-c in xterm to kill script
+
+  Play xmame games
+  cd /tmp
+  wget http://www.hunkler.com/mark/iopener/midori/mame.tar.gz | gunzip -c | tar xvf -
+  ./xmame -rompath . -scale 2 mspacman
+  press "3" to insert a coin
+  press "1" to start single player game
+  (sound is only supported on a v1 iopener right now using M4I 0.093)
+
+******************************************************************************
+to turn off the backlight:
+xset dpms force off
+(set BIOS Video Off mode to Doze)
+

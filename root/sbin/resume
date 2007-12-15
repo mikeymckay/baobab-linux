@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# network
+[ -x /sbin/network ] && . /sbin/network start
+
+# 10 mlinit-0.2
+[ -x /usr/sbin/resume ] && . /usr/sbin/resume

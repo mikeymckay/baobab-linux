@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# 20 mlconfig-0.2
+killall -9 httpd 2> /dev/null
+
+# 60 X-4.0.3
+[ ! -x /usr/X11R6/sbin/die ] || /usr/X11R6/sbin/die

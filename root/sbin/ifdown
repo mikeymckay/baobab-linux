@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# ifdown - bring a network interface down
+
+if [ $# -ne 1 ] ; then
+	echo "usage: $0 <interface>"
+	exit 1
+fi
+
+DEVICE=$1
+
+# if device isn't up, then don't do anything
+if [ -z "`ifconfig -a | sed -ne "s/$DEVICE//p"`" ] ; then
+	exit 0
+fi
+
+# check if config file is there, so we know how to bring it down
+if [ ! -f /tmp/config/net/$DEVICE ] ; then
+	echo "No configuration for $DEVICE"
+	exit 1
+fi
+
+. /tmp/config/net/$DEVICE
+
+# the config file may have changed since the last ifup, so we kill
+# the connection with everything we have
+pump -r -i $DEVICE
+sleep 1
+killall pump
+sleep 1
+ifconfig $DEVICE down
+
+# Some interfaces need special treatment
+if [ "$WLAN" = "y" ] ; then
+        /sbin/wlan.rc stop $DEVICE
+fi
+
+exit 0

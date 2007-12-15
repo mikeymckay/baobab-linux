@@ -1,0 +1,75 @@
+ThemeDescription="Getaway"
+ThemeAuthor="Xerithane"
+Look=pixmap
+
+TitleButtonsLeft="s"
+TitleButtonsRight="xm"
+TitleBarCentered=1
+TitleBarHeight=17
+
+BorderSizeX=0
+BorderSizeY=6
+#CornerSizeX=28
+#CornerSizeY=28
+DlgBorderSizeX=0
+DlgBorderSizeY=4
+
+ColorNormalButton="#222d3c"
+ColorNormalButtonText="#ffffff"
+ColorActiveButton="#424d5c"
+ColorActiveButtonText="#FFFFFF"
+
+ColorNormalTitleBarText="#c0c0c0"
+ColorActiveTitleBarText="#ffffff"
+ColorActiveBorder="#868687"
+ColorNormalBorder="#575757"
+
+ColorNormalMenu="#323d4c"
+ColorActiveMenuItem="#525d6c"
+ColorNormalMenuItemText="#ffffff"
+ColorActiveMenuItemText="#ffffff"
+ColorDisabledMenuItemText="#808080"
+ColorDefaultTaskBar="#323d4c"
+ColorNormalTaskBarApp="#424d5c"
+ColorNormalTaskBarAppText="#ffffff"
+ColorActiveTaskBarApp="#525d6c"
+ColorActiveTaskBarAppText="#FFFFFF"
+ColorMinimizedTaskBarApp="#222d4c"
+ColorMinimizedTaskBarAppText="#ffffff"
+ColorInput="#222d3c"
+ColorMoveSizeStatus="#323d4c"
+ColorMoveSizeStatusText="#FFFFFF"
+ColorInputText="#ffffff"
+MenuMouseTracking=1 
+TaskBarClockLeds=0
+ColorQuickSwitch="#323d4c"
+ColorQuickSwitchText="#ffffff"
+ColorDialog="#323d4c"
+ColorListBox="#323d4c"
+ColorListBoxText="#ffffff"
+ColorListBoxSelection="#525d6c"
+ColorListBoxSelectionText="#ffffff"
+ColorScrollBar="#424d5c"
+ColorScrollBarArrow="#525d6c"
+ColorScrollBarSlider="#323d4c"
+ColorLabel="#323d4c"
+ColorLabelText="#ffffff"
+ColorClock="#323d4c"
+ColorClockText="#c0c0c0"
+
+# Font Specification
+TitleFontName		=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+MenuFontName		=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+MinimizedWindowFontName	=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+ActiveButtonFontName	=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+NormalButtonFontName	=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+QuickSwitchFontName	=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+ListBoxFontName		=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+StatusFontName		=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+ToolTipFontName		=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+ActiveTaskBarFontName	=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+NormalTaskBarFontName	=	"-*-lucidatypewriter-medium-r-*-*-*-100-*-*-*-*-*-*"
+ClockFontName		=	"-B&H-Lucida-Bold-R-Normal-Sans-14-140-75-75-P-92-ISO8859-1"
+
+ShowMenuButtonIcon=0
+TaskBarClockLeds=0

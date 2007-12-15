@@ -1,0 +1,8 @@
+# /etc/printcap
+#
+
+lp:\
+	:sh:\
+	:lp=/dev/null:\
+	:sd=/var/spool:\
+	:if=/usr/local/bin/lpr:

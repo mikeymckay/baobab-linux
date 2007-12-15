@@ -1,0 +1,6 @@
+# This file is sourced by the network start/stop script.
+HOSTNAME=iopener
+DOMAIN=transmeta.com
+FORWARD_IPV4=false
+GATEWAYDEV=eth0
+TIMESERVER=

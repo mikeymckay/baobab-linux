@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# VERY simple command line interface for the upgrade process.
+# uses wget to grab an image file from the host, then dd's the image
+# to the device.
+
+config=/tmp/config
+configdir=/config
+device=/dev/hdb
+
+hostport=
+if [ -f $config/upgrade_host ] ; then
+    hostport=`cat $config/upgrade_host`
+fi
+
+if [ "$1" = "-h" ] ; then
+    if [ $# = 1 ] ; then
+	echo "usage: upgrade [-h host:port] [upgrade_image]"
+	exit 1
+    fi
+    hostport=$2
+    shift
+    shift
+fi
+if [ "$hostport" = "" ] ; then
+    echo "you did not specify a host and none has been defined in $configdir/upgrade_host"
+    exit 1
+fi
+echo $hostport > $config/upgrade_host
+if [ "`cat $config/upgrade_host`" != "`cat $configdir/upgrade_host`" ] ; then
+    echo "storing new upgrade host $hostport"
+    freeze > /dev/null 2> /dev/null
+fi
+
+hostURL="http://$hostport/m4i/pub"
+
+if [ $# = 0 ] ; then
+    wget -O - $hostURL/options.txt
+    exit 0
+else
+    imgfile=$1
+    checksum=$1.md5
+    cd /tmp
+    echo 'getting image file "'$imgfile'"'
+    wget -O $imgfile $hostURL/$imgfile
+    if [ ! -f $imgfile ] ; then
+	echo "Could not download the requested image!"
+	exit 1
+    fi
+    echo 'Image file received- getting checksum file "'$checksum'"'
+    wget -O $checksum $hostURL/$checksum
+    if /bin/md5sum -c $checksum; then 
+	:
+    else
+	echo "Checksum failed- file corrupt? Try again."
+	exit 1
+    fi
+    echo "Checksum confirmed- copying to $device."
+    echo "This may take up to 3 minutes- DO NOT INTERRUPT!!!"
+    dd if=$imgfile of=$device
+    echo "Finished- please wait a few seconds and then reboot..."
+fi
+exit 0

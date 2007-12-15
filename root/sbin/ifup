@@ -1,0 +1,99 @@
+#!/bin/sh
+
+# ifup - bring network interface up
+
+if [ $# -ne 1 ] ; then
+	echo "usage: $0 <interface>"
+	exit 1
+fi
+
+DEVICE=$1
+
+if [ ! -f /tmp/config/net/$DEVICE ] ; then
+	echo "$0: No network configuration for device '$DEVICE'"
+	exit 1
+fi
+
+. /tmp/config/net/$DEVICE
+
+if [ "$ENABLED" = "n" ] ; then
+	echo "Device $DEVICE is disabled."
+	STATUS=down
+	exit 0
+fi
+
+# load drivers for this device
+for i in $DRIVER ; do
+	insmod $i
+done
+
+# Some interfaces need special treatment
+if [ "$WLAN" = "y" ] ; then
+	echo "Configuring wlan device $DEVICE."
+	/sbin/wlan.rc start $DEVICE
+fi
+
+if [ -n "`ifconfig -a | sed -ne 's/$DEVICE//p'`" ] ; then
+	STATUS=up
+else
+    	STATUS=down
+fi
+
+case "$TYPE" in 
+
+    dhcp)
+	pump -i $DEVICE
+	;;
+    static)
+        ifconfig_args=
+
+	if [ -z "$IPADDR" -o -z "$NETMASK" -o -z "$NETWORK" ] ; then
+		echo "Can't configure a static IP w/o "
+		echo "an IP address, a subnet mask, and a network specified!"
+		exit 1
+	fi
+
+        # check if they gave us a broadcast address
+        if [ -n "$BROADCAST" ] ; then
+		ifconfig_args="broadcast $BROADCAST"
+        fi
+
+	# bring up the device
+	ifconfig $DEVICE $IPADDR netmask $NETMASK $ifconfig_args
+
+	# add the network to the route
+	route add -net $NETWORK netmask $NETMASK dev $DEVICE
+
+	# if they gave us a gateway, then set that
+	if [ -n "$GATEWAY" -a "$GATEWAY" != "none" ] ; then
+		route add default gw $GATEWAY metric 1 $DEVICE
+	fi
+
+        if [ "$DNS" != "" ] ; then
+                echo domain $DOMAIN > /etc/resolv.conf
+                for i in $DNS
+                do
+                        echo nameserver $i
+                done >> /etc/resolv.conf
+        fi
+	;;
+    none)
+	exit 0
+	;;
+    *)
+	echo "Network configuration must be one of {none|static|dhcp}"
+	exit 1
+	;;
+esac
+
+# check if this is the default gw for the system
+
+if [ -z "$GATEWAYDEV" -o "$GATEWAYDEV" = "$DEVICE" ] ; then
+	if [ -n "$GATEWAY" ] ; then
+		route add default gw $GATEWAY $DEVICE
+	elif [ "$GATEWAYDEV" = "$DEVICE" ] ; then
+		route add default $DEVICE
+	fi
+fi
+
+exit 0

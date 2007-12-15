@@ -1,0 +1,397 @@
+#!/bin/bash
+
+VERSION="2.3pre1"
+BUILD_DATE="`date -uR`"
+
+BUILDROOT=`pwd`
+if [ "$1" = "w" ] ; then
+   KERNEL=$BUILDROOT/kernel/bzImage_winchip
+   KERNEL_CPU="Winchip C6"
+   IMAGEFILE="m4i-"$VERSION"_winchip.img"
+else
+   KERNEL=$BUILDROOT/kernel/bzImage_mk6
+   KERNEL_CPU="AMD/Rise/Winchip2"
+   IMAGEFILE="m4i-"$VERSION".img"
+fi
+DISK_FILENAME="$BUILDROOT/$IMAGEFILE"
+   
+echo "KERNEL FILE: $KERNEL"
+echo "VERSION: $VERSION"
+echo "KERNEL_CPU: $KERNEL_CPU"
+echo "BUILD_DATE: $BUILD_DATE"
+
+# ROOT_SIZE=0 will automatically size the root partition 
+ROOT_SIZE="3190000"
+#ROOT_SIZE="0"
+ROOT_FREE="0"
+DISK_HEADS="2"
+DISK_SECTORS="32"
+DISK_CYLINDERS="490"
+# For 32M disks: H,S,C=1,62,1015
+STAT_LOG=$BUILDROOT/packcramfs.log
+ROOT=$BUILDROOT/root
+IMAGE=$BUILDROOT/image
+PARTS=$BUILDROOT/parts
+CONFIG=$BUILDROOT/config
+PACKED=usr
+PACKED_IMAGES=20
+PACKED_PARTITION=4
+CONFIG_PARTITION=3
+# RWSIZE=1572864 | 1048576 | 524288 | 393216 | 262144 | 131072 | 65536
+RWSIZE=262144
+TARGET=$BUILDROOT/target
+PATH=$BUILDROOT/target:/sbin:$PATH
+CONFIG_DIR=/config
+export PATH ROOT CONFIG_DIR PARTS IMAGE
+
+# Update version file
+echo "M4I_VERSION=\"$VERSION\"" > $ROOT/config/etc/m4i.version
+echo "M4I_KERNEL_CPU=\"$KERNEL_CPU\"" >> $ROOT/config/etc/m4i.version
+echo "M4I_BUILD_DATE=\"$BUILD_DATE\"" >> $ROOT/config/etc/m4i.version
+
+# by default only write_partition is compiled and installed
+FUNCTIONS="findfiles installconfig configure compile installlocal"
+EXECUTE_ALWAYS="$EXECUTE_ALWAYS make_image install_device install_zero install_file install_new"
+STATISTICS=no
+
+opt_zero=0
+
+# store a file inside anotherone, don't write blocks of '\0'
+# $1=output file
+# $2=input file
+# $3=partition
+function store_file() {
+    offset=0
+    if [ "$3" != 0 ] ; then
+	offset=`awk "\\$1 == "$3" {print \\$9}" < ${1}_geometry`
+	offset=$(($offset * 512))
+    fi
+    echo "store: $1 $2 $3, offset: $offset"
+    perl -e 'open(F, "+<$ARGV[0]") || die "cannot open $ARGV[0] for updating: $!\n";
+             open(I, $ARGV[1]) || die "cannot open $ARGV[1] for reading: $!\n";
+             sysseek(F, $ARGV[2],0) || die "seek failed on $ARGV[0]: $!\n";
+             while(sysread(I, $b, 1024)) { 
+                    if($b eq "\0" x 1024) {  
+                           sysseek(F,1024,1); 
+                    } else { 
+                           syswrite(F, $b, length($b)); 
+                    } 
+             }' $1 $2 $offset
+}
+
+# resize a file (making it larger) by seeking to the requested size
+# and writing one byte
+# $1=file
+# $2=new size (must be bigger that current size)
+function resize_file() {
+        perl -e 'open(F,"+<$ARGV[0]") || die "cannot open $ARGV[0] for updating: $!\n";
+                 sysseek(F,$ARGV[1]-1,0);syswrite(F,"\0",1);close(F);' $1 $2
+}
+
+# Resize a packcramfs file (make it larger only)
+# $1=disk image
+# $2=packcramfs image
+# $3=partition
+function resize_packcramfs() {
+    size=`awk "\\$1 == "$3" {print \\$10}" < ${1}_geometry`
+    size=$(($size * 512))
+    fsize=`ls -l $2 | awk '{ print $5 }'`
+    echo "resize: oldsize: $fsize, newsize $size"
+## XXX
+    if [ $size -lt $fsize ] ; then
+        echo "image $2 is too large"
+        exit 1
+    elif [ $size -gt $fsize ] ; then
+        resize_file $2 $size
+        packcramfs -C -w --resize $2
+    fi
+}
+
+# calculate an md5sum of a directory 
+# (uses name, size, permissions of all files and directories)
+function calcmd5sum() {
+        find $PARTS/$1 -type f | sort | xargs md5sum > $IMAGE/$1.md5sum.n
+        find $PARTS/$1 -ls | perl -ane 'print "$F[10] $F[2] $F[6]\n";' | sort | md5sum >> $IMAGE/$1.md5sum.n
+}
+
+# check if the size of the images fit
+# $1: max size of block device
+function ml_check_size() {
+        size=$1
+        root_size=`ls -l $IMAGE/root1.img.cram | awk '{print 1+int($5/1000) }'`
+        real=$root_size
+        if [ "$ROOT_SIZE" = 0 ] ; then
+            root_size=$(($root_size + $ROOT_FREE / 1000))
+	    echo "Root partition auto-allocated: $root_size"
+        else
+            t=$(($root_size + $ROOT_FREE / 1000))
+            r=$(($ROOT_SIZE / 1000))
+            if [ $t -gt $r ] ; then
+                echo "THERE IS NOT ENOUGH FREE SPACE ON THE ROOT PARTITION, ABORTING"
+		echo "($t needed, $r allocated.)"
+                exit 1
+            fi
+            root_size=$r
+        fi
+        root_size1=$root_size
+        root_size2=$root_size
+
+        if [ "$TEST_CLIENT_SRC" != "" -a "$TEST_CLIENT_SRC" != no ] ; then
+                root_size1=$(($real + 10 ))
+        fi
+
+        ALL_IMAGES="$IMAGE/root1.img.cram $IMAGE/root2.img.cram $IMAGE/main.img.packed"
+        all_size=`ls -l $ALL_IMAGES | awk '{ k+=$5 } END { print int(k/1000) }'`
+
+        if [ "$RWSIZE" = 0 ] ; then
+        	echo "Root: $root_size, usr: $all_size"
+        	rw_size=$((1 + $RWSIZE / 1000))
+	else
+        	rw_size=$((1 + $RWSIZE / 1000))
+	fi
+}
+
+# this feeds fdisk and should make partitions just large enough
+# to fit their contents, with the exception of the last partition,
+# which will take all the rest of the space.
+ml_create_fdisk() {
+        fdisk_script="n
+p
+1
+
++${root_size1}K
+n
+p
+${CONFIG_PARTITION}
+
++${rw_size}K
+n
+p
+${PACKED_PARTITION}
+
+
+a
+1
+p
+w"
+}
+
+function ml_install_disk() {
+        OUTPUT=$DISK_FILENAME
+        ml_check_size $(($DISK_HEADS * $DISK_SECTORS * $DISK_CYLINDERS))
+        ml_create_fdisk >> $STAT_LOG
+
+        echo "writing file ... "
+
+        [ ! -f $OUTPUT ] || rm $OUTPUT
+        # create the image
+        touch $OUTPUT
+        resize_file $OUTPUT $(($size*512))
+
+        # prepend geometry to the fdisk script
+        fdisk_script="x
+h
+$DISK_HEADS
+c
+$DISK_CYLINDERS
+s
+$DISK_SECTORS
+r
+$fdisk_script"
+
+        echo "$fdisk_script" | fdisk $OUTPUT || true
+	echo "x
+h
+$DISK_HEADS
+c
+$DISK_CYLINDERS
+s
+$DISK_SECTORS
+p
+q" | fdisk $OUTPUT > ${OUTPUT}_geometry
+
+        store_file $OUTPUT $TARGET/newmbr.bin 0
+        store_file $OUTPUT $IMAGE/root1.img.cram 1
+#       store_file $OUTPUT $IMAGE/root2.img.cram 2
+
+        if [ -f $IMAGE/config.image ] ; then
+                store_file $OUTPUT $IMAGE/config.image $CONFIG_PARTITION
+        fi
+
+        # install packed version
+        resize_packcramfs $OUTPUT $IMAGE/main.img.packed $PACKED_PARTITION
+        store_file $OUTPUT $IMAGE/main.img.packed $PACKED_PARTITION
+
+        echo "done"
+}
+
+function ml_make_image() {
+        [ "$EDITION" != "" ]  || export EDITION=`date +%s`
+
+        mkdir -p $IMAGE
+        rm -f $IMAGE/.done
+
+        # make copy of root
+        [ -d $ROOT.work ] && rm -rf $ROOT.work
+        cp -a $ROOT $ROOT.work
+        fix=
+
+        # untar the device directory (it messes up source control)
+        tar -xf $ROOT.work/dev.tgz --directory $ROOT.work
+
+        # switch to make sure we only use the working version of root
+        ORIG_ROOT=$ROOT
+        ROOT=$ROOT.work
+        export ROOT
+
+
+        # split the image into root partition, main partition and all requested images
+        [ -d $PARTS ] && rm -rf $PARTS 2> /dev/null
+        mkdir -p $PARTS
+
+        # get config image if needed
+	# move the config directory into $PARTS, and add
+	# the commands to reverse this to $fix
+	# Don't forget to add the mount directory
+	# The image must be named config.image
+        cd $TARGET
+        mv $ROOT$CONFIG_DIR $PARTS
+        d=`basename $CONFIG_DIR`
+        mkdir -p $ROOT$CONFIG_DIR
+        fix="rmdir $ROOT$CONFIG_DIR ; mv  $PARTS/$d $ROOT$CONFIGDIR ; $fix"
+        mkcramfs -E -e 0 -z $PARTS/$d $IMAGE/config.img.cram >> $STAT_LOG
+        packcramfs -c -i 2 -l 8 -b 1024 $IMAGE/config.image $(($RWSIZE / 1024)) >> $STAT_LOG
+        packcramfs -s $IMAGE/config.image /   $IMAGE/config.img.cram >> $STAT_LOG
+        packcramfs -A $IMAGE/config.image / >> $STAT_LOG
+        cd $BUILD
+
+        # start with subdirectories (they are easier to find
+        # if we do it now). They need to be reverse sorted to
+        # avoid conflicts.
+        images=
+        for i in `sort -u -r < $CONFIG/images`
+        do
+                n=`echo $i | tr / .`
+                if [ -d $ROOT/$i ] ; then
+                        mv $ROOT/$i $PARTS/$n
+                        mkdir $ROOT/$i
+                        fix="rmdir $ROOT/$i ; mv $PARTS/$n $ROOT/$i ; $fix"
+                        images="$i $images" # order is important, we need the mount order here!
+                fi
+        done
+
+
+        # the main parts of the packed partition
+        mkdir $PARTS/main
+        [ -f $ROOT/.main_edition ] && mv $ROOT/.main_edition $PARTS/main/.edition
+        for i in $PACKED
+        do
+                n=`echo $i | tr / .`
+                mv $ROOT/$i $PARTS/$n
+                mkdir $PARTS/main/$n
+                ln -s /cramfs/$n $ROOT/$i
+                fix="rm $ROOT/$i ; mv $PARTS/$n $ROOT/$i ; $fix"
+                images="$i $images"
+        done
+
+        mv $ROOT $PARTS/root
+        fix="mv $PARTS/root $ROOT ; $fix"
+
+        # build the image
+
+        let root_size=`du -sb $PARTS/root | awk '{print $1}'`
+
+        # build padded kernel image
+        calcmd5sum root
+        md5sum $KERNEL >> $IMAGE/root.md5sum.n
+        if [ -f $IMAGE/root.md5sum -a -f $IMAGE/root1.img.cram ] ; then
+                if cmp $IMAGE/root.md5sum $IMAGE/root.md5sum.n ; then
+                        rm $IMAGE/root.md5sum.n
+                else
+                        rm $IMAGE/root.md5sum
+                fi
+        fi
+
+        if [ ! -f $IMAGE/root.md5sum ] ; then
+                dd if=/dev/zero of=$IMAGE/bzImage.padded bs=436c count=1
+                cat $KERNEL >> $IMAGE/bzImage.padded
+                e=$EDITION
+                if [ -f $PARTS/root/.edition ] ; then
+                        e=`cat $PARTS/root/.edition`;
+                        rm $PARTS/root/.edition;
+                fi
+                mkcramfs -p -e $e -i $IMAGE/bzImage.padded -z $PARTS/root $IMAGE/roott.img.cram >> $STAT_LOG
+                cp $TARGET/cramfsboot.bin $IMAGE/root1.img.cram
+                #tail +513c  $IMAGE/roott.img.cram >>  $IMAGE/root1.img.cram
+                tail -c+513  $IMAGE/roott.img.cram >>  $IMAGE/root1.img.cram
+                cramfsck $IMAGE/root1.img.cram
+                cp $IMAGE/root1.img.cram  $IMAGE/root2.img.cram 
+                set_boot $IMAGE/root1.img.cram 1
+                set_boot $IMAGE/root2.img.cram 2
+                rm $IMAGE/roott.img.cram
+                mv $IMAGE/root.md5sum.n $IMAGE/root.md5sum
+        fi
+
+        force=0
+        if [ -f $IMAGE/main.img.packed ] ; then
+                mv $IMAGE/main.img.packed $IMAGE/main.img.packed.tmp
+        else
+                rm -f $IMAGE/main.img.packed.tmp
+                packcramfs -c -l 10 -i $PACKED_IMAGES -b 1024 $IMAGE/main.img.packed.tmp 1024 >> $STAT_LOG
+                force=1
+        fi
+
+        for i in main $images
+        do
+                n=`echo $i | tr / .`
+                e=$EDITION
+                if [ -f $PARTS/$n/.edition ] ; then
+                        e=`cat $PARTS/$n/.edition`;
+                        rm $PARTS/$n/.edition;
+                fi
+                [ "$force" = 0 ] || rm -f $IMAGE/$n.md5sum
+                calcmd5sum $n
+                if [ -f $IMAGE/$n.md5sum -a -f $IMAGE/$n.img.cram ] ; then
+                        if cmp $IMAGE/$n.md5sum $IMAGE/$n.md5sum.n ; then
+                                rm $IMAGE/$n.md5sum.n
+                                continue
+                        else
+                                rm $IMAGE/$n.md5sum
+                        fi
+                fi
+                mkcramfs -e $e -z $PARTS/$n $IMAGE/$n.img.cram >> $STAT_LOG
+                cramfsck $IMAGE/$n.img.cram
+                m=$i
+                if [ $m = "main" ] ; then m=/ ; fi
+                packcramfs -s -f --append $IMAGE/main.img.packed.tmp $m $IMAGE/$n.img.cram >> $STAT_LOG
+                packcramfs -A $IMAGE/main.img.packed.tmp $m >> $STAT_LOG
+                mv $IMAGE/$n.md5sum.n $IMAGE/$n.md5sum
+        done
+
+        # make packcramfs file as small as possible (compact, then truncate)
+        packcramfs -z $IMAGE/main.img.packed.tmp >> $STAT_LOG
+        packcramfs -C --fast --write --resize $IMAGE/main.img.packed.tmp >> $STAT_LOG
+        mv $IMAGE/main.img.packed.tmp $IMAGE/main.img.packed
+        chmod a+r $IMAGE/main.img.packed	# packcramfs hard-coded to create it 0600
+
+        echo $fix | sh -e
+
+        touch $IMAGE/.done
+	
+}
+
+# OK, do it...
+
+rm -f image/*
+echo `date -u` > $STAT_LOG
+
+ml_make_image
+
+ml_install_disk
+
+cd $BUILDROOT
+md5sum $IMAGEFILE > $IMAGEFILE.md5
+
+# Clean up
+rm -f image/*
+rm -f ${DISK_FILENAME}_geometry

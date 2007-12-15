@@ -1,0 +1,19 @@
+# this script will be sourced by the image creation script
+
+# get config directory if needed
+
+# move the config directory into $PARTS, and add
+# the commands to reverse this to $fix
+# Don't forget to add the mount directory
+# Note: $RWSIZE is defined in mlinstall
+# The image must be named config.image
+if [ "$PACKCRAMFSCONFIG_SRC" != "no" ] ; then
+        mv $ROOT$CONFIG_DIR $PARTS
+        d=`basename $CONFIG_DIR`
+        mkdir -p $ROOT$CONFIG_DIR
+        fix="rmdir $ROOT$CONFIG_DIR ; mv  $PARTS/$d $ROOT$CONFIGDIR ; $fix"
+        mkcramfs -E -e 0 -z $PARTS/$d $IMAGE/config.img.cram
+        packcramfs -c -i 2 -l 8 -b 1024 $IMAGE/config.image $(($RWSIZE / 1024))
+        packcramfs -s $IMAGE/config.image /   $IMAGE/config.img.cram
+        packcramfs -A $IMAGE/config.image / 
+fi

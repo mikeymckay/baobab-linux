@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Sample script for printing to a networked postsript printer via
+# the 'netcat' program.
+
+netcat 192.168.1.102 9100
+
+#
+# netcat is a simple program that streams raw data from stdin to the
+# specified hostip and port. The example below works on my home LAN,
+# where 192.168.1.102 is my linux box that acts as a print server.
+# It runs a simple perl script that listens to port 9100, sending 
+# any data that it gets to the printer via the appropriate gs filter.
+#
+

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# 40 netscape-4.76
+killall netscape 2> /dev/null
+
+# 99 X-4.0.3
+killall X 2> /dev/null ; killall Xwrapper 2> /dev/null ; killall xinitrc 2> /dev/null

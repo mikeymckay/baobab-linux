@@ -1,0 +1,86 @@
+Content-type: text/html
+
+<HTML><HEAD><TITLE>Manpage of fvnet</TITLE>
+</HEAD><BODY>
+<H1>fvnet</H1>
+Section: User Commands  (1)<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>fvnet</B> - ATMEL Wireless Card Console Monitor Utility
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>fvnet</B>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<B>fvnet</B>
+
+is the monitor utility for the 
+<B>ATMEL Wireless Card </B>
+
+adapters. When the pcmcia module <B>fastvnet_cs</B> or the usb module <B>vnetusba.o</B> is loaded the 
+<B>fvnet</B> application can monitor the device's statistics or change it's runtime parameters. 
+<A NAME="lbAE">&nbsp;</A>
+<H2>NOTE</H2>
+
+In order for the application to run the driver has to complete it's  initialization. If the device's initialization isn't
+finished the application won't start.
+<A NAME="lbAF">&nbsp;</A>
+<H2>Application Screens</H2>
+
+<DL COMPACT>
+<DT><B>Basic Screen<DD>
+In the first you have 3 options. By pressing c</B> you can configure the running device. By pressing <B>v</B> you can view the current configuration.
+And finally by pressing <B>x</B> you can leave the utility.
+<DT><B>First Screen - View Configuration.</B>
+
+<DD>
+If you press the <B>v</B> key the device's configuration will be displayed on your screen. Here you can see the transmitted and received data packets.
+The device's state is also displayed. If the device is associated you can see the associated access point's name and it's BSSID. Other information you
+can see is the channel, the transmit rate, the Operating Mode, the Preamble Type, the Power Management Mode, the RtsCts Threshold and the Fragmentation
+Threshold. 
+You can also see the encryption settings.
+<DT><B>Second Screen - Set Configuration</B>
+
+<DD>
+In the second screen you can configure the running device. By pressing the letter inside the brackets you can set the corresponting value.
+</DL>
+<A NAME="lbAG">&nbsp;</A>
+<H2>BUG REPORT</H2>
+
+For any bugs contact <B><A HREF="mailto:vnetsupport@patras.atmel.com">vnetsupport@patras.atmel.com</A></B>
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+
+802.11 Standard.
+<DL COMPACT>
+<DT><B>xvnet</B>(<B>1</B>).
+
+<DD>
+<P>
+</DL>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">NOTE</A><DD>
+<DT><A HREF="#lbAF">Application Screens</A><DD>
+<DT><A HREF="#lbAG">BUG REPORT</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://localhost/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 23:56:11 GMT, May 20, 2002
+</BODY>
+</HTML>

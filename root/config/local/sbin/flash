@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p /tmp/flash
+mount /dev/sda1 /tmp/flash

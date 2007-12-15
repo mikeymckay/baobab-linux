@@ -1,0 +1,4 @@
+DEVICE=eth0
+TYPE=dhcp
+ENABLED=y
+DRIVER='pegasus'

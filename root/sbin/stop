@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# 10 mlinit-0.2
+[ -x /usr/sbin/stop ] && . /usr/sbin/stop
+
+# 25 network-config-0.2
+/sbin/network stop
+
+# 88 logd-0.1
+killall logd

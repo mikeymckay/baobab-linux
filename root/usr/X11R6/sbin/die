@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# 40 netscape-4.76
+killall -9 netscape 2> /dev/null
+
+# 99 X-4.0.3
+killall -9 X 2> /dev/null ; killall -9 XFree86 2> /dev/null ; killall -9 xinitrc 2> /dev/null

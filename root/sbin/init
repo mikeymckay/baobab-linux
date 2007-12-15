@@ -1,0 +1,120 @@
+#!/bin/sh
+
+echo "Starting init (return here with ctl-alt-F1)..."
+
+# 00 mlinit-0.2
+#/bin/spawn /dev/tty5 0 0 /bin/sh -il &
+#function next_step { : ; }
+echo "Fixing USB by tweaking PCI registers..."
+/sbin/pcitweak -w 00:00:0 -b 0x75 0xa3
+/sbin/pcitweak -w 00:07:2 -b 0x40 0x02
+
+# 01 mlinit-0.2
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/bin/X11
+LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib
+HOME=/tmp
+IP=`ifconfig | grep inet | grep -v "127.0.0.1" | cut -d ":" -f 2 | cut -d " " -f 1 | sed "s/\n//" | head -n1`
+PS1=${IP}: 
+export PATH LD_LIBRARY_PATH HOME PS1
+
+echo "Mounting RW filesystems..."
+mount -n -t proc proc /proc
+mount -n -t ramfs ramfs /tmp
+[ -d /proc/bus/usb ] && mount -n -t usbdevfs usbdevfs /proc/bus/usb
+chmod 1777 /tmp
+
+#next_step
+
+# create this link for locking processes (i.e. pppd)
+mkdir /tmp/lock
+
+#next_step
+
+# devpts
+echo "Building devpts..."
+[ -c /dev/ptmx ] || mknod -mode 666 /dev/ptmx c 5 2
+[ -d /dev/pts ] || mkdir -m 755 /dev/pts
+mount -o gid=5,mode=620 -n -t devpts devpts /dev/pts
+
+#next_step
+
+# Loopback interface
+echo "Creating lookback interfaces..."
+[ -x /bin/uplo ] && /bin/uplo
+
+#next_step
+
+# set our hostname to something without '('
+echo "localhost" > /proc/sys/kernel/hostname
+
+# 02 mlinit-0.2
+echo "Mounting usr partition..."
+/sbin/packcramfs -m /dev/hdb4 /cramfs > /dev/null
+
+# 05 packcramfsconfig-0.1
+echo "Thawing config partition to /tmp/config..."
+[ ! -x /sbin/thaw ] || /sbin/thaw > /dev/null
+
+# 06 glibc-2.1.3
+echo "Setting timezone..."
+if [ -f /tmp/config/timezone ] ; then
+   ln -sf /usr/share/zoneinfo/`cat /tmp/config/timezone` /tmp/localtime
+else
+   ln -sf /usr/share/zoneinfo/US/Pacific /tmp/localtime
+fi
+
+# Make a real tmp dir
+mkdir /tmp/tmp
+
+# Make sure that /tmp/config exists. It should, but if the config partition
+# got corrupted, it might not.
+[ ! -d /tmp/config ] && mkdir /tmp/config
+
+# link everything in /tmp/config/home to /tmp (the operating 'home' dir)
+if [ -d /tmp/config/home ] ; then
+   files=`ls -a /tmp/config/home/`
+   for i in $files ; do
+      if [ -e /tmp/config/home/$i -a "$i" != '.' -a "$i" != '..' ] ; then
+         ln -sf /tmp/config/home/$i /tmp/
+      fi
+   done
+fi
+
+# We need to kill this file, because it will make opera think that it crashed
+# after we do 'store configuration', since it never gets to see opera closed
+# down properly.
+rm -f /tmp/config/.opera/autopera.win
+
+# 12 logd-0.1
+echo "Starting logd (use ctl-alt-F4 to see it)..."
+[ -x /sbin/logd ] && /sbin/logd -f /dev/tty4
+
+# 25 network-config-0.2
+echo "Starting network..."
+/sbin/network start
+/sbin/portmap
+
+# 30 lm-sensors
+echo "Loading hardware monitoring modules (run 'sensors' to see values)..."
+insmod i2c-core > /dev/null
+insmod i2c-proc > /dev/null
+#insmod i2c-isa > /dev/null
+#insmod via686a > /dev/null
+#/usr/bin/sensors -s
+
+# 90 mlinit-0.2
+[ -x /usr/sbin/init ] && . /usr/sbin/init
+
+# 96 run user's configurable init
+[ -x /usr/local/sbin/init ] && . /usr/local/sbin/init
+
+# 98 mlinit-0.2
+echo "Spawning shell (return to root shell with ctl-alt-F1)..."
+# Source the user's profile- this would normally happen automatically
+# if we used a real login sequence.
+[ -f /etc/profile ] && . /etc/profile
+while [ -x /bin/spawn -o -x /usr/bin/spawn ] ; do spawn /dev/tty1 0 0 /bin/sh -i ; done &
+
+# 99 mlinit-0.2
+while true ; do sleep 3600 ; done
+

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# network
+[ -x /sbin/network ] && . /sbin/network stop
+
+# 10 mlinit-0.2
+[ -x /usr/sbin/suspend ] && . /usr/sbin/suspend

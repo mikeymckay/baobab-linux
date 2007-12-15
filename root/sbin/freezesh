@@ -1,0 +1,44 @@
+#!/bin/sh
+
+TMPDIR=/tmp
+SAVEDIR=/tmp/config
+CONFIGDIR=/config
+REPOSITORY=/dev/hdb3
+
+if [ ! -d $TMPDIR ]; then
+	echo "$0: $TMPDIR does not exist" 1>&2
+	exit 1
+fi
+
+echo 
+echo "Saving configuration data..."
+
+mkdir -p $SAVEDIR
+
+if ! mkcramfs -z $SAVEDIR /tmp/img.cramed ; then
+	# huh?
+	echo "$0: mkcramfs fails ($?)" 1>&2
+	exit 1
+fi
+
+if ! packcramfs -q -s $REPOSITORY / /tmp/img.cramed ; then # -q = quiet, -s = store
+	# either partition is bad or there is not enough space
+	echo "$0: partition corrupted or config files too large" 1>&2
+	exit 1
+fi
+
+rm /tmp/img.cramed
+
+if ! packcramfs -q -A $REPOSITORY / ; then # -A = activate mountpoint
+	echo "$0: failed to activate mountpoint $REPOSITORY:/" 1>&2
+	exit 1
+fi
+	
+if ! packcramfs -q -m $REPOSITORY $CONFIGDIR ; then # -m = mount all images
+	echo "$0: failed to mount images in $REPOSITORY" 1>&2
+	exit 1
+fi
+
+echo
+echo "Configuration data has been successfully saved"
+echo

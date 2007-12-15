@@ -1,0 +1,20 @@
+date: 2000/08/15 01:34:47;  author: cfl
+
+Fix to get packcramfs working without loopback
+
+diff -urN linux_orig/drivers/block/blkpg.c linux/drivers/block/blkpg.c
+--- linux_orig/drivers/block/blkpg.c	Thu Oct 26 23:35:47 2000
++++ linux-2.4.20/drivers/block/blkpg.c	Thu Apr  5 20:08:14 2001
+@@ -110,12 +110,6 @@
+ 	if (g->part[minor].nr_sects != 0)
+ 		return -EBUSY;
+ 
+-	/* overlap? */
+-	for (i=first_minor+1; i<end_minor; i++)
+-		if (!(pstart+plength <= g->part[i].start_sect ||
+-		      pstart >= g->part[i].start_sect + g->part[i].nr_sects))
+-			return -EBUSY;
+-
+ 	/* all seems OK */
+ 	g->part[minor].start_sect = pstart;
+ 	g->part[minor].nr_sects = plength;

@@ -1,0 +1,5 @@
+Improvements to make on microGUI theme:
+
+    - Add borders?
+    - make additional *.theme files which specify the colors of the
+      taskbar monitors.

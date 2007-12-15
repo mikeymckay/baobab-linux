@@ -1,0 +1,36 @@
+prog xterm xterm xterm
+prog rxvt xterm rxvt -bg black -cr green -fg white -C -fn 9x15 -sl 500
+separator
+menu Editors folder {
+    prog nedit nedit nedit
+    prog xpad xpad xpad
+    prog Vi xterm xterm -bg black -fg white -e /usr/bin/vi
+}
+menu Internet folder {
+    prog Opera opera opera
+    prog Sylpheed sylpheed sylpheed
+    prog Dillo dillo dillo
+    prog Everybuddy everybuddy everybuddy
+    prog micq xterm xterm -e micq
+    separator
+    prog "Dial Up" eznet eznet up ppp
+    prog "Hang Up" eznet eznet down ppp		
+}
+
+menu System folder {
+    prog xkill xkill xkill
+    prog xev xev xev
+    prog wmalms app wmalms
+}
+
+menu Other folder {
+    prog vncviewer vncviewer vncvieweri
+    prog rdesktop rdesktop rdesktop
+    prog XMMS xmms xmms
+    prog xmixer xmixer xmixer
+    prog xcalc xcalc xcalc
+    prog xpdf xpdf xpdf
+}
+
+prog "Configuration" opera opera localhost
+prog Reboot reboot reboot

@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"></HEAD>
+<BODY>
+Macromedia<br>
+Flash Player 5<br>
+Netscape Plug-in for Linux<br>
+15 February 2001
+<p><br>
+  Macromedia is proud to release the Macromedia Flash Player 5 Netscape plug-in 
+  for<br>
+  the Linux operating system.</p>
+<p><br>
+  Supported Distributions<br>
+  -----------------------</p>
+<p>The Macromedia Flash Player plug-in requires an Intel x86-based Linux<br>
+  distribution with ELF binary support. The distribution must<br>
+  support the GNU C library (glibc 2.0 or greater). Distributions<br>
+  that meet these requirements include:</p>
+<p> - RedHat 5.x, 6.x, 7.0</p>
+<p>The plugin should work for more recent distributions as well. </p>
+<p>MkLinux for Power Macintosh is not currently supported.</p>
+<p><br>
+  Supported Browsers<br>
+  ------------------</p>
+<p>Netscape Navigator 4.0 or greater is required. The glibc version of<br>
+  Netscape Navigator must be used.</p>
+<p><br>
+  Installation<br>
+  ------------</p>
+<p>The following section assumes that you have unpacked the archive<br>
+  flash_linux.tar.gz into the top level of your user directory. Your<br>
+  user directory is referred to as $HOME.</p>
+<p>The Macromedia Flash Player can be installed in two ways:<br>
+  - Install the Flash Player system-wide, making it available<br>
+  to all users of the computer.<br>
+  or<br>
+  - Install the Macromedia Flash Player in a user account, making it<br>
+  available only to that user.</p>
+<p><br>
+  Installing the Macromedia Flash Player System-Wide:</p>
+<p>You will need root access to the computer to install the Macromedia Flash Player<br>
+  system-wide.</p>
+<p>1. Copy the Macromedia Flash Player (libflashplayer.so) into the Netscape <br>
+  plug-in directory.</p>
+<p>cp $HOME/flash_linux/libflashplayer.so /usr/lib/netscape/plugins</p>
+<p>2. Copy the Macromedia Flash Player Java class file (ShockwaveFlash.class)<br>
+  into the Netscape plug-in directory.</p>
+<p>cp $HOME/flash_linux/ShockwaveFlash.class /usr/lib/netscape/plugins</p>
+<p>3. Start Netscape.</p>
+<p>netscape &amp;</p>
+<p>4. Verify the installation by typing about:plugins in the location bar.<br>
+  You should see the Flash Player listed as &quot;Shockwave Flash 5.0r47&quot;</p>
+<p>5. To test the Macromedia Flash Player go to:</p>
+<p>http://www.flash.com/</p>
+<p>(NOTE: If the Web site www.flash.com does not automatically detect that<br>
+  you have the Flash Player installed, click on the link<br>
+  &quot;If you know you have Flash, click here&quot;)</p>
+<p><br>
+  Installing the Macromedia Flash Player in a User Account:</p>
+<p>1. If you have not already used Netscape from the user account,<br>
+  launch Netscape and close it. This will create a Netscape<br>
+  preferences directory (.netscape) in your home directory.<br>
+  The preferences directory will be named:</p>
+<p>$HOME/.netscape</p>
+<p>2. Create a plugins directory in the Netscape preferences<br>
+  directory.</p>
+<p>mkdir $HOME/.netscape/plugins</p>
+<p> If the mkdir command reports the error &quot;cannot make directory:<br>
+  File exists&quot;, do not be alarmed. This means only that the<br>
+  directory was already present and did not need to be created.</p>
+<p>3. Copy the Macromedia Flash Player (libflashplayer.so) into the Netscape <br>
+  plug-in directory.</p>
+<p>cp $HOME/flash_linux/libflashplayer.so $HOME/.netscape/plugins</p>
+<p>4. Copy the Macromedia Flash Player Java class file (ShockwaveFlash.class)<br>
+  into the Netscape plug-in directory.</p>
+<p>cp $HOME/flash_linux/ShockwaveFlash.class $HOME/.netscape/plugins</p>
+<p>5. Start Netscape.</p>
+<p>netscape &amp;</p>
+<p>6. Verify the installation by typing about:plugins in the location bar.<br>
+  You should see the Macromedia Flash Player listed as &quot;Shockwave Flash 5.0r47&quot;</p>
+<p>7. To test the Macromedia Flash Player go to:</p>
+<p>http://www.flash.com/</p>
+<p>(NOTE: If the Web site www.flash.com does not automatically detect that<br>
+  you have the Flash Player installed, click on the link<br>
+  &quot;If you know you have Flash, click here&quot;)</p>
+<p></p>
+<p>Troubleshooting<br>
+  ---------------</p>
+<p>Q: When I try to visit a Web site that contains Flash content, I get the<br>
+  error message &quot;Unknown type application/octet-stream&quot;.</p>
+<p>A: The Web site you are attempting to view needs to properly configure<br>
+  their Web server with the MIME types for Flash content. Specifically,<br>
+  they must add the MIME types:<br>
+  .spl application/futuresplash<br>
+  .swf application/x-shockwave-flash<br>
+  You might want to let the Webmaster of the site know of the problem.</p>
+<p><br>
+  Q: My Linux system is RedHat 6.0. When I browse to a Web page containing<br>
+  Flash content, the browser reports &quot;Starting Java&quot; and then crashes.</p>
+<p>A: This is a Java-related bug in the RedHat 6.0 distribution. Red Hat<br>
+  has documented the problem and provides a fix on their Product Support<br>
+  FAQ Web page:</p>
+<p> http://www.redhat.com/support?faq</p>
+<p><br>
+  Optimal X Server Configuration<br>
+  ------------------------------</p>
+<p>Flash Player should work with any X server configuration. However,<br>
+  optimal performance is achieved at the following color depths and<br>
+  color mask settings:</p>
+<p> Depth: 8<br>
+  Visual: PseudoColor</p>
+<p> Depth: 15<br>
+  Bits Per Pixel: 16<br>
+  Visual: TrueColor<br>
+  Red Mask: 0x00007C00<br>
+  Green Mask: 0x000003E0<br>
+  Blue Mask: 0x0000001F</p>
+<p> Depth: 16<br>
+  Bits Per Pixel: 16<br>
+  Visual: TrueColor<br>
+  Red Mask: 0x0000F800<br>
+  Green Mask: 0x000007E0<br>
+  Blue Mask: 0x0000001F</p>
+<p> Depth: 24<br>
+  Bits Per Pixel: 24<br>
+  Visual: TrueColor<br>
+  Red Mask: 0x00FF0000<br>
+  Green Mask: 0x0000FF00<br>
+  Blue Mask: 0x000000FF</p>
+<p> Depth: 32<br>
+  Bits Per Pixel: 32<br>
+  Visual: TrueColor<br>
+  Red Mask: 0x00FF0000<br>
+  Green Mask: 0x0000FF00<br>
+  Blue Mask: 0x000000FF</p>
+<p> Depth: 32<br>
+  Bits Per Pixel: 32<br>
+  Visual: TrueColor<br>
+  Red Mask: 0x000000FF<br>
+  Green Mask: 0x0000FF00<br>
+  Blue Mask: 0x00FF0000</p>
+<p>In addition, the X server's image byte order must match the host byte<br>
+  order in order to achieve optimal performance using one of the above<br>
+  configurations.</p>
+<p>Macromedia Flash Player takes advantage of the the MIT-SHM Shared Memory<br>
+  Extension. This will boost performance on supported systems.</p>
+<p><br>
+  Known Bugs<br>
+  ----------</p>
+<p>Some web sites use JavaScript detection and may default to a <br>
+  non-Flash page for users who are not on Macintosh or Windows <br>
+  platforms. Some web sites may have a link you can click to get <br>
+  to the Flash content. </p>
+<p>RealFlash is not supported by RealAudio on the UNIX platform.</p>
+<p>A defect was discovered in the sound functionality of the 5.0r45 <br>
+  build of the Flash Player Netscape plug-in for Linux. Occasionally <br>
+  and randomly, sounds in a Flash movie would fail to play. This <br>
+  problem affected only configurations where Flash Player played <br>
+  sounds directly through OSS (Open Sound System). <br>
+  Configurations using Enlightened Sound Daemon (ESD) were not <br>
+  affected. This new version of the Flash Player fixes the above <br>
+  defect. Sounds now play properly through both OSS and ESD.<br>
+  In the old Flash Player version, one workaround to the problem <br>
+  is to run ESD on your Linux system. ESD is installed by default in <br>
+  several popular Linux distributions, including RedHat.<br>
+</p>
+<p><br>
+  Technical Issues and Reporting Bugs<br>
+  -----------------------------------</p>
+<p>The Webplayers Discussion Group provides an open forum to discuss <br>
+  technical issues regarding Macromedia Players. Also of interest are <br>
+  the Flash, Flash Site Design, and Generator DiscussionGroups. <br>
+  Macromedia Technical Support actively monitors these groups, as <br>
+  well as hosting a community of users there. Descriptions and links <br>
+  to these discussion groups can be found at: <br>
+  <br>
+  http://www.macromedia.com/support/forums/</p>
+<p><br>
+  Bug reports may be sent to flashplayerunix@macromedia.com <br>
+  To allow us to investigate reported bugs, please include the <br>
+  following information:</p>
+<p>1) Platform and version<br>
+  2) Netscape version<br>
+  3) Reproducible steps including a URL to the web site where the <br>
+  problem was encountered.</p>
+<p>If we need further information about a bug, you will be contacted. An<br>
+  automated reply will be sent to assure you that we have received your<br>
+  bug report. Due to the volume of mail received we are not able to<br>
+  individually respond to each report.</p>
+<p><br>
+</p>
+</BODY></HTML>

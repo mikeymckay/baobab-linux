@@ -1,0 +1,25 @@
+#!/bin/sh
+
+TMPDIR=/tmp
+SAVEDIR=/tmp/config
+CONFIGDIR=/config
+REPOSITORY=/dev/hdb3
+
+mkdir -p $SAVEDIR
+if packcramfs -m $REPOSITORY $CONFIGDIR ; then
+        :
+else
+        # corrupt? lets run check
+        if packcramfs -C -w $REPOSITORY ; then
+                # fixed, now mount
+                packcramfs -m $REPOSITORY $CONFIGDIR
+        else
+                # broken beyond repair, reinitialize
+                packcramfs -c -q -i 2 -l 30 $REPOSITORY 10
+                packcramfs -C -w -q --resize $REPOSITORY 
+                freeze
+        fi
+fi
+rm -rf $SAVEDIR
+cp -a $CONFIGDIR $SAVEDIR
+chmod 1777 $SAVEDIR

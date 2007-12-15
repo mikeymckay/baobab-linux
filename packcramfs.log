@@ -1,0 +1,2766 @@
+Sat Dec 15 07:07:18 UTC 2007
+  X11
+  bookmarks.html
+  disk
+  etc
+  file.tmp
+  home
+  label.prn
+  local
+  net
+  network
+  pppoe.conf
+  print.sh
+  printrc
+  sound
+  timezone
+  upgrade_host
+'X11':
+  XF86Config
+  XFinit
+  Xmodmap
+'etc':
+  adjtime
+  fstab
+  ghttpd.conf
+  group
+  hosts
+  ld.so.cache
+  localtime
+  m4i.version
+  nsswitch.conf
+  passwd
+  ppp
+  printcap
+  profile
+  protocols
+  pump.conf
+  resolv.conf
+  samba
+  sensors.conf
+  services
+  sysconfig
+'ppp':
+  chap-secrets
+  ip-up
+  options
+  pap-secrets
+  pppoe.conf
+  resolv.conf
+'samba':
+  lmhosts
+  samba.stack
+  samba.xinetd
+  smb.conf
+  smbusers
+'sysconfig':
+  apm-scripts
+  apmd
+'apm-scripts':
+  apmscript
+  resume
+  suspend
+'home':
+  .WMalms
+  .ash_history
+  .icewm
+  .ssh
+  .xinitrc
+'.icewm':
+  README
+'local':
+  bin
+  ghttpd
+  include
+  lib
+  sbin
+  share
+'bin':
+  lpr
+'ghttpd':
+  404.html
+  README
+  cgi-bin
+  cgierror.html
+  cmderror.html
+  htdocs
+'cgi-bin':
+  print.sh
+'sbin':
+  flash
+  flasha
+  flashb
+  init
+'net':
+  eth0
+Directory data: 1740 bytes
+-63.55% (-8377 bytes)	XF86Config
+-42.31% (-223 bytes)	XFinit
+-31.52% (-81 bytes)	Xmodmap
+-67.46% (-1965 bytes)	bookmarks.html
+100.00% (+12 bytes)	adjtime
+-54.17% (-1092 bytes)	ghttpd.conf
+ 45.45% (+10 bytes)	group
+ 60.00% (+12 bytes)	hosts
+-65.83% (-817 bytes)	ld.so.cache
+100.00% (+14 bytes)	localtime
+  5.66% (+6 bytes)	m4i.version
+-50.74% (-103 bytes)	nsswitch.conf
+ -6.25% (-4 bytes)	passwd
+-41.61% (-134 bytes)	ip-up
+1500.00% (+15 bytes)	options
+-48.09% (-1653 bytes)	pppoe.conf
+100.00% (+14 bytes)	resolv.conf
+ -3.30% (-3 bytes)	printcap
+-39.27% (-75 bytes)	profile
+-45.84% (-799 bytes)	protocols
+ -1.75% (-1 bytes)	pump.conf
+-56.42% (-145 bytes)	samba.stack
+-27.17% (-97 bytes)	samba.xinetd
+-56.05% (-6015 bytes)	smb.conf
+-13.40% (-13 bytes)	smbusers
+-61.68% (-1030 bytes)	sensors.conf
+-60.46% (-8735 bytes)	services
+-56.83% (-3170 bytes)	apmscript
+166.67% (+15 bytes)	resume
+-52.01% (-1218 bytes)	apmd
+-19.13% (-35 bytes)	file.tmp
+-30.53% (-58 bytes)	.WMalms
+ 15.56% (+7 bytes)	.ash_history
+-25.48% (-67 bytes)	README
+  2.04% (+2 bytes)	.xinitrc
+-24.68% (-38 bytes)	label.prn
+-37.95% (-181 bytes)	lpr
+-44.71% (-372 bytes)	404.html
+-47.34% (-374 bytes)	README
+-54.29% (-399 bytes)	print.sh
+-41.91% (-329 bytes)	cgierror.html
+-38.30% (-288 bytes)	cmderror.html
+  5.26% (+3 bytes)	flash
+-20.00% (-22 bytes)	flasha
+-20.00% (-22 bytes)	flashb
+-12.50% (-16 bytes)	init
+ 30.61% (+15 bytes)	eth0
+  1.41% (+2 bytes)	network
+ 77.78% (+14 bytes)	print.sh
+-55.73% (-1012 bytes)	printrc
+ 14.29% (+6 bytes)	sound
+118.18% (+13 bytes)	timezone
+ 86.67% (+13 bytes)	upgrade_host
+Everything: 32 kilobytes
+Super block: 76 bytes
+CRC: 7dfd59ba
+created superblock of size 312 bytes, with 2 partitions
+Multi Compressed partition, reading data from /home/crazy/BaobabLinux/midori/git/image/config.image
+magic:                      0xeab85d45
+version:                    2
+count:                      2
+signature:                  MCompressed
+overall size:               262144
+block size:                 1024
+loop offset:                8
+total number of partitions: 2
+active partitions:          0
+used partitions:            0
+non active space:           261120
+unused space:               261120
+biggest hole:               261120
+read_cramfs(/, /home/crazy/BaobabLinux/midori/git/image/config.img.cram)
+writing cramfs /
+magic:                      0xeab85d45
+version:                    2
+count:                      3
+signature:                  MCompressed
+overall size:               262144
+block size:                 1024
+loop offset:                8
+total number of partitions: 2
+active partitions:          0
+used partitions:            1
+non active space:           261120
+unused space:               228352
+biggest hole:               228352
+[00]:   /                   (edition 0, start=0x00000400, size=32768 bytes)
+[01]:                       (edition 0, start=0x00000000, size=0 bytes)
+magic:                      0xeab85d45
+version:                    2
+count:                      4
+signature:                  MCompressed
+overall size:               262144
+block size:                 1024
+loop offset:                8
+total number of partitions: 2
+active partitions:          1
+used partitions:            1
+non active space:           228352
+unused space:               228352
+biggest hole:               228352
+[00]: * /                   (edition 0, start=0x00000400, size=32768 bytes)
+[01]:                       (edition 0, start=0x00000000, size=0 bytes)
+Including: /home/crazy/BaobabLinux/midori/git/image/bzImage.padded
+  bin
+  config
+  config_restore.tgz
+  cramfs
+  dev
+  dev.tgz
+  etc
+  lib
+  proc
+  sbin
+  tmp
+  usr
+  var
+'bin':
+  [
+  ash
+  busybox
+  cat
+  chgrp
+  chmod
+  chown
+  cp
+  date
+  dd
+  df
+  dmesg
+  echo
+  false
+  grep
+  gunzip
+  gzip
+  keydown
+  kill
+  ln
+  ls
+  md5sum
+  mkdir
+  mknod
+  mktemp
+  more
+  mount
+  mv
+  pidof
+  ping
+  ps
+  pwd
+  rm
+  rmdir
+  sed
+  sh
+  sleep
+  spawn
+  su
+  sync
+  tar
+  touch
+  true
+  umount
+  uname
+  uplo
+  vi
+  zcat
+'dev':
+  apm_bios
+  audio
+  audio0
+  audio1
+  console
+  cpu
+  dmfm0
+  dsp
+  dsp0
+  dsp1
+  fb0
+  fb1
+  fb2
+  fb3
+  fb4
+  fb5
+  fb6
+  fb7
+  full
+  hda
+  hda1
+  hda10
+  hda2
+  hda3
+  hda4
+  hda5
+  hda6
+  hda7
+  hda8
+  hda9
+  hdb
+  hdb1
+  hdb10
+  hdb2
+  hdb3
+  hdb4
+  hdb5
+  hdb6
+  hdb7
+  hdb8
+  hdb9
+  kmem
+  lp0
+  mem
+  midi
+  midi00
+  midi01
+  mixer
+  mixer0
+  mixer1
+  modem
+  mouse
+  null
+  port
+  ppp
+  psaux
+  ptmx
+  pts
+  ptyp0
+  ptyp1
+  ptyp2
+  ptyp3
+  ptyp4
+  ptyp5
+  ptyp6
+  ptyp7
+  ptyp8
+  ptyp9
+  random
+  rtc
+  scd0
+  sda
+  sda1
+  sda2
+  sda3
+  sda4
+  sda5
+  sda6
+  sda7
+  sda8
+  sda9
+  sdb
+  sdb1
+  sdb2
+  sdb3
+  sdb4
+  sdb5
+  sdb6
+  sdb7
+  sdb8
+  sdb9
+  sdc
+  sdc1
+  sdc2
+  sdc3
+  sdc4
+  sdc5
+  sdc6
+  sdc7
+  sdc8
+  sdc9
+  sdd
+  sdd1
+  sdd2
+  sdd3
+  sdd4
+  sdd5
+  sdd6
+  sdd7
+  sdd8
+  sdd9
+  sndstat
+  tty
+  tty0
+  tty1
+  tty2
+  tty3
+  tty4
+  tty5
+  tty6
+  tty7
+  tty8
+  ttyS0
+  ttyS1
+  ttyp0
+  ttyp1
+  ttyp2
+  ttyp3
+  ttyp4
+  ttyp5
+  ttyp6
+  ttyp7
+  ttyp8
+  ttyp9
+  twscreen0
+  twscreen1
+  twscreen2
+  twscreen3
+  urandom
+  usb
+  usbmouse
+  zero
+'cpu':
+  0
+'0':
+  msr
+'usb':
+  lp0
+  lp1
+  lp2
+  lp3
+'lib':
+  httpd
+  ld-2.1.3.so
+  ld-linux.so.2
+  libNoVersion-2.2.4.so
+  libNoVersion.so.1
+  libc-2.1.3.so
+  libc.so.6
+  libcrypt-2.1.3.so
+  libcrypt.so.1
+  libnss_dns-2.1.3.so
+  libnss_dns.so.2
+  libnss_files-2.1.3.so
+  libnss_files.so.2
+  libpam.so.0
+  libpthread-0.8.so
+  libpthread.so.0
+  libresolv-2.1.3.so
+  libresolv.so.2
+  libtermcap.so.2
+  libtermcap.so.2.0.8
+  libutil-2.1.3.so
+  libutil.so.1
+  libz.so
+  libz.so.1
+  libz.so.1.1.3
+  mlconfig
+  modules
+'mlconfig':
+  DIRS
+  empty.html
+  green.gif
+  index.html
+  lsky.jpg
+  main.html
+  menu.cgi
+  midori.jpg
+  miscconfig
+  mlconfig.sh
+  network-config-0.2
+  packcramfsconfig-0.1
+  packcramfsupgrade-0.2
+  print.sh
+  rsky.jpg
+  rxvt-2.6.3
+  sky.html
+  sky.jpg
+  systemCommands
+'miscconfig':
+  lmsensors.cgi
+  lmsensors.menu
+  sound.cgi
+  sound.menu
+'network-config-0.2':
+  connect.cgi
+  connect.menu
+  disconnect.cgi
+  network.cgi
+  network.menu
+  ppp.cgi
+  ppp.menu
+'packcramfsconfig-0.1':
+  freeze.cgi
+  freeze.menu
+'packcramfsupgrade-0.2':
+  upgrade.cgi
+  upgrade.menu
+'rxvt-2.6.3':
+  rxvt.cgi
+  rxvt.menu
+'systemCommands':
+  poweroff.cgi
+  poweroff.menu
+  reboot.cgi
+  reboot.menu
+  root.cgi
+  root.menu
+  switch.cgi
+  switch.menu
+'modules':
+  2.4.20
+'2.4.20':
+  build
+  kernel
+  modules.dep
+  pcmcia
+'kernel':
+  drivers
+'drivers':
+  i2c
+  usb
+'i2c':
+  i2c-core.o
+  i2c-proc.o
+'usb':
+  pegasus.o
+'sbin':
+  die
+  disk
+  freeze
+  freezesh
+  halt
+  hwclock
+  ifconfig
+  ifdown
+  ifup
+  init
+  init_bb
+  insmod
+  klogd
+  logd
+  lsmod
+  make_active
+  mkcramfs
+  mkswap
+  modprobe
+  mount.smb
+  mount.smbfs
+  network
+  nwepgen
+  packcramfs
+  pcitweak
+  portmap
+  poweroff
+  pppoe
+  pump
+  reboot
+  resume
+  rmmod
+  route
+  set_boot
+  smbmnt
+  smbmount
+  smbumount
+  stop
+  suspend
+  swapoff
+  swapon
+  syslogd
+  thaw
+  upgrade
+'var':
+  lock
+  log
+  run
+  spool
+Directory data: 960012 bytes
+185.71% (+13 bytes)	[
+-40.85% (-108924 bytes)	busybox
+300.00% (+12 bytes)	gunzip
+-45.87% (-22320 bytes)	gzip
+  0.37% (+105 bytes)	config_restore.tgz
+233.33% (+14 bytes)	audio
+300.00% (+12 bytes)	dsp
+233.33% (+14 bytes)	midi
+233.33% (+14 bytes)	mixer
+300.00% (+15 bytes)	modem
+300.00% (+15 bytes)	mouse
+ -7.45% (-181 bytes)	dev.tgz
+ 86.67% (+13 bytes)	etc
+-53.63% (-8628 bytes)	httpd
+-46.81% (-38008 bytes)	ld-2.1.3.so
+118.18% (+13 bytes)	ld-linux.so.2
+-62.34% (-9861 bytes)	libNoVersion-2.2.4.so
+-52.06% (-551964 bytes)	libc-2.1.3.so
+115.38% (+15 bytes)	libc.so.6
+-53.75% (-11660 bytes)	libcrypt-2.1.3.so
+ 88.24% (+15 bytes)	libcrypt.so.1
+-50.50% (-6464 bytes)	libnss_dns-2.1.3.so
+ 68.42% (+13 bytes)	libnss_dns.so.2
+-57.49% (-19840 bytes)	libnss_files-2.1.3.so
+ 71.43% (+15 bytes)	libnss_files.so.2
+-54.01% (-19132 bytes)	libpam.so.0
+-71.23% (-51956 bytes)	libpthread-0.8.so
+ 88.24% (+15 bytes)	libpthread.so.0
+-50.11% (-24808 bytes)	libresolv-2.1.3.so
+ 77.78% (+14 bytes)	libresolv.so.2
+-48.73% (-7227 bytes)	libtermcap.so.2
+-56.82% (-5052 bytes)	libutil-2.1.3.so
+ 75.00% (+12 bytes)	libutil.so.1
+ 84.62% (+11 bytes)	libz.so
+-51.18% (-26964 bytes)	libz.so.1.1.3
+ 77.78% (+14 bytes)	DIRS
+ 14.29% (+5 bytes)	empty.html
+-28.22% (-250 bytes)	green.gif
+-48.29% (-198 bytes)	index.html
+-37.27% (-663 bytes)	lsky.jpg
+-49.04% (-1278 bytes)	main.html
+-49.35% (-3336 bytes)	menu.cgi
+ -0.69% (-29 bytes)	midori.jpg
+-24.24% (-64 bytes)	lmsensors.cgi
+ 37.14% (+13 bytes)	lmsensors.menu
+-68.84% (-1405 bytes)	sound.cgi
+ 52.38% (+11 bytes)	sound.menu
+-55.56% (-790 bytes)	mlconfig.sh
+-57.55% (-385 bytes)	connect.cgi
+-30.23% (-26 bytes)	connect.menu
+-52.98% (-302 bytes)	disconnect.cgi
+-77.16% (-9570 bytes)	network.cgi
+ 29.41% (+10 bytes)	network.menu
+-65.51% (-1968 bytes)	ppp.cgi
+ 42.86% (+12 bytes)	ppp.menu
+-56.22% (-303 bytes)	freeze.cgi
+ 33.33% (+13 bytes)	freeze.menu
+-63.31% (-2119 bytes)	upgrade.cgi
+ 29.73% (+11 bytes)	upgrade.menu
+ 42.86% (+12 bytes)	print.sh
+-34.64% (-670 bytes)	rsky.jpg
+-51.59% (-243 bytes)	rxvt.cgi
+ 33.33% (+13 bytes)	rxvt.menu
+-34.99% (-127 bytes)	sky.html
+ -0.06% (-4 bytes)	sky.jpg
+-40.07% (-123 bytes)	poweroff.cgi
+ 23.08% (+9 bytes)	poweroff.menu
+-40.59% (-123 bytes)	reboot.cgi
+ 29.41% (+10 bytes)	reboot.menu
+-65.59% (-892 bytes)	root.cgi
+ 26.32% (+10 bytes)	root.menu
+-60.86% (-597 bytes)	switch.cgi
+ 23.81% (+10 bytes)	switch.menu
+ 41.94% (+13 bytes)	build
+-59.58% (-12356 bytes)	i2c-core.o
+-49.96% (-4848 bytes)	i2c-proc.o
+-53.29% (-10388 bytes)	pegasus.o
+ -6.12% (-6 bytes)	die
+ -1.12% (-1 bytes)	disk
+-56.65% (-1856 bytes)	freeze
+-52.79% (-483 bytes)	freezesh
+100.00% (+14 bytes)	halt
+-51.77% (-14128 bytes)	hwclock
+-44.12% (-319 bytes)	ifdown
+-57.13% (-1146 bytes)	ifup
+-55.23% (-1836 bytes)	init
+-56.61% (-9708 bytes)	logd
+-53.15% (-2460 bytes)	make_active
+-45.00% (-4936 bytes)	mkcramfs
+150.00% (+12 bytes)	mount.smb
+-55.23% (-898 bytes)	network
+-58.97% (-8605 bytes)	nwepgen
+-46.83% (-13168 bytes)	packcramfs
+-54.70% (-13236 bytes)	pcitweak
+-46.37% (-12784 bytes)	portmap
+-54.58% (-21527 bytes)	pppoe
+-45.78% (-18364 bytes)	pump
+-29.23% (-38 bytes)	resume
+-54.11% (-17000 bytes)	route
+-54.56% (-2248 bytes)	set_boot
+-50.52% (-199400 bytes)	smbmnt
+-50.73% (-205108 bytes)	smbmount
+-50.46% (-198384 bytes)	smbumount
+-17.73% (-25 bytes)	stop
+-29.77% (-39 bytes)	suspend
+-53.09% (-326 bytes)	thaw
+-54.65% (-863 bytes)	upgrade
+118.18% (+13 bytes)	usr
+166.67% (+15 bytes)	lock
+300.00% (+12 bytes)	log
+Everything: 2588 kilobytes
+Super block: 76 bytes
+CRC: c1975765
+created superblock of size 2616 bytes, with 20 partitions
+Multi Compressed partition, reading data from /home/crazy/BaobabLinux/midori/git/image/main.img.packed.tmp
+magic:                      0xeab85d45
+version:                    2
+count:                      2
+signature:                  MCompressed
+overall size:               1048576
+block size:                 1024
+loop offset:                10
+total number of partitions: 20
+active partitions:          0
+used partitions:            0
+non active space:           1042432
+unused space:               1042432
+biggest hole:               1042432
+  usr
+Directory data: 92 bytes
+Everything: 4 kilobytes
+Super block: 76 bytes
+CRC: 2131e7ee
+read_cramfs(/, /home/crazy/BaobabLinux/midori/git/image/main.img.cram)
+writing cramfs /
+magic:                      0xeab85d45
+version:                    2
+count:                      4
+signature:                  MCompressed
+overall size:               1048576
+block size:                 1024
+loop offset:                10
+total number of partitions: 20
+active partitions:          0
+used partitions:            1
+non active space:           1042432
+unused space:               1038336
+biggest hole:               1038336
+[00]:   /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[01]:                       (edition 0, start=0x00000000, size=0 bytes)
+[02]:                       (edition 0, start=0x00000000, size=0 bytes)
+[03]:                       (edition 0, start=0x00000000, size=0 bytes)
+[04]:                       (edition 0, start=0x00000000, size=0 bytes)
+[05]:                       (edition 0, start=0x00000000, size=0 bytes)
+[06]:                       (edition 0, start=0x00000000, size=0 bytes)
+[07]:                       (edition 0, start=0x00000000, size=0 bytes)
+[08]:                       (edition 0, start=0x00000000, size=0 bytes)
+[09]:                       (edition 0, start=0x00000000, size=0 bytes)
+[10]:                       (edition 0, start=0x00000000, size=0 bytes)
+[11]:                       (edition 0, start=0x00000000, size=0 bytes)
+[12]:                       (edition 0, start=0x00000000, size=0 bytes)
+[13]:                       (edition 0, start=0x00000000, size=0 bytes)
+[14]:                       (edition 0, start=0x00000000, size=0 bytes)
+[15]:                       (edition 0, start=0x00000000, size=0 bytes)
+[16]:                       (edition 0, start=0x00000000, size=0 bytes)
+[17]:                       (edition 0, start=0x00000000, size=0 bytes)
+[18]:                       (edition 0, start=0x00000000, size=0 bytes)
+[19]:                       (edition 0, start=0x00000000, size=0 bytes)
+magic:                      0xeab85d45
+version:                    2
+count:                      5
+signature:                  MCompressed
+overall size:               1048576
+block size:                 1024
+loop offset:                10
+total number of partitions: 20
+active partitions:          1
+used partitions:            1
+non active space:           1038336
+unused space:               1038336
+biggest hole:               1038336
+[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[01]:                       (edition 0, start=0x00000000, size=0 bytes)
+[02]:                       (edition 0, start=0x00000000, size=0 bytes)
+[03]:                       (edition 0, start=0x00000000, size=0 bytes)
+[04]:                       (edition 0, start=0x00000000, size=0 bytes)
+[05]:                       (edition 0, start=0x00000000, size=0 bytes)
+[06]:                       (edition 0, start=0x00000000, size=0 bytes)
+[07]:                       (edition 0, start=0x00000000, size=0 bytes)
+[08]:                       (edition 0, start=0x00000000, size=0 bytes)
+[09]:                       (edition 0, start=0x00000000, size=0 bytes)
+[10]:                       (edition 0, start=0x00000000, size=0 bytes)
+[11]:                       (edition 0, start=0x00000000, size=0 bytes)
+[12]:                       (edition 0, start=0x00000000, size=0 bytes)
+[13]:                       (edition 0, start=0x00000000, size=0 bytes)
+[14]:                       (edition 0, start=0x00000000, size=0 bytes)
+[15]:                       (edition 0, start=0x00000000, size=0 bytes)
+[16]:                       (edition 0, start=0x00000000, size=0 bytes)
+[17]:                       (edition 0, start=0x00000000, size=0 bytes)
+[18]:                       (edition 0, start=0x00000000, size=0 bytes)
+[19]:                       (edition 0, start=0x00000000, size=0 bytes)
+  X11R6
+  bin
+  lib
+  local
+  sbin
+  share
+  src
+'bin':
+  X11
+  [
+  apm
+  apmsleep
+  aumix
+  basename
+  chvt
+  clear
+  cut
+  dirname
+  du
+  env
+  fbi
+  find
+  free
+  head
+  id
+  k6mult
+  killall
+  logger
+  md5sum
+  mountFlashReboot.sh
+  netcat
+  netscape
+  netstat
+  rdate
+  rdesktop
+  reset
+  sambaMountFlashReboot.sh
+  scp
+  sensors
+  setIP.sh
+  setServer.sh
+  setkeycodes
+  showTouchSettings.sh
+  sort
+  ssh
+  tail
+  telnet
+  test
+  tftp
+  tplay
+  traceroute
+  tty
+  uniq
+  uptime
+  vncviewer
+  w
+  wc
+  wget
+  which
+  whoami
+  wlanstat
+  wmalms
+  xargs
+  yes
+'lib':
+  everybuddy
+  kbd
+  libBrokenLocale-2.1.3.so
+  libBrokenLocale.so
+  libBrokenLocale.so.1
+  libapm.a
+  libartsc.so.0
+  libaudiofile.so.0
+  libaudiofile.so.0.0.0
+  libdl-2.1.3.so
+  libdl.so.2
+  libesd.so.0
+  libgdbm.so
+  libgdbm.so.2
+  libgdbm.so.2.0.0
+  libgdk-1.2.so.0
+  libgdk-1.2.so.0.9.1
+  libgdk_pixbuf.so.2
+  libglib-1.2.so.0
+  libglib-1.2.so.0.0.10
+  libgmodule-1.2.so.0
+  libgmodule-1.2.so.0.0.10
+  libgthread-1.2.so.0
+  libgthread-1.2.so.0.0.10
+  libgtk-1.2.so.0
+  libgtk-1.2.so.0.9.1
+  libjpeg.so
+  libjpeg.so.62
+  libjpeg.so.62.0.0
+  libm-2.1.3.so
+  libm.so.6
+  libnsl-2.1.3.so
+  libnsl.so.1
+  libpam.so.0
+  libpam.so.0.75
+  libpng.so.2
+  libreadline.so
+  libreadline.so.3
+  libreadline.so.3.0
+  libsensors.so
+  libsensors.so.1
+  libsensors.so.1.2.1
+  libstdc++-2-libc6.1-1-2.9.0.so
+  libstdc++-libc6.1-1.so.2
+  libstdc++.so
+  libungif.so
+  libungif.so.4
+  libungif.so.4.1.0
+  libz.so.1
+  mlconfig
+'kbd':
+  consolefonts
+'consolefonts':
+  lat1-16.psf.gz
+'mlconfig':
+  busybox-0.47
+'busybox-0.47':
+  time.cgi
+  time.menu
+  timezone.cgi
+  timezone.menu
+'sbin':
+  apmd
+  chroot
+  die
+  ftpd
+  ghttpd
+  init
+  resume
+  soundconfig
+  stop
+  suspend
+'share':
+  tmp
+  usb.ids
+Directory data: 3104 bytes
+100.00% (+14 bytes)	X11
+100.00% (+12 bytes)	[
+-46.60% (-4720 bytes)	apm
+-48.16% (-5664 bytes)	apmsleep
+-50.93% (-5344 bytes)	aumix
+-47.23% (-22592 bytes)	fbi
+-59.63% (-20257 bytes)	k6mult
+-14.05% (-17 bytes)	mountFlashReboot.sh
+-58.82% (-8113 bytes)	netcat
+ 40.00% (+8 bytes)	netscape
+166.67% (+15 bytes)	netstat
+-50.63% (-38680 bytes)	rdesktop
+ -9.22% (-13 bytes)	sambaMountFlashReboot.sh
+-47.84% (-12872 bytes)	scp
+-60.47% (-56259 bytes)	sensors
+-13.21% (-28 bytes)	setIP.sh
+ 11.76% (+8 bytes)	setServer.sh
+-47.54% (-3244 bytes)	setkeycodes
+ 26.83% (+11 bytes)	showTouchSettings.sh
+-47.46% (-93024 bytes)	ssh
+-51.75% (-7964 bytes)	tplay
+-51.46% (-27164 bytes)	vncviewer
+-40.74% (-143 bytes)	wlanstat
+-52.30% (-14572 bytes)	wmalms
+  0.92% (+18 bytes)	lat1-16.psf.gz
+-60.92% (-2556 bytes)	libBrokenLocale-2.1.3.so
+ 60.00% (+12 bytes)	libBrokenLocale.so
+ 50.00% (+12 bytes)	libBrokenLocale.so.1
+-52.89% (-3790 bytes)	libapm.a
+-52.40% (-11984 bytes)	libartsc.so.0
+ 52.38% (+11 bytes)	libaudiofile.so.0
+-55.73% (-31652 bytes)	libaudiofile.so.0.0.0
+-57.70% (-6088 bytes)	libdl-2.1.3.so
+100.00% (+14 bytes)	libdl.so.2
+-55.90% (-14404 bytes)	libesd.so.0
+-52.12% (-12756 bytes)	libgdbm.so
+ 68.42% (+13 bytes)	libgdk-1.2.so.0
+-47.16% (-83936 bytes)	libgdk-1.2.so.0.9.1
+-55.88% (-44268 bytes)	libgdk_pixbuf.so.2
+ 52.38% (+11 bytes)	libglib-1.2.so.0
+-54.73% (-58980 bytes)	libglib-1.2.so.0.0.10
+ 50.00% (+12 bytes)	libgmodule-1.2.so.0
+-54.77% (-4596 bytes)	libgmodule-1.2.so.0.0.10
+ 50.00% (+12 bytes)	libgthread-1.2.so.0
+-56.56% (-4692 bytes)	libgthread-1.2.so.0.0.10
+ 68.42% (+13 bytes)	libgtk-1.2.so.0
+-50.35% (-442604 bytes)	libgtk-1.2.so.0.9.1
+ 88.24% (+15 bytes)	libjpeg.so
+-47.44% (-62356 bytes)	libjpeg.so.62.0.0
+-58.06% (-78756 bytes)	libm-2.1.3.so
+115.38% (+15 bytes)	libm.so.6
+-54.32% (-43168 bytes)	libnsl-2.1.3.so
+ 86.67% (+13 bytes)	libnsl.so.1
+100.00% (+14 bytes)	libpam.so.0
+-51.57% (-15076 bytes)	libpam.so.0.75
+-48.80% (-64200 bytes)	libpng.so.2
+-54.46% (-72604 bytes)	libreadline.so
+-67.23% (-61406 bytes)	libsensors.so
+115.38% (+15 bytes)	libsensors.so.1
+-64.04% (-172132 bytes)	libstdc++-2-libc6.1-1-2.9.0.so
+ 46.67% (+14 bytes)	libstdc++-libc6.1-1.so.2
+ 50.00% (+12 bytes)	libstdc++.so
+ 88.24% (+15 bytes)	libungif.so
+-46.07% (-13344 bytes)	libungif.so.4.1.0
+-51.79% (-29320 bytes)	libz.so.1
+-71.97% (-2640 bytes)	time.cgi
+ 37.50% (+12 bytes)	time.menu
+-50.32% (-4464 bytes)	timezone.cgi
+ 18.52% (+5 bytes)	timezone.menu
+ 88.24% (+15 bytes)	local
+-46.34% (-7288 bytes)	apmd
+ -7.20% (-9 bytes)	die
+-46.76% (-36172 bytes)	ftpd
+-64.66% (-55897 bytes)	ghttpd
+-34.13% (-143 bytes)	init
+-22.84% (-45 bytes)	resume
+-40.74% (-154 bytes)	soundconfig
+ -9.68% (-12 bytes)	stop
+-23.62% (-47 bytes)	suspend
+-53.32% (-16854 bytes)	usb.ids
+Everything: 1540 kilobytes
+Super block: 76 bytes
+CRC: a6d2d35f
+read_cramfs(usr, /home/crazy/BaobabLinux/midori/git/image/usr.img.cram)
+writing cramfs usr
+magic:                      0xeab85d45
+version:                    2
+count:                      7
+signature:                  MCompressed
+overall size:               1587200
+block size:                 1024
+loop offset:                10
+total number of partitions: 20
+active partitions:          1
+used partitions:            2
+non active space:           1576960
+unused space:               0
+biggest hole:               0
+[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[01]:   usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
+[02]:                       (edition 0, start=0x00000000, size=0 bytes)
+[03]:                       (edition 0, start=0x00000000, size=0 bytes)
+[04]:                       (edition 0, start=0x00000000, size=0 bytes)
+[05]:                       (edition 0, start=0x00000000, size=0 bytes)
+[06]:                       (edition 0, start=0x00000000, size=0 bytes)
+[07]:                       (edition 0, start=0x00000000, size=0 bytes)
+[08]:                       (edition 0, start=0x00000000, size=0 bytes)
+[09]:                       (edition 0, start=0x00000000, size=0 bytes)
+[10]:                       (edition 0, start=0x00000000, size=0 bytes)
+[11]:                       (edition 0, start=0x00000000, size=0 bytes)
+[12]:                       (edition 0, start=0x00000000, size=0 bytes)
+[13]:                       (edition 0, start=0x00000000, size=0 bytes)
+[14]:                       (edition 0, start=0x00000000, size=0 bytes)
+[15]:                       (edition 0, start=0x00000000, size=0 bytes)
+[16]:                       (edition 0, start=0x00000000, size=0 bytes)
+[17]:                       (edition 0, start=0x00000000, size=0 bytes)
+[18]:                       (edition 0, start=0x00000000, size=0 bytes)
+[19]:                       (edition 0, start=0x00000000, size=0 bytes)
+magic:                      0xeab85d45
+version:                    2
+count:                      8
+signature:                  MCompressed
+overall size:               1587200
+block size:                 1024
+loop offset:                10
+total number of partitions: 20
+active partitions:          2
+used partitions:            2
+non active space:           0
+unused space:               0
+biggest hole:               0
+[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
+[02]:                       (edition 0, start=0x00000000, size=0 bytes)
+[03]:                       (edition 0, start=0x00000000, size=0 bytes)
+[04]:                       (edition 0, start=0x00000000, size=0 bytes)
+[05]:                       (edition 0, start=0x00000000, size=0 bytes)
+[06]:                       (edition 0, start=0x00000000, size=0 bytes)
+[07]:                       (edition 0, start=0x00000000, size=0 bytes)
+[08]:                       (edition 0, start=0x00000000, size=0 bytes)
+[09]:                       (edition 0, start=0x00000000, size=0 bytes)
+[10]:                       (edition 0, start=0x00000000, size=0 bytes)
+[11]:                       (edition 0, start=0x00000000, size=0 bytes)
+[12]:                       (edition 0, start=0x00000000, size=0 bytes)
+[13]:                       (edition 0, start=0x00000000, size=0 bytes)
+[14]:                       (edition 0, start=0x00000000, size=0 bytes)
+[15]:                       (edition 0, start=0x00000000, size=0 bytes)
+[16]:                       (edition 0, start=0x00000000, size=0 bytes)
+[17]:                       (edition 0, start=0x00000000, size=0 bytes)
+[18]:                       (edition 0, start=0x00000000, size=0 bytes)
+[19]:                       (edition 0, start=0x00000000, size=0 bytes)
+  Xmodmap
+  Xresources
+  bin
+  init
+  lib
+  sbin
+  xinitrc
+'bin':
+  X
+  XFree86
+  icewm
+  icewmbg
+  icewmhint
+  rxvt
+  wm
+  xcalc
+  xev
+  xhost
+  xinit
+  xkill
+  xlito
+  xmessage
+  xmixer
+  xmodmap
+  xpad
+  xrdb
+  xset
+  xsetbg
+  xsetroot
+  xterm
+  xview
+'lib':
+  X11
+  libICE.so.6
+  libSM.so.6
+  libX11.so.6
+  libXaw.so.6
+  libXaw.so.7
+  libXext.so.6
+  libXfont.so.1.3
+  libXi.so.6
+  libXmu.so.6
+  libXmuu.so.1
+  libXp.so.6
+  libXpm.so
+  libXpm.so.4
+  libXpm.so.4.11
+  libXt.so.6
+  libXtst.so.6
+  modules
+'X11':
+  XErrorDB
+  XF86Config
+  XKeysymDB
+  app-defaults
+  fonts
+  icewm
+  locale
+  rgb.txt
+  xkb
+  xserver
+'app-defaults':
+  XCalc
+  XCalc-color
+  Xedit
+'icewm':
+  IceWM.desktop
+  icewm
+  icons
+  images
+  keys
+  ledclock
+  mailbox
+  menu
+  preferences
+  taskbar
+  themes
+  toolbar
+  winoptions
+'icewm':
+  close.xpm
+  maximize.xpm
+  menu.xpm
+  restore.xpm
+'icons':
+  app_16x16.xpm
+  app_32x32.xpm
+  bomb_16x16.xpm
+  bomb_32x32.xpm
+  file_16x16.xpm
+  file_32x32.xpm
+  folder_16x16.xpm
+  folder_32x32.xpm
+  fte_16x16.xpm
+  fte_32x32.xpm
+  gnome_16x16.xpm
+  kde_16x16.xpm
+  navigator_16x16.xpm
+  navigator_32x32.xpm
+  pdf_16x16.xpm
+  pdf_32x32.xpm
+  xcalc_16x16.xpm
+  xcalc_32x32.xpm
+  xedit_16x16.xpm
+  xedit_32x32.xpm
+  xisp_16x16.xpm
+  xisp_32x32.xpm
+  xli_16x16.xpm
+  xli_32x32.xpm
+  xload_16x16.xpm
+  xload_32x32.xpm
+  xterm_16x16.xpm
+  xterm_32x32.xpm
+'images':
+  .xvpics
+'.xvpics':
+  bg.xpm
+  mid.xpm
+'ledclock':
+  a.xpm
+  colon.xpm
+  dot.xpm
+  m.xpm
+  n0.xpm
+  n1.xpm
+  n2.xpm
+  n3.xpm
+  n4.xpm
+  n5.xpm
+  n6.xpm
+  n7.xpm
+  n8.xpm
+  n9.xpm
+  p.xpm
+  slash.xpm
+  space.xpm
+'mailbox':
+  errmail.xpm
+  mail.xpm
+  newmail.xpm
+  nomail.xpm
+  unreadmail.xpm
+'taskbar':
+  linux.xpm
+  linux1.xpm
+  linux2.xpm
+  linux20.xpm
+  start.xpm
+  windows.xpm
+'themes':
+  Area51
+  Default
+  Infadel2
+  OpenLook-shaped
+  getaway
+  gtk2
+  metal2
+  microGUI
+  motif
+  nice
+  warp3
+  warp4
+  win95
+'Area51':
+  area51.png
+  closeA.xpm
+  closeI.xpm
+  default.theme
+  icons
+  maximizeA.xpm
+  maximizeI.xpm
+  menu.xpm
+  minimizeA.xpm
+  minimizeI.xpm
+  restore.xpm
+  restoreA.xpm
+  restoreI.xpm
+  taskbar
+  titleAB.xpm
+  titleAM.xpm
+  titleAP.xpm
+  titleAS.xpm
+  titleAT.xpm
+  titleIB.xpm
+  titleIM.xpm
+  titleIP.xpm
+  titleIS.xpm
+  titleIT.xpm
+'icons':
+  app_16x16.xpm
+  folder_16x16.xpm
+  folder_32x32.xpm
+'taskbar':
+  linux.xpm
+  windows.xpm
+'Default':
+  .tar.gz
+  .xvpics
+  Makefile
+  closeA.xpm
+  closeI.xpm
+  cursors
+  default.theme
+  depthA.xpm
+  depthI.xpm
+  dframeAB.xpm
+  dframeABL.xpm
+  dframeABR.xpm
+  dframeAL.xpm
+  dframeAR.xpm
+  dframeAT.xpm
+  dframeATL.xpm
+  dframeATR.xpm
+  dframeIB.xpm
+  dframeIBL.xpm
+  dframeIBR.xpm
+  dframeIL.xpm
+  dframeIR.xpm
+  dframeIT.xpm
+  dframeITL.xpm
+  dframeITR.xpm
+  fonts.dir
+  frameAB.xpm
+  frameABL.xpm
+  frameABR.xpm
+  frameAL.xpm
+  frameAR.xpm
+  frameAT.xpm
+  frameATL.xpm
+  frameATR.xpm
+  frameIB.xpm
+  frameIBL.xpm
+  frameIBR.xpm
+  frameIL.xpm
+  frameIR.xpm
+  frameIT.xpm
+  frameITL.xpm
+  frameITR.xpm
+  hideA.xpm
+  hideI.xpm
+  mailbox
+  maximizeA.xpm
+  maximizeI.xpm
+  menuButtonA.xpm
+  menuButtonI.xpm
+  minimizeA.xpm
+  minimizeI.xpm
+  restoreA.xpm
+  restoreI.xpm
+  rolldownA.xpm
+  rolldownI.xpm
+  rollupA.xpm
+  rollupI.xpm
+  snap.pcf.gz
+  taskbar
+  theme.xcf
+  winter.png
+'.xvpics':
+  closeA.xpm
+  closeI.xpm
+  depthA.xpm
+  depthI.xpm
+  dframeAB.xpm
+  dframeABL.xpm
+  dframeABR.xpm
+  dframeATL.xpm
+  dframeATR.xpm
+  frameAB.xpm
+  frameABL.png
+  frameABL.xpm
+  frameABR.xpm
+  frameAL.xpm
+  frameAR.xpm
+  frameAT.xpm
+  frameATL.xpm
+  frameATR.png
+  frameATR.xpm
+  frameIB.xpm
+  frameIBL.xpm
+  frameIBR.xpm
+  frameIL.xpm
+  frameIR.xpm
+  frameIT.xpm
+  frameITL.xpm
+  frameITR.xpm
+  frameL.xpm
+  hideA.xpm
+  maximizeA.xpm
+  menuButtonA.xpm
+  minimizeA.xpm
+  restoreA.xpm
+  rolldownA.xpm
+  rollupA.xpm
+  theme.xcf
+'cursors':
+  left.xpm
+  move.xpm
+  right.xpm
+  sizeB.xpm
+  sizeBL.xpm
+  sizeBR.xpm
+  sizeL.xpm
+  sizeR.xpm
+  sizeT.xpm
+  sizeTL.xpm
+  sizeTR.xpm
+'mailbox':
+  errmail.xpm
+  mail.xpm
+  newmail.xpm
+  nomail.xpm
+  unreadmail.xpm
+'taskbar':
+  .xvpics
+  icewm.xpm
+  linux.xpm
+  windows.xpm
+'.xvpics':
+  icewm.xpm
+  linux.xpm
+'Infadel2':
+  Ergonomic.theme
+  Overloaded.theme
+  closeA.xpm
+  closeI.xpm
+  cursors
+  default.theme
+  depthA.xpm
+  depthI.xpm
+  fonts.dir.default
+  hideA.xpm
+  hideI.xpm
+  icons
+  mailbox
+  maximizeA.xpm
+  maximizeI.xpm
+  menuButtonA.xpm
+  menuButtonI.xpm
+  minimizeA.xpm
+  minimizeI.xpm
+  restoreA.xpm
+  restoreI.xpm
+  rolldownA.xpm
+  rolldownI.xpm
+  rollupA.xpm
+  rollupI.xpm
+  snap.pcf
+  taskbar
+  titleAB.xpm
+  titleAJ.xpm
+  titleAM.xpm
+  titleAP.xpm
+  titleAQ.xpm
+  titleAR.xpm
+  titleAS.xpm
+  titleAT.xpm
+  titleIB.xpm
+  titleIJ.xpm
+  titleIM.xpm
+  titleIP.xpm
+  titleIQ.xpm
+  titleIR.xpm
+  titleIS.xpm
+  titleIT.xpm
+'cursors':
+  left.xpm
+  move.xpm
+  right.xpm
+  sizeB.xpm
+  sizeBL.xpm
+  sizeBR.xpm
+  sizeL.xpm
+  sizeR.xpm
+  sizeT.xpm
+  sizeTL.xpm
+  sizeTR.xpm
+'icons':
+  app_16x16.xpm
+  folder_16x16.xpm
+  folder_32x32.xpm
+'mailbox':
+  errmail.xpm
+  mail.xpm
+  newmail.xpm
+  nomail.xpm
+  unreadmail.xpm
+'taskbar':
+  linux.xpm
+  windows.xpm
+'OpenLook-shaped':
+  .tar.gz
+  default.theme
+  dframeAB.xpm
+  dframeABL.xpm
+  dframeABR.xpm
+  dframeAL.xpm
+  dframeAR.xpm
+  dframeAT.xpm
+  dframeATL.xpm
+  dframeATR.xpm
+  dframeIB.xpm
+  dframeIBL.xpm
+  dframeIBR.xpm
+  dframeIL.xpm
+  dframeIR.xpm
+  dframeIT.xpm
+  dframeITL.xpm
+  dframeITR.xpm
+  frameAB.xpm
+  frameABL.xpm
+  frameABR.xpm
+  frameAL.xpm
+  frameAR.xpm
+  frameAT.xpm
+  frameATL.xpm
+  frameATR.xpm
+  frameIB.xpm
+  frameIBL.xpm
+  frameIBR.xpm
+  frameIL.xpm
+  frameIR.xpm
+  frameIT.xpm
+  frameITL.xpm
+  frameITR.xpm
+  minimizeA.xpm
+  minimizeI.xpm
+  titleAB.xpm
+  titleAJ.xpm
+  titleAL.xpm
+  titleAM.xpm
+  titleAR.xpm
+  titleAT.xpm
+  titleIB.xpm
+  titleIJ.xpm
+  titleIL.xpm
+  titleIM.xpm
+  titleIR.xpm
+  titleIT.xpm
+'getaway':
+  .xvpics
+  bg.xpm
+  closeA.xpm
+  closeI.xpm
+  default.theme
+  frameAB.xpm
+  frameABL.xpm
+  frameABR.xpm
+  frameAL.xpm
+  frameAR.xpm
+  frameAT.xpm
+  frameATL.xpm
+  frameATR.xpm
+  frameIB.xpm
+  frameIBL.xpm
+  frameIBR.xpm
+  frameIL.xpm
+  frameIR.xpm
+  frameIT.xpm
+  frameITL.xpm
+  frameITR.xpm
+  maximizeA.xpm
+  maximizeI.xpm
+  menuButtonA.xpm
+  menuButtonI.xpm
+  menubg.xpm
+  switchbg.xpm
+  taskbar
+  titleAB.xpm
+  titleAM.xpm
+  titleAP.xpm
+  titleAS.xpm
+  titleAT.xpm
+  titleIB.xpm
+  titleIM.xpm
+  titleIP.xpm
+  titleIS.xpm
+  titleIT.xpm
+'.xvpics':
+  bg.xpm
+  closeA.xpm
+  closeI.xpm
+  frameAB.xpm
+  frameABR.xpm
+  frameAL.xpm
+  frameAR.xpm
+  frameAT.xpm
+  frameATL.xpm
+  frameATR.xpm
+  getaway-bar.xcf
+  maximizeA.xpm
+  maximizeI.xpm
+  menuButtonA.xpm
+  menuButtonI.xpm
+  menubg.xpm
+  switchbg.xpm
+  titleAT.xpm
+  titleIB.xpm
+'taskbar':
+  .xvpics
+  linux.xpm
+  taskbarbg.xpm
+  taskbuttonactive.xpm
+  taskbuttonbg.xpm
+  taskbuttonminimized.xpm
+  windows.xpm
+'.xvpics':
+  taskbarbg.xpm
+'gtk2':
+  closeA.xpm
+  closeI.xpm
+  default.theme
+  maximizeA.xpm
+  maximizeI.xpm
+  menuButtonA.xpm
+  menuButtonI.xpm
+  minimizeA.xpm
+  minimizeI.xpm
+  restoreA.xpm
+  restoreI.xpm
+'metal2':
+  closeA.xpm
+  closeI.xpm
+  default.theme
+  depthA.xpm
+  depthI.xpm
+  dframeAB.xpm
+  dframeABL.xpm
+  dframeABR.xpm
+  dframeAL.xpm
+  dframeAR.xpm
+  dframeAT.xpm
+  dframeATL.xpm
+  dframeATR.xpm
+  dframeIB.xpm
+  dframeIBL.xpm
+  dframeIBR.xpm
+  dframeIL.xpm
+  dframeIR.xpm
+  dframeIT.xpm
+  dframeITL.xpm
+  dframeITR.xpm
+  frameAB.xpm
+  frameABL.xpm
+  frameABR.xpm
+  frameAL.xpm
+  frameAR.xpm
+  frameAT.xpm
+  frameATL.xpm
+  frameATR.xpm
+  frameIB.xpm
+  frameIBL.xpm
+  frameIBR.xpm
+  frameIL.xpm
+  frameIR.xpm
+  frameIT.xpm
+  frameITL.xpm
+  frameITR.xpm
+  hideA.xpm
+  hideI.xpm
+  maximizeA.xpm
+  maximizeI.xpm
+  menuButtonA.xpm
+  menuButtonI.xpm
+  minimizeA.xpm
+  minimizeI.xpm
+  restoreA.xpm
+  restoreI.xpm
+  rolldownA.xpm
+  rolldownI.xpm
+  rollupA.xpm
+  rollupI.xpm
+  titleAB.xpm
+  titleAL.xpm
+  titleAM.xpm
+  titleAP.xpm
+  titleAR.xpm
+  titleAS.xpm
+  titleAT.xpm
+  titleIB.xpm
+  titleIL.xpm
+  titleIM.xpm
+  titleIP.xpm
+  titleIR.xpm
+  titleIS.xpm
+  titleIT.xpm
+'microGUI':
+  .xvpics
+  bare.theme
+  closeA.xpm
+  closeI.xpm
+  complex.theme
+  default.theme
+  doc
+  hideA.xpm
+  hideI.xpm
+  ledclock
+  logoutbg.xpm
+  maximizeA.xpm
+  maximizeI.xpm
+  menuButtonA.xpm
+  menuButtonI.xpm
+  minimizeA.xpm
+  minimizeI.xpm
+  restoreA.xpm
+  restoreI.xpm
+  rolldownA.xpm
+  rolldownI.xpm
+  rollupA.xpm
+  rollupI.xpm
+  switchbg.xpm
+  taskbar
+  titleAB.xpm
+  titleAL.xpm
+  titleAM.xpm
+  titleAT.xpm
+  titleIB.xpm
+  titleIL.xpm
+  titleIM.xpm
+  titleIT.xpm
+'.xvpics':
+  hideA.xpm
+  hideI.xpm
+  rolldownA.xpm
+  rolldownI.xpm
+  rollupA.xpm
+  rollupI.xpm
+'doc':
+  CHANGES
+  README
+  TODO
+'ledclock':
+  .xvpics
+  a.xpm
+  colon.xpm
+  dot.xpm
+  m.xpm
+  n0.xpm
+  n1.xpm
+  n2.xpm
+  n3.xpm
+  n4.xpm
+  n5.xpm
+  n6.xpm
+  n7.xpm
+  n8.xpm
+  n9.xpm
+  p.xpm
+  slash.xpm
+  space.xpm
+'.xvpics':
+  a.xpm
+  colon.xpm
+  dot.xpm
+  m.xpm
+  n0.xpm
+  n1.xpm
+  n2.xpm
+  n3.xpm
+  n4.xpm
+  n5.xpm
+  n6.xpm
+  n7.xpm
+  n8.xpm
+  n9.xpm
+  numeral.xpm
+  p.xpm
+  punct.xpm
+  slash.xpm
+  space.xpm
+'taskbar':
+  .xvpics
+  linux.png
+  linux.xpm
+  taskbarbg.xpm
+  taskbuttonactive.xpm
+  taskbuttonbg.xpm
+  taskbuttonminimized.xpm
+  windows.xpm
+'.xvpics':
+  linux.xpm
+'motif':
+  close.xpm
+  default.theme
+  maximize.xpm
+  menu.xpm
+  minimize.xpm
+  restore.xpm
+'nice':
+  blue.theme
+  close.xpm
+  default.theme
+  hide.xpm
+  maximize.xpm
+  minimize.xpm
+  restore.xpm
+  rolldown.xpm
+  rollup.xpm
+'warp3':
+  close.xpm
+  default.theme
+  hide.xpm
+  maximize.xpm
+  minimize.xpm
+  restore.xpm
+  rolldown.xpm
+  rollup.xpm
+'warp4':
+  close.xpm
+  default.theme
+  hide.xpm
+  maximize.xpm
+  minimize.xpm
+  restore.xpm
+'win95':
+  close.xpm
+  default.theme
+  maximize.xpm
+  minimize.xpm
+  restore.xpm
+'locale':
+  C
+  iso8859-1
+  locale.alias
+  locale.dir
+'C':
+  XLC_LOCALE
+'iso8859-1':
+  XLC_LOCALE
+'xkb':
+  types
+  types.dir
+'types':
+  basic
+  default
+  iso9995
+  mousekeys
+  pc
+'xserver':
+  SecurityPolicy
+'modules':
+  drivers
+  extensions
+  fonts
+  input
+  libcfb.a
+  libddc.a
+  libfb.a
+  libi2c.a
+  libpcidata.a
+  libramdac.a
+  libscanpci.a
+  libshadow.a
+  libshadowfb.a
+  libvbe.a
+  libvgahw.a
+  linux
+'drivers':
+  cirrus_alpine.o
+  cirrus_drv.o
+  trident_drv.o
+'extensions':
+  libdbe.a
+  libextmod.a
+'fonts':
+  libbitmap.a
+  libfreetype.a
+  libtype1.a
+'input':
+  mouse_drv.o
+  mutouch_drv.o
+'linux':
+  libfbdevhw.a
+  libint10.a
+'sbin':
+  die
+  init
+  stop
+Directory data: 17220 bytes
+ 56.52% (+13 bytes)	Xmodmap
+-74.41% (-1303 bytes)	Xresources
+185.71% (+13 bytes)	X
+-50.53% (-765952 bytes)	XFree86
+-49.32% (-144920 bytes)	icewm
+-54.95% (-18128 bytes)	icewmbg
+-50.45% (-2900 bytes)	icewmhint
+-47.01% (-32220 bytes)	rxvt
+300.00% (+15 bytes)	wm
+-51.66% (-10852 bytes)	xcalc
+-52.65% (-8196 bytes)	xev
+-47.59% (-4068 bytes)	xhost
+-47.89% (-4668 bytes)	xinit
+-55.07% (-10231 bytes)	xkill
+-51.08% (-3880 bytes)	xlito
+-47.90% (-578516 bytes)	xmessage
+-49.21% (-15356 bytes)	xmixer
+-51.94% (-11908 bytes)	xmodmap
+-53.83% (-12204 bytes)	xpad
+-46.97% (-8636 bytes)	xrdb
+-55.67% (-16196 bytes)	xset
+433.33% (+13 bytes)	xsetbg
+-52.27% (-5624 bytes)	xsetroot
+ 63.64% (+14 bytes)	init
+-72.11% (-24226 bytes)	XErrorDB
+ 38.46% (+10 bytes)	XF86Config
+-60.66% (-3473 bytes)	XKeysymDB
+-79.18% (-13615 bytes)	XCalc
+-83.44% (-947 bytes)	XCalc-color
+-50.00% (-376 bytes)	Xedit
+-27.93% (-62 bytes)	IceWM.desktop
+-61.57% (-282 bytes)	close.xpm
+-73.46% (-299 bytes)	maximize.xpm
+-72.05% (-330 bytes)	menu.xpm
+-69.38% (-281 bytes)	restore.xpm
+-61.86% (-253 bytes)	app_16x16.xpm
+-80.08% (-1013 bytes)	app_32x32.xpm
+-54.41% (-253 bytes)	bomb_16x16.xpm
+-74.31% (-1053 bytes)	bomb_32x32.xpm
+-61.01% (-313 bytes)	file_16x16.xpm
+-83.92% (-1148 bytes)	file_32x32.xpm
+-60.22% (-327 bytes)	folder_16x16.xpm
+-83.80% (-1159 bytes)	folder_32x32.xpm
+-61.46% (-319 bytes)	fte_16x16.xpm
+-80.75% (-1091 bytes)	fte_32x32.xpm
+-52.21% (-236 bytes)	gnome_16x16.xpm
+-48.41% (-274 bytes)	kde_16x16.xpm
+-52.86% (-323 bytes)	navigator_16x16.xpm
+-67.99% (-977 bytes)	navigator_32x32.xpm
+-62.48% (-313 bytes)	pdf_16x16.xpm
+-85.94% (-2151 bytes)	pdf_32x32.xpm
+-56.14% (-256 bytes)	xcalc_16x16.xpm
+-78.58% (-954 bytes)	xcalc_32x32.xpm
+-51.45% (-301 bytes)	xedit_16x16.xpm
+-59.13% (-1545 bytes)	xedit_32x32.xpm
+-55.35% (-1706 bytes)	xisp_16x16.xpm
+-59.63% (-4862 bytes)	xisp_32x32.xpm
+-61.65% (-328 bytes)	xli_16x16.xpm
+-73.29% (-1339 bytes)	xli_32x32.xpm
+-62.92% (-319 bytes)	xload_16x16.xpm
+-82.08% (-1099 bytes)	xload_32x32.xpm
+-55.56% (-310 bytes)	xterm_16x16.xpm
+-80.46% (-1120 bytes)	xterm_32x32.xpm
+-60.94% (-724 bytes)	bg.xpm
+-55.52% (-794 bytes)	mid.xpm
+-62.03% (-392 bytes)	keys
+-66.47% (-222 bytes)	a.xpm
+-64.96% (-178 bytes)	colon.xpm
+-66.42% (-182 bytes)	dot.xpm
+-66.47% (-222 bytes)	m.xpm
+-71.49% (-311 bytes)	n0.xpm
+-77.01% (-335 bytes)	n1.xpm
+-71.49% (-311 bytes)	n2.xpm
+-72.41% (-315 bytes)	n3.xpm
+-72.41% (-315 bytes)	n4.xpm
+-71.49% (-311 bytes)	n5.xpm
+-71.49% (-311 bytes)	n6.xpm
+-74.25% (-323 bytes)	n7.xpm
+-71.49% (-311 bytes)	n8.xpm
+-70.57% (-307 bytes)	n9.xpm
+-68.86% (-230 bytes)	p.xpm
+-65.27% (-218 bytes)	slash.xpm
+-67.88% (-186 bytes)	space.xpm
+-62.30% (-271 bytes)	errmail.xpm
+-63.22% (-275 bytes)	mail.xpm
+-62.56% (-274 bytes)	newmail.xpm
+-63.22% (-275 bytes)	nomail.xpm
+-62.81% (-277 bytes)	unreadmail.xpm
+-59.38% (-532 bytes)	menu
+-69.86% (-9790 bytes)	preferences
+-65.54% (-776 bytes)	linux.xpm
+-57.15% (-747 bytes)	linux1.xpm
+-63.93% (-780 bytes)	linux2.xpm
+-56.54% (-739 bytes)	linux20.xpm
+-73.05% (-412 bytes)	start.xpm
+-71.47% (-471 bytes)	windows.xpm
+  0.37% (+271 bytes)	area51.png
+-61.34% (-1834 bytes)	closeA.xpm
+-59.73% (-1074 bytes)	closeI.xpm
+-74.75% (-1693 bytes)	default.theme
+-62.47% (-253 bytes)	app_16x16.xpm
+-54.70% (-396 bytes)	folder_16x16.xpm
+-69.12% (-2784 bytes)	folder_32x32.xpm
+-58.80% (-1593 bytes)	maximizeA.xpm
+-57.69% (-911 bytes)	maximizeI.xpm
+-61.78% (-1901 bytes)	minimizeA.xpm
+-59.02% (-1083 bytes)	minimizeI.xpm
+-72.38% (-304 bytes)	restore.xpm
+-55.28% (-6477 bytes)	linux.xpm
+-70.73% (-464 bytes)	windows.xpm
+-39.95% (-157 bytes)	titleAB.xpm
+-40.05% (-171 bytes)	titleAM.xpm
+-40.05% (-171 bytes)	titleAP.xpm
+-38.93% (-153 bytes)	titleAS.xpm
+-39.95% (-157 bytes)	titleAT.xpm
+-39.95% (-157 bytes)	titleIB.xpm
+-39.95% (-157 bytes)	titleIM.xpm
+-39.95% (-157 bytes)	titleIP.xpm
+-39.95% (-157 bytes)	titleIS.xpm
+-39.95% (-157 bytes)	titleIT.xpm
+  0.18% (+103 bytes)	.tar.gz
+-54.64% (-265 bytes)	closeA.xpm
+-57.94% (-281 bytes)	closeI.xpm
+-60.41% (-293 bytes)	depthA.xpm
+-63.71% (-309 bytes)	depthI.xpm
+ 23.08% (+15 bytes)	dframeAB.xpm
+-76.79% (-569 bytes)	dframeABL.xpm
+-73.01% (-541 bytes)	dframeABR.xpm
+-77.87% (-577 bytes)	dframeATL.xpm
+-73.55% (-545 bytes)	dframeATR.xpm
+ 10.84% (+9 bytes)	frameAB.xpm
+-37.93% (-110 bytes)	frameABL.png
+-37.93% (-110 bytes)	frameABL.xpm
+-40.69% (-118 bytes)	frameABR.xpm
+ 15.66% (+13 bytes)	frameAL.xpm
+ 15.66% (+13 bytes)	frameAR.xpm
+  1.20% (+1 bytes)	frameAT.xpm
+-39.31% (-114 bytes)	frameATL.xpm
+-40.69% (-118 bytes)	frameATR.png
+-37.93% (-110 bytes)	frameATR.xpm
+ 15.79% (+12 bytes)	frameIB.xpm
+-41.89% (-124 bytes)	frameIBL.xpm
+-37.84% (-112 bytes)	frameIBR.xpm
+ 15.79% (+12 bytes)	frameIL.xpm
+ 15.79% (+12 bytes)	frameIR.xpm
+ 15.79% (+12 bytes)	frameIT.xpm
+-37.84% (-112 bytes)	frameITL.xpm
+-39.19% (-116 bytes)	frameITR.xpm
+ 15.66% (+13 bytes)	frameL.xpm
+-58.76% (-285 bytes)	hideA.xpm
+-61.24% (-297 bytes)	maximizeA.xpm
+-68.66% (-333 bytes)	menuButtonA.xpm
+-64.54% (-313 bytes)	minimizeA.xpm
+-60.41% (-293 bytes)	restoreA.xpm
+-59.59% (-289 bytes)	rolldownA.xpm
+-58.76% (-285 bytes)	rollupA.xpm
+-91.62% (-4461 bytes)	theme.xcf
+-42.86% (-93 bytes)	Makefile
+-70.62% (-452 bytes)	closeA.xpm
+-71.88% (-460 bytes)	closeI.xpm
+-53.67% (-190 bytes)	left.xpm
+-70.08% (-506 bytes)	move.xpm
+-55.34% (-233 bytes)	right.xpm
+-62.48% (-313 bytes)	sizeB.xpm
+-67.01% (-390 bytes)	sizeBL.xpm
+-65.69% (-383 bytes)	sizeBR.xpm
+-64.62% (-336 bytes)	sizeL.xpm
+-65.45% (-341 bytes)	sizeR.xpm
+-62.40% (-312 bytes)	sizeT.xpm
+-66.27% (-385 bytes)	sizeTL.xpm
+-64.95% (-378 bytes)	sizeTR.xpm
+-72.81% (-2089 bytes)	default.theme
+-75.00% (-480 bytes)	depthA.xpm
+-76.25% (-488 bytes)	depthI.xpm
+-12.61% (-15 bytes)	dframeAB.xpm
+-63.37% (-263 bytes)	dframeABL.xpm
+-63.37% (-263 bytes)	dframeABR.xpm
+ -2.80% (-3 bytes)	dframeAL.xpm
+ -2.80% (-3 bytes)	dframeAR.xpm
+-12.61% (-15 bytes)	dframeAT.xpm
+-63.37% (-263 bytes)	dframeATL.xpm
+-63.37% (-263 bytes)	dframeATR.xpm
+-15.97% (-19 bytes)	dframeIB.xpm
+-65.30% (-271 bytes)	dframeIBL.xpm
+-65.30% (-271 bytes)	dframeIBR.xpm
+ -6.54% (-7 bytes)	dframeIL.xpm
+ -6.54% (-7 bytes)	dframeIR.xpm
+-15.97% (-19 bytes)	dframeIT.xpm
+-65.30% (-271 bytes)	dframeITL.xpm
+-65.30% (-271 bytes)	dframeITR.xpm
+ 10.53% (+8 bytes)	fonts.dir
+-27.27% (-51 bytes)	frameAB.xpm
+-53.28% (-365 bytes)	frameABL.xpm
+-53.97% (-394 bytes)	frameABR.xpm
+-16.88% (-26 bytes)	frameAL.xpm
+-16.88% (-26 bytes)	frameAR.xpm
+-29.03% (-54 bytes)	frameAT.xpm
+-56.00% (-392 bytes)	frameATL.xpm
+-55.20% (-345 bytes)	frameATR.xpm
+-29.03% (-54 bytes)	frameIB.xpm
+-53.87% (-369 bytes)	frameIBR.xpm
+-16.88% (-26 bytes)	frameIL.xpm
+-16.88% (-26 bytes)	frameIR.xpm
+-29.03% (-54 bytes)	frameIT.xpm
+-53.28% (-365 bytes)	frameITL.xpm
+-53.28% (-365 bytes)	frameITR.xpm
+-73.08% (-467 bytes)	hideA.xpm
+-74.33% (-475 bytes)	hideI.xpm
+-68.40% (-277 bytes)	errmail.xpm
+-69.15% (-278 bytes)	mail.xpm
+-68.40% (-277 bytes)	newmail.xpm
+-68.32% (-276 bytes)	nomail.xpm
+-67.65% (-276 bytes)	unreadmail.xpm
+-75.12% (-483 bytes)	maximizeA.xpm
+-75.74% (-487 bytes)	maximizeI.xpm
+-79.85% (-539 bytes)	menuButtonA.xpm
+-81.04% (-547 bytes)	menuButtonI.xpm
+-73.87% (-475 bytes)	minimizeA.xpm
+-75.12% (-483 bytes)	minimizeI.xpm
+-73.21% (-470 bytes)	restoreA.xpm
+-73.83% (-474 bytes)	restoreI.xpm
+-72.01% (-463 bytes)	rolldownA.xpm
+-72.63% (-467 bytes)	rolldownI.xpm
+-73.17% (-469 bytes)	rollupA.xpm
+-74.41% (-477 bytes)	rollupI.xpm
+ -2.49% (-85 bytes)	snap.pcf.gz
+-43.69% (-450 bytes)	icewm.xpm
+-46.59% (-478 bytes)	linux.xpm
+-61.15% (-787 bytes)	icewm.xpm
+-54.76% (-1956 bytes)	linux.xpm
+-70.44% (-467 bytes)	windows.xpm
+-84.81% (-33427 bytes)	theme.xcf
+  0.39% (+78 bytes)	winter.png
+-68.41% (-2417 bytes)	Ergonomic.theme
+-68.45% (-2421 bytes)	Overloaded.theme
+-49.45% (-583 bytes)	closeA.xpm
+-53.52% (-631 bytes)	closeI.xpm
+-68.42% (-2418 bytes)	default.theme
+-49.45% (-583 bytes)	depthA.xpm
+-52.84% (-623 bytes)	depthI.xpm
+  9.59% (+7 bytes)	fonts.dir.default
+-49.41% (-582 bytes)	hideA.xpm
+-53.48% (-630 bytes)	hideI.xpm
+-50.41% (-622 bytes)	folder_16x16.xpm
+-70.15% (-282 bytes)	mail.xpm
+-68.40% (-277 bytes)	newmail.xpm
+-69.31% (-280 bytes)	nomail.xpm
+-67.65% (-276 bytes)	unreadmail.xpm
+-50.30% (-587 bytes)	maximizeA.xpm
+-54.07% (-631 bytes)	maximizeI.xpm
+-52.14% (-645 bytes)	menuButtonA.xpm
+-55.70% (-689 bytes)	menuButtonI.xpm
+-50.30% (-587 bytes)	minimizeA.xpm
+-54.07% (-631 bytes)	minimizeI.xpm
+-49.57% (-578 bytes)	restoreA.xpm
+-53.34% (-622 bytes)	restoreI.xpm
+-49.27% (-575 bytes)	rolldownA.xpm
+-53.04% (-619 bytes)	rolldownI.xpm
+-49.53% (-577 bytes)	rollupA.xpm
+-53.30% (-621 bytes)	rollupI.xpm
+-68.82% (-7600 bytes)	snap.pcf
+-55.76% (-4053 bytes)	linux.xpm
+-75.84% (-427 bytes)	windows.xpm
+-39.62% (-126 bytes)	titleAB.xpm
+-41.92% (-179 bytes)	titleAJ.xpm
+-56.17% (-687 bytes)	titleAM.xpm
+-55.85% (-683 bytes)	titleAP.xpm
+-41.46% (-170 bytes)	titleAQ.xpm
+-40.20% (-164 bytes)	titleAT.xpm
+-60.29% (-674 bytes)	titleIM.xpm
+-59.93% (-670 bytes)	titleIP.xpm
+-49.02% (-200 bytes)	titleIT.xpm
+ -1.54% (-39 bytes)	.tar.gz
+-66.67% (-928 bytes)	default.theme
+-17.36% (-21 bytes)	dframeAB.xpm
+-59.25% (-157 bytes)	dframeABL.xpm
+-59.25% (-157 bytes)	dframeABR.xpm
+ -0.95% (-1 bytes)	dframeAL.xpm
+ -0.95% (-1 bytes)	dframeAR.xpm
+-17.36% (-21 bytes)	dframeAT.xpm
+-59.25% (-157 bytes)	dframeATL.xpm
+-59.25% (-157 bytes)	dframeATR.xpm
+-14.05% (-17 bytes)	dframeIB.xpm
+-57.74% (-153 bytes)	dframeIBL.xpm
+-57.74% (-153 bytes)	dframeIBR.xpm
+ -0.95% (-1 bytes)	dframeIL.xpm
+ -0.95% (-1 bytes)	dframeIR.xpm
+-14.05% (-17 bytes)	dframeIT.xpm
+-59.25% (-157 bytes)	dframeITL.xpm
+-59.25% (-157 bytes)	dframeITR.xpm
+-15.62% (-20 bytes)	frameAB.xpm
+-49.49% (-145 bytes)	frameABL.xpm
+-49.66% (-146 bytes)	frameABR.xpm
+ -3.57% (-4 bytes)	frameAL.xpm
+ -7.14% (-8 bytes)	frameAR.xpm
+-15.62% (-20 bytes)	frameAT.xpm
+-49.66% (-146 bytes)	frameATL.xpm
+-48.30% (-142 bytes)	frameATR.xpm
+-78.15% (-801 bytes)	minimizeA.xpm
+-76.98% (-789 bytes)	minimizeI.xpm
+118.18% (+13 bytes)	titleAB.xpm
+-65.58% (-282 bytes)	titleAJ.xpm
+-58.54% (-192 bytes)	titleAL.xpm
+-47.83% (-99 bytes)	titleAR.xpm
+-46.03% (-116 bytes)	titleAT.xpm
+-47.75% (-106 bytes)	titleIB.xpm
+-66.51% (-286 bytes)	titleIJ.xpm
+-57.84% (-214 bytes)	titleIL.xpm
+-49.76% (-103 bytes)	titleIR.xpm
+  9.09% (+7 bytes)	bg.xpm
+-50.00% (-288 bytes)	closeA.xpm
+-51.39% (-296 bytes)	closeI.xpm
+ 19.40% (+13 bytes)	frameAB.xpm
+-69.42% (-445 bytes)	frameABR.xpm
+ 24.59% (+15 bytes)	frameAL.xpm
+-69.42% (-445 bytes)	frameATL.xpm
+-68.80% (-441 bytes)	frameATR.xpm
+-43.11% (-582 bytes)	getaway-bar.xcf
+-47.22% (-272 bytes)	maximizeA.xpm
+-49.31% (-284 bytes)	maximizeI.xpm
+-44.72% (-288 bytes)	menuButtonA.xpm
+-49.69% (-320 bytes)	menuButtonI.xpm
+-73.80% (-2411 bytes)	menubg.xpm
+-70.74% (-2311 bytes)	switchbg.xpm
+ 15.00% (+12 bytes)	titleAT.xpm
+  5.00% (+4 bytes)	titleIB.xpm
+-15.45% (-19 bytes)	bg.xpm
+-63.18% (-1105 bytes)	closeA.xpm
+-63.92% (-1070 bytes)	closeI.xpm
+-72.47% (-1716 bytes)	default.theme
+-25.15% (-43 bytes)	frameAB.xpm
+-78.83% (-715 bytes)	frameABL.xpm
+  2.33% (+2 bytes)	frameAL.xpm
+  2.33% (+2 bytes)	frameAR.xpm
+-25.15% (-43 bytes)	frameAT.xpm
+-78.83% (-715 bytes)	frameATL.xpm
+-60.71% (-1100 bytes)	maximizeA.xpm
+-61.10% (-1043 bytes)	maximizeI.xpm
+-66.93% (-1975 bytes)	menuButtonA.xpm
+-61.15% (-1215 bytes)	menuButtonI.xpm
+-92.17% (-5271 bytes)	menubg.xpm
+-91.44% (-5300 bytes)	switchbg.xpm
+-80.53% (-2631 bytes)	taskbarbg.xpm
+-60.48% (-1359 bytes)	linux.xpm
+-91.68% (-5466 bytes)	taskbarbg.xpm
+-89.22% (-2682 bytes)	taskbuttonactive.xpm
+-91.92% (-3640 bytes)	taskbuttonbg.xpm
+-91.63% (-3635 bytes)	taskbuttonminimized.xpm
+-75.09% (-434 bytes)	windows.xpm
+-41.18% (-168 bytes)	titleAB.xpm
+-41.18% (-168 bytes)	titleIB.xpm
+-76.91% (-866 bytes)	closeA.xpm
+-76.55% (-862 bytes)	closeI.xpm
+-68.55% (-863 bytes)	default.theme
+-79.75% (-898 bytes)	maximizeA.xpm
+-79.75% (-898 bytes)	maximizeI.xpm
+-86.87% (-953 bytes)	menuButtonA.xpm
+-86.87% (-953 bytes)	menuButtonI.xpm
+-77.98% (-878 bytes)	minimizeA.xpm
+-76.91% (-866 bytes)	minimizeI.xpm
+-80.11% (-902 bytes)	restoreA.xpm
+-80.11% (-902 bytes)	restoreI.xpm
+-80.87% (-1268 bytes)	closeA.xpm
+-81.12% (-1272 bytes)	closeI.xpm
+-70.51% (-918 bytes)	default.theme
+-79.81% (-917 bytes)	depthA.xpm
+-80.16% (-921 bytes)	depthI.xpm
+-40.68% (-96 bytes)	dframeAB.xpm
+-67.25% (-345 bytes)	dframeABL.xpm
+-68.16% (-351 bytes)	dframeABR.xpm
+-68.87% (-177 bytes)	dframeAL.xpm
+-72.51% (-306 bytes)	dframeATL.xpm
+-68.16% (-351 bytes)	dframeATR.xpm
+-40.68% (-96 bytes)	dframeIB.xpm
+-68.03% (-349 bytes)	dframeIBL.xpm
+-68.16% (-351 bytes)	dframeIBR.xpm
+-68.87% (-177 bytes)	dframeIL.xpm
+-73.46% (-310 bytes)	dframeITL.xpm
+-68.16% (-351 bytes)	dframeITR.xpm
+-35.58% (-95 bytes)	frameAB.xpm
+-65.71% (-368 bytes)	frameABL.xpm
+-66.24% (-361 bytes)	frameABR.xpm
+-30.65% (-76 bytes)	frameAL.xpm
+-30.65% (-76 bytes)	frameAR.xpm
+-34.08% (-91 bytes)	frameAT.xpm
+-62.86% (-352 bytes)	frameATL.xpm
+-61.43% (-344 bytes)	frameATR.xpm
+-35.58% (-95 bytes)	frameIB.xpm
+-66.43% (-372 bytes)	frameIBL.xpm
+-66.97% (-365 bytes)	frameIBR.xpm
+-32.26% (-80 bytes)	frameIL.xpm
+-32.26% (-80 bytes)	frameIR.xpm
+-35.58% (-95 bytes)	frameIT.xpm
+-63.57% (-356 bytes)	frameITL.xpm
+-62.14% (-348 bytes)	frameITR.xpm
+-82.01% (-930 bytes)	hideA.xpm
+-82.36% (-934 bytes)	hideI.xpm
+-76.57% (-941 bytes)	maximizeA.xpm
+-76.57% (-941 bytes)	maximizeI.xpm
+-85.06% (-1184 bytes)	menuButtonA.xpm
+-84.78% (-1181 bytes)	menuButtonI.xpm
+-76.89% (-945 bytes)	minimizeA.xpm
+-77.22% (-949 bytes)	minimizeI.xpm
+-76.57% (-941 bytes)	restoreA.xpm
+-76.89% (-945 bytes)	restoreI.xpm
+-80.67% (-918 bytes)	rolldownA.xpm
+-81.02% (-922 bytes)	rolldownI.xpm
+-81.69% (-928 bytes)	rollupA.xpm
+-82.04% (-932 bytes)	rollupI.xpm
+-52.00% (-195 bytes)	titleAB.xpm
+-51.04% (-171 bytes)	titleAL.xpm
+-58.79% (-234 bytes)	titleAM.xpm
+-53.37% (-206 bytes)	titleAR.xpm
+-47.27% (-147 bytes)	titleAT.xpm
+-52.00% (-195 bytes)	titleIB.xpm
+-51.04% (-171 bytes)	titleIL.xpm
+-58.79% (-234 bytes)	titleIM.xpm
+-53.41% (-188 bytes)	titleIR.xpm
+-47.44% (-148 bytes)	titleIT.xpm
+-33.15% (-236 bytes)	hideA.xpm
+-35.96% (-256 bytes)	hideI.xpm
+-30.90% (-220 bytes)	rolldownA.xpm
+-35.39% (-252 bytes)	rolldownI.xpm
+-30.90% (-220 bytes)	rollupA.xpm
+-35.96% (-256 bytes)	rollupI.xpm
+-64.48% (-915 bytes)	bare.theme
+-57.76% (-3894 bytes)	closeA.xpm
+-57.88% (-3590 bytes)	closeI.xpm
+-62.46% (-1078 bytes)	complex.theme
+-63.26% (-909 bytes)	default.theme
+-14.53% (-17 bytes)	CHANGES
+-43.06% (-593 bytes)	README
+-15.23% (-23 bytes)	TODO
+-57.43% (-3853 bytes)	hideA.xpm
+-58.42% (-3557 bytes)	hideI.xpm
+-24.28% (-59 bytes)	a.xpm
+-22.63% (-55 bytes)	colon.xpm
+-27.57% (-67 bytes)	dot.xpm
+-24.28% (-59 bytes)	m.xpm
+-30.64% (-106 bytes)	n0.xpm
+-32.75% (-113 bytes)	n1.xpm
+-32.95% (-114 bytes)	n2.xpm
+-30.64% (-106 bytes)	n3.xpm
+-31.59% (-109 bytes)	n4.xpm
+-32.95% (-114 bytes)	n5.xpm
+-31.79% (-110 bytes)	n6.xpm
+-31.79% (-110 bytes)	n7.xpm
+-30.64% (-106 bytes)	n8.xpm
+-35.26% (-122 bytes)	n9.xpm
+-44.35% (-153 bytes)	numeral.xpm
+-24.28% (-59 bytes)	p.xpm
+-30.86% (-75 bytes)	punct.xpm
+-22.95% (-56 bytes)	slash.xpm
+-56.67% (-497 bytes)	a.xpm
+-56.19% (-436 bytes)	colon.xpm
+-58.94% (-465 bytes)	dot.xpm
+-57.40% (-512 bytes)	m.xpm
+-57.59% (-728 bytes)	n0.xpm
+-58.95% (-586 bytes)	n1.xpm
+-58.58% (-679 bytes)	n2.xpm
+-58.05% (-725 bytes)	n3.xpm
+-58.55% (-582 bytes)	n4.xpm
+-58.51% (-722 bytes)	n5.xpm
+-58.14% (-700 bytes)	n6.xpm
+-58.87% (-647 bytes)	n7.xpm
+-57.91% (-732 bytes)	n8.xpm
+-58.47% (-704 bytes)	n9.xpm
+-57.11% (-458 bytes)	p.xpm
+-58.49% (-682 bytes)	slash.xpm
+-59.76% (-392 bytes)	space.xpm
+-95.21% (-10570 bytes)	logoutbg.xpm
+-57.24% (-4037 bytes)	maximizeA.xpm
+-58.73% (-3597 bytes)	maximizeI.xpm
+-55.88% (-5015 bytes)	menuButtonA.xpm
+-57.92% (-2511 bytes)	menuButtonI.xpm
+-57.37% (-4037 bytes)	minimizeA.xpm
+-58.53% (-3529 bytes)	minimizeI.xpm
+-56.79% (-4268 bytes)	restoreA.xpm
+-58.53% (-3556 bytes)	restoreI.xpm
+-57.06% (-4225 bytes)	rolldownA.xpm
+-59.08% (-3609 bytes)	rolldownI.xpm
+-57.16% (-4259 bytes)	rollupA.xpm
+-58.89% (-3559 bytes)	rollupI.xpm
+-92.18% (-5426 bytes)	switchbg.xpm
+-31.84% (-327 bytes)	linux.xpm
+  0.61% (+32 bytes)	linux.png
+-57.42% (-6333 bytes)	linux.xpm
+-92.19% (-5427 bytes)	taskbarbg.xpm
+-84.94% (-2708 bytes)	taskbuttonactive.xpm
+-90.75% (-3689 bytes)	taskbuttonbg.xpm
+-90.67% (-3692 bytes)	taskbuttonminimized.xpm
+-68.14% (-539 bytes)	titleAB.xpm
+-62.78% (-506 bytes)	titleAL.xpm
+-56.37% (-2351 bytes)	titleAM.xpm
+-62.28% (-502 bytes)	titleAT.xpm
+-68.24% (-550 bytes)	titleIL.xpm
+-61.09% (-1727 bytes)	titleIM.xpm
+-68.24% (-550 bytes)	titleIT.xpm
+-61.23% (-259 bytes)	close.xpm
+-71.26% (-615 bytes)	default.theme
+-71.50% (-301 bytes)	maximize.xpm
+-74.03% (-342 bytes)	minimize.xpm
+-69.70% (-506 bytes)	blue.theme
+-63.74% (-232 bytes)	close.xpm
+-66.46% (-547 bytes)	default.theme
+-68.31% (-250 bytes)	hide.xpm
+-70.49% (-258 bytes)	maximize.xpm
+-72.75% (-267 bytes)	minimize.xpm
+-66.03% (-241 bytes)	restore.xpm
+-65.12% (-239 bytes)	rolldown.xpm
+-65.12% (-239 bytes)	rollup.xpm
+-67.33% (-272 bytes)	close.xpm
+-64.12% (-579 bytes)	default.theme
+-73.40% (-298 bytes)	maximize.xpm
+-75.84% (-339 bytes)	minimize.xpm
+-72.35% (-293 bytes)	restore.xpm
+-77.69% (-822 bytes)	close.xpm
+-65.24% (-548 bytes)	default.theme
+-79.94% (-845 bytes)	hide.xpm
+-84.17% (-893 bytes)	maximize.xpm
+-84.18% (-894 bytes)	minimize.xpm
+-80.38% (-852 bytes)	restore.xpm
+-68.42% (-676 bytes)	default.theme
+-70.00% (-252 bytes)	maximize.xpm
+-72.30% (-261 bytes)	minimize.xpm
+-35.85% (-38 bytes)	toolbar
+-68.16% (-976 bytes)	winoptions
+-42.12% (-326 bytes)	XLC_LOCALE
+-49.50% (-396 bytes)	XLC_LOCALE
+-63.90% (-807 bytes)	locale.alias
+-37.24% (-159 bytes)	locale.dir
+-69.20% (-12023 bytes)	rgb.txt
+-57.37% (-463 bytes)	basic
+-25.42% (-45 bytes)	default
+-41.85% (-213 bytes)	iso9995
+-27.65% (-81 bytes)	mousekeys
+-54.34% (-376 bytes)	pc
+-58.19% (-167 bytes)	types.dir
+-56.71% (-1661 bytes)	SecurityPolicy
+-53.01% (-41516 bytes)	libICE.so.6
+-52.57% (-16700 bytes)	libSM.so.6
+-42.07% (-379396 bytes)	libX11.so.6
+-46.38% (-157740 bytes)	libXaw.so.6
+-55.18% (-27248 bytes)	libXext.so.6
+-48.77% (-223156 bytes)	libXfont.so.1.3
+-56.16% (-16620 bytes)	libXi.so.6
+-49.85% (-40636 bytes)	libXmu.so.6
+-50.37% (-5232 bytes)	libXmuu.so.1
+-52.32% (-13656 bytes)	libXp.so.6
+100.00% (+14 bytes)	libXpm.so
+-47.48% (-25680 bytes)	libXpm.so.4.11
+-50.27% (-147228 bytes)	libXt.so.6
+-51.64% (-8644 bytes)	libXtst.so.6
+-54.88% (-19480 bytes)	cirrus_alpine.o
+-49.93% (-4423 bytes)	cirrus_drv.o
+-56.54% (-56854 bytes)	trident_drv.o
+-48.67% (-7632 bytes)	libdbe.a
+-54.34% (-73492 bytes)	libextmod.a
+-49.55% (-36934 bytes)	libbitmap.a
+-48.09% (-45228 bytes)	libfreetype.a
+-56.75% (-112548 bytes)	libtype1.a
+-53.72% (-12088 bytes)	mouse_drv.o
+-59.65% (-10400 bytes)	mutouch_drv.o
+-54.55% (-108882 bytes)	libcfb.a
+-53.56% (-14166 bytes)	libddc.a
+-51.05% (-76570 bytes)	libfb.a
+-53.04% (-3746 bytes)	libi2c.a
+-86.45% (-49112 bytes)	libpcidata.a
+-56.33% (-17286 bytes)	libramdac.a
+-89.48% (-104438 bytes)	libscanpci.a
+-58.00% (-15586 bytes)	libshadow.a
+-56.37% (-12010 bytes)	libshadowfb.a
+-51.98% (-3260 bytes)	libvbe.a
+-54.52% (-9800 bytes)	libvgahw.a
+-50.10% (-4502 bytes)	libfbdevhw.a
+-53.53% (-11810 bytes)	libint10.a
+-36.84% (-63 bytes)	die
+-29.93% (-135 bytes)	init
+-35.00% (-56 bytes)	stop
+-29.06% (-77 bytes)	xinitrc
+Everything: 3856 kilobytes
+Super block: 76 bytes
+CRC: c4e3803b
+read_cramfs(usr/X11R6, /home/crazy/BaobabLinux/midori/git/image/usr.X11R6.img.cram)
+writing cramfs usr/X11R6
+magic:                      0xeab85d45
+version:                    2
+count:                      10
+signature:                  MCompressed
+overall size:               5535744
+block size:                 1024
+loop offset:                10
+total number of partitions: 20
+active partitions:          2
+used partitions:            3
+non active space:           3948544
+unused space:               0
+biggest hole:               0
+[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
+[02]:   usr/X11R6           (edition 1197702438, start=0x00183800, size=3948544 bytes)
+[03]:                       (edition 0, start=0x00000000, size=0 bytes)
+[04]:                       (edition 0, start=0x00000000, size=0 bytes)
+[05]:                       (edition 0, start=0x00000000, size=0 bytes)
+[06]:                       (edition 0, start=0x00000000, size=0 bytes)
+[07]:                       (edition 0, start=0x00000000, size=0 bytes)
+[08]:                       (edition 0, start=0x00000000, size=0 bytes)
+[09]:                       (edition 0, start=0x00000000, size=0 bytes)
+[10]:                       (edition 0, start=0x00000000, size=0 bytes)
+[11]:                       (edition 0, start=0x00000000, size=0 bytes)
+[12]:                       (edition 0, start=0x00000000, size=0 bytes)
+[13]:                       (edition 0, start=0x00000000, size=0 bytes)
+[14]:                       (edition 0, start=0x00000000, size=0 bytes)
+[15]:                       (edition 0, start=0x00000000, size=0 bytes)
+[16]:                       (edition 0, start=0x00000000, size=0 bytes)
+[17]:                       (edition 0, start=0x00000000, size=0 bytes)
+[18]:                       (edition 0, start=0x00000000, size=0 bytes)
+[19]:                       (edition 0, start=0x00000000, size=0 bytes)
+magic:                      0xeab85d45
+version:                    2
+count:                      11
+signature:                  MCompressed
+overall size:               5535744
+block size:                 1024
+loop offset:                10
+total number of partitions: 20
+active partitions:          3
+used partitions:            3
+non active space:           0
+unused space:               0
+biggest hole:               0
+[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1197702438, start=0x00183800, size=3948544 bytes)
+[03]:                       (edition 0, start=0x00000000, size=0 bytes)
+[04]:                       (edition 0, start=0x00000000, size=0 bytes)
+[05]:                       (edition 0, start=0x00000000, size=0 bytes)
+[06]:                       (edition 0, start=0x00000000, size=0 bytes)
+[07]:                       (edition 0, start=0x00000000, size=0 bytes)
+[08]:                       (edition 0, start=0x00000000, size=0 bytes)
+[09]:                       (edition 0, start=0x00000000, size=0 bytes)
+[10]:                       (edition 0, start=0x00000000, size=0 bytes)
+[11]:                       (edition 0, start=0x00000000, size=0 bytes)
+[12]:                       (edition 0, start=0x00000000, size=0 bytes)
+[13]:                       (edition 0, start=0x00000000, size=0 bytes)
+[14]:                       (edition 0, start=0x00000000, size=0 bytes)
+[15]:                       (edition 0, start=0x00000000, size=0 bytes)
+[16]:                       (edition 0, start=0x00000000, size=0 bytes)
+[17]:                       (edition 0, start=0x00000000, size=0 bytes)
+[18]:                       (edition 0, start=0x00000000, size=0 bytes)
+[19]:                       (edition 0, start=0x00000000, size=0 bytes)
+  75dpi
+  misc
+  xfs.config
+'75dpi':
+  VeraSe.ttf
+  courB08.pcf.gz
+  courB10.pcf.gz
+  courB12.pcf.gz
+  courB14.pcf.gz
+  courB18.pcf.gz
+  courB24.pcf.gz
+  courBO08.pcf.gz
+  courBO10.pcf.gz
+  courBO12.pcf.gz
+  courBO14.pcf.gz
+  courBO18.pcf.gz
+  courBO24.pcf.gz
+  courO08.pcf.gz
+  courO10.pcf.gz
+  courO12.pcf.gz
+  courO14.pcf.gz
+  courO18.pcf.gz
+  courO24.pcf.gz
+  courR08.pcf.gz
+  courR10.pcf.gz
+  courR12.pcf.gz
+  courR14.pcf.gz
+  courR18.pcf.gz
+  courR24.pcf.gz
+  fonts.dir
+  helvB08.pcf.gz
+  helvB10.pcf.gz
+  helvB12.pcf.gz
+  helvB14.pcf.gz
+  helvB18.pcf.gz
+  helvB24.pcf.gz
+  helvBO08.pcf.gz
+  helvBO10.pcf.gz
+  helvBO12.pcf.gz
+  helvBO14.pcf.gz
+  helvBO18.pcf.gz
+  helvBO24.pcf.gz
+  helvO08.pcf.gz
+  helvO10.pcf.gz
+  helvO12.pcf.gz
+  helvO14.pcf.gz
+  helvO18.pcf.gz
+  helvO24.pcf.gz
+  helvR08.pcf.gz
+  helvR10.pcf.gz
+  helvR12.pcf.gz
+  helvR14.pcf.gz
+  helvR18.pcf.gz
+  helvR24.pcf.gz
+  symb08.pcf.gz
+  symb10.pcf.gz
+  symb12.pcf.gz
+  symb14.pcf.gz
+  symb18.pcf.gz
+  symb24.pcf.gz
+  timB08.pcf.gz
+  timB10.pcf.gz
+  timB12.pcf.gz
+  timB14.pcf.gz
+  timB18.pcf.gz
+  timB24.pcf.gz
+  timBI08.pcf.gz
+  timBI10.pcf.gz
+  timBI12.pcf.gz
+  timBI14.pcf.gz
+  timBI18.pcf.gz
+  timBI24.pcf.gz
+  timI08.pcf.gz
+  timI10.pcf.gz
+  timI12.pcf.gz
+  timI14.pcf.gz
+  timI18.pcf.gz
+  timI24.pcf.gz
+  timR08.pcf.gz
+  timR10.pcf.gz
+  timR12.pcf.gz
+  timR14.pcf.gz
+  timR18.pcf.gz
+  timR24.pcf.gz
+'misc':
+  7x14-ISO8859-1.pcf.gz
+  7x14B-ISO8859-1.pcf.gz
+  cursor.pcf.gz
+  fonts.alias
+  fonts.dir
+  nil2.pcf.gz
+Directory data: 2540 bytes
+-34.07% (-20536 bytes)	VeraSe.ttf
+  0.75% (+31 bytes)	courB08.pcf.gz
+  0.73% (+32 bytes)	courB10.pcf.gz
+  0.68% (+30 bytes)	courB12.pcf.gz
+  0.65% (+31 bytes)	courB14.pcf.gz
+  0.61% (+32 bytes)	courB18.pcf.gz
+  0.50% (+30 bytes)	courB24.pcf.gz
+  0.74% (+32 bytes)	courBO08.pcf.gz
+  0.71% (+32 bytes)	courBO10.pcf.gz
+  0.62% (+30 bytes)	courBO12.pcf.gz
+  0.61% (+31 bytes)	courBO14.pcf.gz
+  0.53% (+30 bytes)	courBO18.pcf.gz
+  0.48% (+31 bytes)	courBO24.pcf.gz
+  0.76% (+32 bytes)	courO08.pcf.gz
+  0.68% (+30 bytes)	courO10.pcf.gz
+  0.66% (+31 bytes)	courO12.pcf.gz
+  0.60% (+30 bytes)	courO14.pcf.gz
+  0.61% (+33 bytes)	courO18.pcf.gz
+  0.52% (+32 bytes)	courO24.pcf.gz
+  0.77% (+32 bytes)	courR08.pcf.gz
+  0.70% (+30 bytes)	courR10.pcf.gz
+  0.67% (+30 bytes)	courR12.pcf.gz
+  0.64% (+30 bytes)	courR14.pcf.gz
+  0.63% (+32 bytes)	courR18.pcf.gz
+  0.54% (+31 bytes)	courR24.pcf.gz
+-85.20% (-4951 bytes)	fonts.dir
+  0.70% (+32 bytes)	helvB08.pcf.gz
+  0.63% (+30 bytes)	helvB10.pcf.gz
+  0.65% (+32 bytes)	helvB12.pcf.gz
+  0.61% (+32 bytes)	helvB14.pcf.gz
+  0.55% (+32 bytes)	helvB18.pcf.gz
+  0.47% (+31 bytes)	helvB24.pcf.gz
+  0.65% (+31 bytes)	helvBO08.pcf.gz
+  0.66% (+33 bytes)	helvBO10.pcf.gz
+  0.61% (+32 bytes)	helvBO12.pcf.gz
+  0.57% (+32 bytes)	helvBO14.pcf.gz
+  0.50% (+31 bytes)	helvBO18.pcf.gz
+  0.44% (+32 bytes)	helvBO24.pcf.gz
+  0.70% (+33 bytes)	helvO08.pcf.gz
+  0.61% (+30 bytes)	helvO10.pcf.gz
+  0.58% (+30 bytes)	helvO12.pcf.gz
+  0.56% (+31 bytes)	helvO14.pcf.gz
+  0.52% (+32 bytes)	helvO18.pcf.gz
+  0.43% (+31 bytes)	helvO24.pcf.gz
+  0.73% (+33 bytes)	helvR08.pcf.gz
+  0.68% (+32 bytes)	helvR10.pcf.gz
+  0.66% (+32 bytes)	helvR12.pcf.gz
+  0.58% (+30 bytes)	helvR14.pcf.gz
+  0.57% (+33 bytes)	helvR18.pcf.gz
+  0.50% (+33 bytes)	helvR24.pcf.gz
+  0.79% (+33 bytes)	symb08.pcf.gz
+  0.68% (+30 bytes)	symb10.pcf.gz
+  0.69% (+33 bytes)	symb12.pcf.gz
+  0.66% (+33 bytes)	symb14.pcf.gz
+  0.58% (+33 bytes)	symb18.pcf.gz
+  0.50% (+32 bytes)	symb24.pcf.gz
+  0.66% (+30 bytes)	timB08.pcf.gz
+  0.67% (+32 bytes)	timB10.pcf.gz
+  0.64% (+33 bytes)	timB12.pcf.gz
+  0.59% (+32 bytes)	timB14.pcf.gz
+  0.53% (+32 bytes)	timB18.pcf.gz
+  0.42% (+30 bytes)	timB24.pcf.gz
+  0.64% (+30 bytes)	timBI08.pcf.gz
+  0.60% (+30 bytes)	timBI10.pcf.gz
+  0.56% (+30 bytes)	timBI12.pcf.gz
+  0.58% (+33 bytes)	timBI14.pcf.gz
+  0.48% (+30 bytes)	timBI18.pcf.gz
+  0.43% (+33 bytes)	timBI24.pcf.gz
+  0.72% (+33 bytes)	timI08.pcf.gz
+  0.61% (+30 bytes)	timI10.pcf.gz
+  0.62% (+32 bytes)	timI12.pcf.gz
+  0.54% (+30 bytes)	timI14.pcf.gz
+  0.51% (+32 bytes)	timI18.pcf.gz
+  0.42% (+31 bytes)	timI24.pcf.gz
+  0.71% (+32 bytes)	timR08.pcf.gz
+  0.66% (+31 bytes)	timR10.pcf.gz
+  0.60% (+30 bytes)	timR12.pcf.gz
+  0.60% (+32 bytes)	timR14.pcf.gz
+  0.55% (+33 bytes)	timR18.pcf.gz
+  0.46% (+31 bytes)	timR24.pcf.gz
+  0.72% (+32 bytes)	7x14-ISO8859-1.pcf.gz
+  0.77% (+33 bytes)	7x14B-ISO8859-1.pcf.gz
+  0.61% (+31 bytes)	cursor.pcf.gz
+-50.84% (-211 bytes)	fonts.alias
+-44.66% (-113 bytes)	fonts.dir
+ -4.01% (-95 bytes)	nil2.pcf.gz
+-22.58% (-49 bytes)	xfs.config
+Everything: 468 kilobytes
+Super block: 76 bytes
+CRC: ebc4e448
+read_cramfs(usr/X11R6/lib/X11/fonts, /home/crazy/BaobabLinux/midori/git/image/usr.X11R6.lib.X11.fonts.img.cram)
+writing cramfs usr/X11R6/lib/X11/fonts
+magic:                      0xeab85d45
+version:                    2
+count:                      13
+signature:                  MCompressed
+overall size:               6014976
+block size:                 1024
+loop offset:                10
+total number of partitions: 20
+active partitions:          3
+used partitions:            4
+non active space:           479232
+unused space:               0
+biggest hole:               0
+[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1197702438, start=0x00183800, size=3948544 bytes)
+[03]:   usr/X11R6/lib/X11/fonts (edition 1197702438, start=0x00547800, size=479232 bytes)
+[04]:                       (edition 0, start=0x00000000, size=0 bytes)
+[05]:                       (edition 0, start=0x00000000, size=0 bytes)
+[06]:                       (edition 0, start=0x00000000, size=0 bytes)
+[07]:                       (edition 0, start=0x00000000, size=0 bytes)
+[08]:                       (edition 0, start=0x00000000, size=0 bytes)
+[09]:                       (edition 0, start=0x00000000, size=0 bytes)
+[10]:                       (edition 0, start=0x00000000, size=0 bytes)
+[11]:                       (edition 0, start=0x00000000, size=0 bytes)
+[12]:                       (edition 0, start=0x00000000, size=0 bytes)
+[13]:                       (edition 0, start=0x00000000, size=0 bytes)
+[14]:                       (edition 0, start=0x00000000, size=0 bytes)
+[15]:                       (edition 0, start=0x00000000, size=0 bytes)
+[16]:                       (edition 0, start=0x00000000, size=0 bytes)
+[17]:                       (edition 0, start=0x00000000, size=0 bytes)
+[18]:                       (edition 0, start=0x00000000, size=0 bytes)
+[19]:                       (edition 0, start=0x00000000, size=0 bytes)
+magic:                      0xeab85d45
+version:                    2
+count:                      14
+signature:                  MCompressed
+overall size:               6014976
+block size:                 1024
+loop offset:                10
+total number of partitions: 20
+active partitions:          4
+used partitions:            4
+non active space:           0
+unused space:               0
+biggest hole:               0
+[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1197702438, start=0x00183800, size=3948544 bytes)
+[03]: * usr/X11R6/lib/X11/fonts (edition 1197702438, start=0x00547800, size=479232 bytes)
+[04]:                       (edition 0, start=0x00000000, size=0 bytes)
+[05]:                       (edition 0, start=0x00000000, size=0 bytes)
+[06]:                       (edition 0, start=0x00000000, size=0 bytes)
+[07]:                       (edition 0, start=0x00000000, size=0 bytes)
+[08]:                       (edition 0, start=0x00000000, size=0 bytes)
+[09]:                       (edition 0, start=0x00000000, size=0 bytes)
+[10]:                       (edition 0, start=0x00000000, size=0 bytes)
+[11]:                       (edition 0, start=0x00000000, size=0 bytes)
+[12]:                       (edition 0, start=0x00000000, size=0 bytes)
+[13]:                       (edition 0, start=0x00000000, size=0 bytes)
+[14]:                       (edition 0, start=0x00000000, size=0 bytes)
+[15]:                       (edition 0, start=0x00000000, size=0 bytes)
+[16]:                       (edition 0, start=0x00000000, size=0 bytes)
+[17]:                       (edition 0, start=0x00000000, size=0 bytes)
+[18]:                       (edition 0, start=0x00000000, size=0 bytes)
+[19]:                       (edition 0, start=0x00000000, size=0 bytes)
+magic:                      0xeab85d45
+version:                    2
+count:                      22
+signature:                  MCompressed
+overall size:               6014976
+block size:                 1024
+loop offset:                10
+total number of partitions: 20
+active partitions:          4
+used partitions:            4
+non active space:           0
+unused space:               0
+biggest hole:               0
+[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1197702438, start=0x00183800, size=3948544 bytes)
+[03]: * usr/X11R6/lib/X11/fonts (edition 1197702438, start=0x00547800, size=479232 bytes)
+[04]:                       (edition 0, start=0x00000000, size=0 bytes)
+[05]:                       (edition 0, start=0x00000000, size=0 bytes)
+[06]:                       (edition 0, start=0x00000000, size=0 bytes)
+[07]:                       (edition 0, start=0x00000000, size=0 bytes)
+[08]:                       (edition 0, start=0x00000000, size=0 bytes)
+[09]:                       (edition 0, start=0x00000000, size=0 bytes)
+[10]:                       (edition 0, start=0x00000000, size=0 bytes)
+[11]:                       (edition 0, start=0x00000000, size=0 bytes)
+[12]:                       (edition 0, start=0x00000000, size=0 bytes)
+[13]:                       (edition 0, start=0x00000000, size=0 bytes)
+[14]:                       (edition 0, start=0x00000000, size=0 bytes)
+[15]:                       (edition 0, start=0x00000000, size=0 bytes)
+[16]:                       (edition 0, start=0x00000000, size=0 bytes)
+[17]:                       (edition 0, start=0x00000000, size=0 bytes)
+[18]:                       (edition 0, start=0x00000000, size=0 bytes)
+[19]:                       (edition 0, start=0x00000000, size=0 bytes)

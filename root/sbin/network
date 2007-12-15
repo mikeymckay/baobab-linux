@@ -1,0 +1,82 @@
+#!/bin/sh
+
+#
+# network start script
+#
+# takes two parameters - the action and the device to act upon
+#
+# the action must be one of start, stop, suspend, resume, or restart
+# 
+# The device can be any valid network device (i.e. eth0, wlan1, ppp0)
+# Each device specified must have a file of the same name in 
+# /config/net with configuration parameters in it
+#
+
+USAGE="usage: $0 {start|stop|restart|status}"
+
+if [ $# -ne 1 ] ; then 
+	echo $USAGE
+	exit 1
+fi
+
+. /tmp/config/network
+
+interfaces=`cd /tmp/config/net/ ; echo *`
+
+
+case "$1" in 
+
+start)
+	# set up ipv4 forwarding
+	if [ -d /proc/sys/net/ipv4 -a -f /proc/sys/net/ipv4/ip_forward ] ; then
+	    if [ -n "$FORWARD_IPV4" -a "$FORWARD_IPV4" = "yes" ] ; then
+		    ipv4_forward=1
+	    else
+		    ipv4_forward=0
+	    fi
+	    if [ $ipv4_forward != `cat /proc/sys/net/ipv4/ip_forward` ] ; then
+		echo "$ipv4_forward" > /proc/sys/net/ipv4/ip_forward
+	    fi
+	fi
+
+	for i in $interfaces ; do
+	    /sbin/ifup $i
+	done
+        if [ "$TIMESERVER" != "" -a \( -x /bin/rdate -o -x /usr/bin/rdate \) ] ; then
+                rdate "$TIMESERVER"
+                if [ -x /sbin/hwclock ] ; then
+                        /sbin/hwclock --systohc --utc
+                fi
+        fi 
+	;;
+stop)
+	for i in $interfaces ; do
+	    /sbin/ifdown $i
+	done
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+status)
+	for i in $interfaces ; do
+	    if [ -n "`ifconfig -a | sed -ne 's/$DEVICE//p'`" ] ; then
+		status=up
+	    else
+		status=down
+	    fi
+	    echo "Interface $i is $status"
+	done
+
+	if [ "$STATUS" = "up" ] ; then
+		echo "$DEVICE already configured"
+		exit 0
+	fi
+	;;
+*)
+	echo $USAGE
+	exit 1
+	;;
+esac
+
+exit 0

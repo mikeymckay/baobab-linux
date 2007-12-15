@@ -1,0 +1,185 @@
+#!/bin/bash
+
+. $SCRIPTS/functions.sh
+
+# creates the upgrade packages.
+# An upgrade package consists of a tar.gz file, with unpacks into 
+# the same directory and has at least one file, namely 'install'.
+# install is the shell script that will be executed in order to
+# make the installation.
+
+mkdir -p $IMAGE/upgrades
+
+rm -f $IMAGE/upgrades/options.txt
+ 
+cat > $IMAGE/upgrades/index.html <<EOF
+<html><head><title>Upgrades</title></head><body><h1>Upgrades</h1>
+<big><ul>
+EOF
+for i in all new packed root mbr
+do
+        echo "<li><a href=$i.tar.gz>$i</a>" >> $IMAGE/upgrades/index.html
+        echo $i >> $IMAGE/upgrades/options.txt
+done
+
+cat > $IMAGE/packed <<EOF
+#!/bin/sh
+hostport=\$1
+if [ "\$1" = "" ] ; then 
+        hostport=$UPGRADE_HOST:$UPGRADE_PORT
+fi
+packcramfs -q -i $PACKED_IMAGES -l 10 -c ${IMAGE_DEVICE}${PACKED_PARTITION} 1000
+packcramfs -C -q -w --resize ${IMAGE_DEVICE}${PACKED_PARTITION}
+EOF
+
+cat > $IMAGE/all  <<EOF
+#!/bin/sh
+hostport=\$1
+if [ "\$1" = "" ] ; then 
+        hostport=$UPGRADE_HOST:$UPGRADE_PORT
+fi
+upgrade -h \$hostport -q packed
+upgrade -h \$hostport -q root
+EOF
+
+cat > $IMAGE/new  <<EOF
+#!/bin/sh
+set -e
+hostport=\$1
+if [ "\$1" = "" ] ; then 
+        hostport=$UPGRADE_HOST:$UPGRADE_PORT
+fi
+( ./upgrade_new -h \$hostport -q <<!
+EOF
+
+packcramfs -C -I -q $IMAGE/root1.img.cram | sed 's/edition \([0-9]*\).*/ROOT \1/' >> $IMAGE/new
+packcramfs -p -t -q $IMAGE/main.img.packed | sed 's/^[^ ]* //' >> $IMAGE/new
+cat >>  $IMAGE/new <<EOF
+!
+) | sh 
+EOF
+
+
+function create_tar() {
+        cd tmp
+        find . -depth -print | xargs touch -t 197001010000.00
+        tar cf ../upgrades/$1.tar .
+        gzip -nf9 ../upgrades/$1.tar
+        rm -f ../upgrades/$1.tar
+        cd ..
+        rm -rf tmp
+}
+
+function create_image() {
+        name=`basename $2 .img.cram`
+        if [ ! -f upgrades/$name.tar.gz -o $2 -nt upgrades/$name.tar.gz ] ; then
+                rm -rf tmp
+                mkdir -p tmp
+                cp $2 tmp
+                ml_transpose $TARGET/upgrade_packed tmp/upgrade_packed
+                cp $TARGET/packcramfs tmp
+                chmod 755 tmp/upgrade_packed tmp/packcramfs
+                cat > tmp/install <<EOF
+#!/bin/sh
+if [ ! -x upgrade_packed ] ; then
+        echo "install must be executed in the same directory where upgrade_packed resides"
+        exit 1
+fi
+./upgrade_packed $1 $2
+EOF
+                chmod 755 tmp/upgrade_packed tmp/install
+                imgname=$name.tar.gz
+                create_tar $name
+        fi
+        echo "<li><a href=$imgname>$name</a>" >> upgrades/index.html
+        echo "upgrade -h \$hostport -q $name" >> packed
+        echo $name >> upgrades/options.txt
+}
+
+function create_exec() {
+        mkdir tmp
+        mv $1 tmp/install
+        chmod 755 tmp/install
+        create_tar $1
+}
+
+
+cd $IMAGE
+
+# create root partition upgrade
+rm -rf tmp
+mkdir -p tmp
+cp root1.img.cram tmp/root.img.cram
+cp $TARGET/write_partition tmp/write_partition
+cp $TARGET/cramfsck tmp
+cat > tmp/install <<EOF
+#!/bin/sh
+if [ ! -x write_partition ] ; then
+        echo "install must be executed in the same directory where write_partition resides"
+        exit 1
+fi
+p=\`set_boot \`
+if [ "\$p" = "1" ] ; then
+        p=2
+else
+        p=1
+fi
+set_boot root.img.cram \$p
+if ./write_partition -q -p root.img.cram $IMAGE_DEVICE\$p
+then
+        if make_active $IMAGE_DEVICE \$p
+        then
+                echo "Now rebooting system"
+                sleep 1
+                reboot
+        fi
+fi
+echo "Upgrade failed"
+exit 1
+EOF
+chmod 755 tmp/install
+create_tar root
+
+if [ ! -f upgrades/mbr.tar.gz -o $BUILD/$CRAMFSBOOT_SRC/src/newmbr.bin -nt upgrades/mbr.tar.gz ] ; then
+        # create mbr upgrade
+        rm -rf tmp
+        mkdir -p tmp
+        cp $TARGET/newmbr.bin tmp/newmbr.bin
+        cp $TARGET/write_partition tmp
+        cat > tmp/install <<EOF
+#!/bin/sh
+set -e
+if [ ! -x write_partition ] ; then
+        echo "install must be executed in the same directory where write_partition resides"
+        exit 1
+fi
+./write_partition -p newmbr.bin $IMAGE_DEVICE
+echo "Now rebooting system"
+sleep 1
+reboot
+EOF
+        chmod 755 tmp/install
+        create_tar mbr
+fi
+
+# create new upgrade
+rm -rf tmp
+mkdir -p tmp
+cp new tmp/install
+chmod 755 tmp/install
+cp $TARGET/upgrade_new tmp/upgrade_new
+create_tar new
+
+
+# create packed cram partitions
+create_image / main.img.cram
+for i in $PACKED `sort -u $IMAGE/images`
+do
+        n=`echo $i | tr / .`
+        create_image $i $n.img.cram
+done
+
+create_exec packed 
+create_exec all 
+
+echo "</ul></body></html>" >> upgrades/index.html

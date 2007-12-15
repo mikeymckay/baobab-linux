@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# 30 aumix-2.7
+[ -x /usr/bin/aumix ] && /usr/bin/aumix -v0 -m0&
+
+# 5 busybox-0.47
+backlight off 2> /dev/null || :
+
+# 60 X-4.0.3
+[ ! -x /usr/X11R6/sbin/suspend ] || /usr/X11R6/sbin/suspend

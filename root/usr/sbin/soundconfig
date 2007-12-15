@@ -1,0 +1,11 @@
+#! /bin/sh
+. /tmp/config/sound
+
+# The following two seem to be necessary for non-v5 Iopeners
+# (Yamaha sound chip)
+/usr/bin/aumix -d /dev/mixer -w $PCM > /dev/null 2>&1
+/usr/bin/aumix -d /dev/mixer1 -v $VOLUME -t $TREBLE -b $BASS > /dev/null 2>&1
+
+# This one seems to do better for v5 Iopeners (via sound)
+/usr/bin/aumix -v $VOLUME -w $PCM -t $TREBLE -b $BASS > /dev/null 2>&1
+
