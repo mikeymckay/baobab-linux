@@ -238,6 +238,9 @@ function ml_make_image() {
 
         # untar the device directory (it messes up source control)
         tar -xf $ROOT.work/dev.tgz --directory $ROOT.work
+        mkdir $ROOT.work/cramfs
+        mkdir $ROOT.work/proc
+        mkdir $ROOT.work/tmp
 
         # switch to make sure we only use the working version of root
         ORIG_ROOT=$ROOT

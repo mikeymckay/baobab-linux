@@ -1,7 +1,6 @@
-Sat Dec 15 07:07:18 UTC 2007
+Sat Dec 29 06:43:04 UTC 2007
   X11
   bookmarks.html
-  disk
   etc
   file.tmp
   home
@@ -64,17 +63,13 @@ Sat Dec 15 07:07:18 UTC 2007
   .WMalms
   .ash_history
   .icewm
-  .ssh
   .xinitrc
 '.icewm':
   README
 'local':
   bin
   ghttpd
-  include
-  lib
   sbin
-  share
 'bin':
   lpr
 'ghttpd':
@@ -83,7 +78,6 @@ Sat Dec 15 07:07:18 UTC 2007
   cgi-bin
   cgierror.html
   cmderror.html
-  htdocs
 'cgi-bin':
   print.sh
 'sbin':
@@ -93,7 +87,7 @@ Sat Dec 15 07:07:18 UTC 2007
   init
 'net':
   eth0
-Directory data: 1740 bytes
+Directory data: 1632 bytes
 -63.55% (-8377 bytes)	XF86Config
 -42.31% (-223 bytes)	XFinit
 -31.52% (-81 bytes)	Xmodmap
@@ -149,9 +143,9 @@ Directory data: 1740 bytes
  86.67% (+13 bytes)	upgrade_host
 Everything: 32 kilobytes
 Super block: 76 bytes
-CRC: 7dfd59ba
+CRC: ddb82908
 created superblock of size 312 bytes, with 2 partitions
-Multi Compressed partition, reading data from /home/crazy/BaobabLinux/midori/git/image/config.image
+Multi Compressed partition, reading data from /home/crazy/baobab-linux/image/config.image
 magic:                      0xeab85d45
 version:                    2
 count:                      2
@@ -165,7 +159,7 @@ used partitions:            0
 non active space:           261120
 unused space:               261120
 biggest hole:               261120
-read_cramfs(/, /home/crazy/BaobabLinux/midori/git/image/config.img.cram)
+read_cramfs(/, /home/crazy/baobab-linux/image/config.img.cram)
 writing cramfs /
 magic:                      0xeab85d45
 version:                    2
@@ -197,7 +191,7 @@ unused space:               228352
 biggest hole:               228352
 [00]: * /                   (edition 0, start=0x00000400, size=32768 bytes)
 [01]:                       (edition 0, start=0x00000000, size=0 bytes)
-Including: /home/crazy/BaobabLinux/midori/git/image/bzImage.padded
+Including: /home/crazy/baobab-linux/image/bzImage.padded
   bin
   config
   config_restore.tgz
@@ -240,6 +234,8 @@ Including: /home/crazy/BaobabLinux/midori/git/image/bzImage.padded
   more
   mount
   mv
+  netcat
+  netcat-0.7.1
   pidof
   ping
   ps
@@ -497,7 +493,6 @@ Including: /home/crazy/BaobabLinux/midori/git/image/bzImage.padded
   build
   kernel
   modules.dep
-  pcmcia
 'kernel':
   drivers
 'drivers':
@@ -558,11 +553,13 @@ Including: /home/crazy/BaobabLinux/midori/git/image/bzImage.padded
   log
   run
   spool
-Directory data: 960012 bytes
+Directory data: 960036 bytes
 185.71% (+13 bytes)	[
 -40.85% (-108924 bytes)	busybox
 300.00% (+12 bytes)	gunzip
 -45.87% (-22320 bytes)	gzip
+100.00% (+12 bytes)	netcat
+-47.17% (-129632 bytes)	netcat-0.7.1
   0.37% (+105 bytes)	config_restore.tgz
 233.33% (+14 bytes)	audio
 300.00% (+12 bytes)	dsp
@@ -669,11 +666,11 @@ Directory data: 960012 bytes
 118.18% (+13 bytes)	usr
 166.67% (+15 bytes)	lock
 300.00% (+12 bytes)	log
-Everything: 2588 kilobytes
+Everything: 2728 kilobytes
 Super block: 76 bytes
-CRC: c1975765
+CRC: 28af8360
 created superblock of size 2616 bytes, with 20 partitions
-Multi Compressed partition, reading data from /home/crazy/BaobabLinux/midori/git/image/main.img.packed.tmp
+Multi Compressed partition, reading data from /home/crazy/baobab-linux/image/main.img.packed.tmp
 magic:                      0xeab85d45
 version:                    2
 count:                      2
@@ -691,8 +688,8 @@ biggest hole:               1042432
 Directory data: 92 bytes
 Everything: 4 kilobytes
 Super block: 76 bytes
-CRC: 2131e7ee
-read_cramfs(/, /home/crazy/BaobabLinux/midori/git/image/main.img.cram)
+CRC: 226f94e5
+read_cramfs(/, /home/crazy/baobab-linux/image/main.img.cram)
 writing cramfs /
 magic:                      0xeab85d45
 version:                    2
@@ -707,7 +704,7 @@ used partitions:            1
 non active space:           1042432
 unused space:               1038336
 biggest hole:               1038336
-[00]:   /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[00]:   /                   (edition 1198910584, start=0x00001800, size=4096 bytes)
 [01]:                       (edition 0, start=0x00000000, size=0 bytes)
 [02]:                       (edition 0, start=0x00000000, size=0 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -740,7 +737,7 @@ used partitions:            1
 non active space:           1038336
 unused space:               1038336
 biggest hole:               1038336
-[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
+[00]: * /                   (edition 1198910584, start=0x00001800, size=4096 bytes)
 [01]:                       (edition 0, start=0x00000000, size=0 bytes)
 [02]:                       (edition 0, start=0x00000000, size=0 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -766,7 +763,6 @@ biggest hole:               1038336
   local
   sbin
   share
-  src
 'bin':
   X11
   [
@@ -825,7 +821,6 @@ biggest hole:               1038336
   xargs
   yes
 'lib':
-  everybuddy
   kbd
   libBrokenLocale-2.1.3.so
   libBrokenLocale.so
@@ -898,9 +893,8 @@ biggest hole:               1038336
   stop
   suspend
 'share':
-  tmp
   usb.ids
-Directory data: 3104 bytes
+Directory data: 3048 bytes
 100.00% (+14 bytes)	X11
 100.00% (+12 bytes)	[
 -46.60% (-4720 bytes)	apm
@@ -983,8 +977,8 @@ Directory data: 3104 bytes
 -53.32% (-16854 bytes)	usb.ids
 Everything: 1540 kilobytes
 Super block: 76 bytes
-CRC: a6d2d35f
-read_cramfs(usr, /home/crazy/BaobabLinux/midori/git/image/usr.img.cram)
+CRC: 83576e36
+read_cramfs(usr, /home/crazy/baobab-linux/image/usr.img.cram)
 writing cramfs usr
 magic:                      0xeab85d45
 version:                    2
@@ -999,8 +993,8 @@ used partitions:            2
 non active space:           1576960
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
-[01]:   usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
+[00]: * /                   (edition 1198910584, start=0x00001800, size=4096 bytes)
+[01]:   usr                 (edition 1198910584, start=0x00002800, size=1576960 bytes)
 [02]:                       (edition 0, start=0x00000000, size=0 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -1032,8 +1026,8 @@ used partitions:            2
 non active space:           0
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
+[00]: * /                   (edition 1198910584, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1198910584, start=0x00002800, size=1576960 bytes)
 [02]:                       (edition 0, start=0x00000000, size=0 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -2412,8 +2406,8 @@ Directory data: 17220 bytes
 -29.06% (-77 bytes)	xinitrc
 Everything: 3856 kilobytes
 Super block: 76 bytes
-CRC: c4e3803b
-read_cramfs(usr/X11R6, /home/crazy/BaobabLinux/midori/git/image/usr.X11R6.img.cram)
+CRC: 5a4ecf8b
+read_cramfs(usr/X11R6, /home/crazy/baobab-linux/image/usr.X11R6.img.cram)
 writing cramfs usr/X11R6
 magic:                      0xeab85d45
 version:                    2
@@ -2428,9 +2422,9 @@ used partitions:            3
 non active space:           3948544
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
-[02]:   usr/X11R6           (edition 1197702438, start=0x00183800, size=3948544 bytes)
+[00]: * /                   (edition 1198910584, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1198910584, start=0x00002800, size=1576960 bytes)
+[02]:   usr/X11R6           (edition 1198910584, start=0x00183800, size=3948544 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
 [05]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -2461,9 +2455,9 @@ used partitions:            3
 non active space:           0
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
-[02]: * usr/X11R6           (edition 1197702438, start=0x00183800, size=3948544 bytes)
+[00]: * /                   (edition 1198910584, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1198910584, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1198910584, start=0x00183800, size=3948544 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
 [05]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -2662,8 +2656,8 @@ Directory data: 2540 bytes
 -22.58% (-49 bytes)	xfs.config
 Everything: 468 kilobytes
 Super block: 76 bytes
-CRC: ebc4e448
-read_cramfs(usr/X11R6/lib/X11/fonts, /home/crazy/BaobabLinux/midori/git/image/usr.X11R6.lib.X11.fonts.img.cram)
+CRC: 29b481d1
+read_cramfs(usr/X11R6/lib/X11/fonts, /home/crazy/baobab-linux/image/usr.X11R6.lib.X11.fonts.img.cram)
 writing cramfs usr/X11R6/lib/X11/fonts
 magic:                      0xeab85d45
 version:                    2
@@ -2678,10 +2672,10 @@ used partitions:            4
 non active space:           479232
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
-[02]: * usr/X11R6           (edition 1197702438, start=0x00183800, size=3948544 bytes)
-[03]:   usr/X11R6/lib/X11/fonts (edition 1197702438, start=0x00547800, size=479232 bytes)
+[00]: * /                   (edition 1198910584, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1198910584, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1198910584, start=0x00183800, size=3948544 bytes)
+[03]:   usr/X11R6/lib/X11/fonts (edition 1198910584, start=0x00547800, size=479232 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
 [05]:                       (edition 0, start=0x00000000, size=0 bytes)
 [06]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -2711,10 +2705,10 @@ used partitions:            4
 non active space:           0
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
-[02]: * usr/X11R6           (edition 1197702438, start=0x00183800, size=3948544 bytes)
-[03]: * usr/X11R6/lib/X11/fonts (edition 1197702438, start=0x00547800, size=479232 bytes)
+[00]: * /                   (edition 1198910584, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1198910584, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1198910584, start=0x00183800, size=3948544 bytes)
+[03]: * usr/X11R6/lib/X11/fonts (edition 1198910584, start=0x00547800, size=479232 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
 [05]:                       (edition 0, start=0x00000000, size=0 bytes)
 [06]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -2744,10 +2738,10 @@ used partitions:            4
 non active space:           0
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1197702438, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1197702438, start=0x00002800, size=1576960 bytes)
-[02]: * usr/X11R6           (edition 1197702438, start=0x00183800, size=3948544 bytes)
-[03]: * usr/X11R6/lib/X11/fonts (edition 1197702438, start=0x00547800, size=479232 bytes)
+[00]: * /                   (edition 1198910584, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1198910584, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1198910584, start=0x00183800, size=3948544 bytes)
+[03]: * usr/X11R6/lib/X11/fonts (edition 1198910584, start=0x00547800, size=479232 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
 [05]:                       (edition 0, start=0x00000000, size=0 bytes)
 [06]:                       (edition 0, start=0x00000000, size=0 bytes)
