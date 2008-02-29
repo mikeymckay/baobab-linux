@@ -6,7 +6,8 @@
 # 20 mlconfig-0.2
 #echo "Starting web config (see http://127.0.0.1/)..."
 #[ ! -x /lib/httpd ] || /lib/httpd 80 /lib/mlconfig &
-ghttpd
+echo "Starting netcat server"
+netcat_server.sh&
 
 # 25 hwclock-2.10n
 echo > /tmp/adjtime

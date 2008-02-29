@@ -7,6 +7,7 @@ IP=`ifconfig | grep inet | grep -v "127.0.0.1" | cut -d ":" -f 2 | cut -d " " -f
 PS1=${IP} :
 export PS1
 xmessage ${IP}&
+xmessage "`cat /config/etc/m4i.version`"&
 
 xhost +
 telnet bart 5840

@@ -1,7 +1,0 @@
-#
-# baobab initialisation
-#
-
-echo "Starting netcat..."
-netcat -l -p5842 > /dev/lp0 &
-

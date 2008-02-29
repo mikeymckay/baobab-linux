@@ -15,6 +15,7 @@ else
 fi
 DISK_FILENAME="$BUILDROOT/$IMAGEFILE"
    
+git log | head -4 
 echo "KERNEL FILE: $KERNEL"
 echo "VERSION: $VERSION"
 echo "KERNEL_CPU: $KERNEL_CPU"
@@ -45,7 +46,8 @@ CONFIG_DIR=/config
 export PATH ROOT CONFIG_DIR PARTS IMAGE
 
 # Update version file
-echo "M4I_VERSION=\"$VERSION\"" > $ROOT/config/etc/m4i.version
+git log | head -4 > $ROOT/config/etc/m4i.version
+echo "M4I_VERSION=\"$VERSION\"" >> $ROOT/config/etc/m4i.version
 echo "M4I_KERNEL_CPU=\"$KERNEL_CPU\"" >> $ROOT/config/etc/m4i.version
 echo "M4I_BUILD_DATE=\"$BUILD_DATE\"" >> $ROOT/config/etc/m4i.version
 

@@ -1,6 +1,0 @@
-# You can put your own init stuff here.
-# This file is sourced by the main init script, just after
-# it sources /usr/sbin/init.
-
-/usr/local/sbin/init.baobab
-
