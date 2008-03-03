@@ -18,7 +18,8 @@ elif [ $mode = "continue" ]; then
   echo -n "$print_string" >> $printer_file
 elif [ $mode = "finish" ]; then
   echo -n "$print_string" >> $printer_file
-  cat $printer_file > $printer
+  #cat $printer_file > $printer
+  cat $printer_file | netcat localhost 4242
 else
   echo "No mode given"
 fi

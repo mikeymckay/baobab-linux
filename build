@@ -46,10 +46,10 @@ CONFIG_DIR=/config
 export PATH ROOT CONFIG_DIR PARTS IMAGE
 
 # Update version file
-git log | head -4 > $ROOT/config/etc/m4i.version
-echo "M4I_VERSION=\"$VERSION\"" >> $ROOT/config/etc/m4i.version
-echo "M4I_KERNEL_CPU=\"$KERNEL_CPU\"" >> $ROOT/config/etc/m4i.version
-echo "M4I_BUILD_DATE=\"$BUILD_DATE\"" >> $ROOT/config/etc/m4i.version
+git log | head -3 > $ROOT/config/etc/m4i.version
+#echo "M4I_VERSION=\"$VERSION\"" >> $ROOT/config/etc/m4i.version
+#echo "M4I_KERNEL_CPU=\"$KERNEL_CPU\"" >> $ROOT/config/etc/m4i.version
+#echo "M4I_BUILD_DATE=\"$BUILD_DATE\"" >> $ROOT/config/etc/m4i.version
 
 # by default only write_partition is compiled and installed
 FUNCTIONS="findfiles installconfig configure compile installlocal"

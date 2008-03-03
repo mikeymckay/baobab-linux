@@ -1,4 +1,4 @@
-Fri Feb 29 08:56:39 UTC 2008
+Mon Mar 3 06:38:25 UTC 2008
   X11
   bookmarks.html
   etc
@@ -98,7 +98,7 @@ Directory data: 1644 bytes
  60.00% (+12 bytes)	hosts
 -65.83% (-817 bytes)	ld.so.cache
 100.00% (+14 bytes)	localtime
- -8.62% (-20 bytes)	m4i.version
+ -0.80% (-1 bytes)	m4i.version
 -50.74% (-103 bytes)	nsswitch.conf
  -6.25% (-4 bytes)	passwd
 -41.61% (-134 bytes)	ip-up
@@ -143,7 +143,7 @@ Directory data: 1644 bytes
  86.67% (+13 bytes)	upgrade_host
 Everything: 32 kilobytes
 Super block: 76 bytes
-CRC: ea2d25ce
+CRC: 101941c1
 created superblock of size 312 bytes, with 2 partitions
 Multi Compressed partition, reading data from /home/crazy/baobab-linux/image/config.image
 magic:                      0xeab85d45
@@ -668,7 +668,7 @@ Directory data: 960036 bytes
 300.00% (+12 bytes)	log
 Everything: 2728 kilobytes
 Super block: 76 bytes
-CRC: a00d94f
+CRC: 955e472c
 created superblock of size 2616 bytes, with 20 partitions
 Multi Compressed partition, reading data from /home/crazy/baobab-linux/image/main.img.packed.tmp
 magic:                      0xeab85d45
@@ -688,7 +688,7 @@ biggest hole:               1042432
 Directory data: 92 bytes
 Everything: 4 kilobytes
 Super block: 76 bytes
-CRC: ba9d945c
+CRC: 63944dee
 read_cramfs(/, /home/crazy/baobab-linux/image/main.img.cram)
 writing cramfs /
 magic:                      0xeab85d45
@@ -704,7 +704,7 @@ used partitions:            1
 non active space:           1042432
 unused space:               1038336
 biggest hole:               1038336
-[00]:   /                   (edition 1204275399, start=0x00001800, size=4096 bytes)
+[00]:   /                   (edition 1204526305, start=0x00001800, size=4096 bytes)
 [01]:                       (edition 0, start=0x00000000, size=0 bytes)
 [02]:                       (edition 0, start=0x00000000, size=0 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -737,7 +737,7 @@ used partitions:            1
 non active space:           1038336
 unused space:               1038336
 biggest hole:               1038336
-[00]: * /                   (edition 1204275399, start=0x00001800, size=4096 bytes)
+[00]: * /                   (edition 1204526305, start=0x00001800, size=4096 bytes)
 [01]:                       (edition 0, start=0x00000000, size=0 bytes)
 [02]:                       (edition 0, start=0x00000000, size=0 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -969,7 +969,7 @@ Directory data: 3048 bytes
  -7.20% (-9 bytes)	die
 -46.76% (-36172 bytes)	ftpd
 -64.66% (-55897 bytes)	ghttpd
--36.52% (-168 bytes)	init
+-38.78% (-190 bytes)	init
 -22.84% (-45 bytes)	resume
 -40.74% (-154 bytes)	soundconfig
  -9.68% (-12 bytes)	stop
@@ -977,7 +977,7 @@ Directory data: 3048 bytes
 -53.32% (-16854 bytes)	usb.ids
 Everything: 1540 kilobytes
 Super block: 76 bytes
-CRC: 2ebc2ba3
+CRC: a658d11c
 read_cramfs(usr, /home/crazy/baobab-linux/image/usr.img.cram)
 writing cramfs usr
 magic:                      0xeab85d45
@@ -993,8 +993,8 @@ used partitions:            2
 non active space:           1576960
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1204275399, start=0x00001800, size=4096 bytes)
-[01]:   usr                 (edition 1204275399, start=0x00002800, size=1576960 bytes)
+[00]: * /                   (edition 1204526305, start=0x00001800, size=4096 bytes)
+[01]:   usr                 (edition 1204526305, start=0x00002800, size=1576960 bytes)
 [02]:                       (edition 0, start=0x00000000, size=0 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -1026,8 +1026,8 @@ used partitions:            2
 non active space:           0
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1204275399, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1204275399, start=0x00002800, size=1576960 bytes)
+[00]: * /                   (edition 1204526305, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1204526305, start=0x00002800, size=1576960 bytes)
 [02]:                       (edition 0, start=0x00000000, size=0 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -2401,12 +2401,12 @@ Directory data: 17220 bytes
 -50.10% (-4502 bytes)	libfbdevhw.a
 -53.53% (-11810 bytes)	libint10.a
 -36.84% (-63 bytes)	die
--30.89% (-152 bytes)	init
+-31.03% (-153 bytes)	init
 -35.00% (-56 bytes)	stop
 -29.06% (-77 bytes)	xinitrc
 Everything: 3856 kilobytes
 Super block: 76 bytes
-CRC: f3e8c8f8
+CRC: 95fb61fe
 read_cramfs(usr/X11R6, /home/crazy/baobab-linux/image/usr.X11R6.img.cram)
 writing cramfs usr/X11R6
 magic:                      0xeab85d45
@@ -2422,9 +2422,9 @@ used partitions:            3
 non active space:           3948544
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1204275399, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1204275399, start=0x00002800, size=1576960 bytes)
-[02]:   usr/X11R6           (edition 1204275399, start=0x00183800, size=3948544 bytes)
+[00]: * /                   (edition 1204526305, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1204526305, start=0x00002800, size=1576960 bytes)
+[02]:   usr/X11R6           (edition 1204526305, start=0x00183800, size=3948544 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
 [05]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -2455,9 +2455,9 @@ used partitions:            3
 non active space:           0
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1204275399, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1204275399, start=0x00002800, size=1576960 bytes)
-[02]: * usr/X11R6           (edition 1204275399, start=0x00183800, size=3948544 bytes)
+[00]: * /                   (edition 1204526305, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1204526305, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1204526305, start=0x00183800, size=3948544 bytes)
 [03]:                       (edition 0, start=0x00000000, size=0 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
 [05]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -2656,7 +2656,7 @@ Directory data: 2540 bytes
 -22.58% (-49 bytes)	xfs.config
 Everything: 468 kilobytes
 Super block: 76 bytes
-CRC: 49dc9671
+CRC: 5d16f9fa
 read_cramfs(usr/X11R6/lib/X11/fonts, /home/crazy/baobab-linux/image/usr.X11R6.lib.X11.fonts.img.cram)
 writing cramfs usr/X11R6/lib/X11/fonts
 magic:                      0xeab85d45
@@ -2672,10 +2672,10 @@ used partitions:            4
 non active space:           479232
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1204275399, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1204275399, start=0x00002800, size=1576960 bytes)
-[02]: * usr/X11R6           (edition 1204275399, start=0x00183800, size=3948544 bytes)
-[03]:   usr/X11R6/lib/X11/fonts (edition 1204275399, start=0x00547800, size=479232 bytes)
+[00]: * /                   (edition 1204526305, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1204526305, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1204526305, start=0x00183800, size=3948544 bytes)
+[03]:   usr/X11R6/lib/X11/fonts (edition 1204526305, start=0x00547800, size=479232 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
 [05]:                       (edition 0, start=0x00000000, size=0 bytes)
 [06]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -2705,10 +2705,10 @@ used partitions:            4
 non active space:           0
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1204275399, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1204275399, start=0x00002800, size=1576960 bytes)
-[02]: * usr/X11R6           (edition 1204275399, start=0x00183800, size=3948544 bytes)
-[03]: * usr/X11R6/lib/X11/fonts (edition 1204275399, start=0x00547800, size=479232 bytes)
+[00]: * /                   (edition 1204526305, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1204526305, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1204526305, start=0x00183800, size=3948544 bytes)
+[03]: * usr/X11R6/lib/X11/fonts (edition 1204526305, start=0x00547800, size=479232 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
 [05]:                       (edition 0, start=0x00000000, size=0 bytes)
 [06]:                       (edition 0, start=0x00000000, size=0 bytes)
@@ -2738,10 +2738,10 @@ used partitions:            4
 non active space:           0
 unused space:               0
 biggest hole:               0
-[00]: * /                   (edition 1204275399, start=0x00001800, size=4096 bytes)
-[01]: * usr                 (edition 1204275399, start=0x00002800, size=1576960 bytes)
-[02]: * usr/X11R6           (edition 1204275399, start=0x00183800, size=3948544 bytes)
-[03]: * usr/X11R6/lib/X11/fonts (edition 1204275399, start=0x00547800, size=479232 bytes)
+[00]: * /                   (edition 1204526305, start=0x00001800, size=4096 bytes)
+[01]: * usr                 (edition 1204526305, start=0x00002800, size=1576960 bytes)
+[02]: * usr/X11R6           (edition 1204526305, start=0x00183800, size=3948544 bytes)
+[03]: * usr/X11R6/lib/X11/fonts (edition 1204526305, start=0x00547800, size=479232 bytes)
 [04]:                       (edition 0, start=0x00000000, size=0 bytes)
 [05]:                       (edition 0, start=0x00000000, size=0 bytes)
 [06]:                       (edition 0, start=0x00000000, size=0 bytes)
