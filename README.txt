@@ -1,3 +1,8 @@
+This README is pretty out of date, but I am leaving it in for posterity's sake. Check out 
+http://neverlet.be/2010/1/15/pih-baobab-openmrs-x-forwarding-mateme-and-you
+to see how we are using this to run firefox from a server onto a touchscreen running baobab-linux.
+
+----
 Midori for the Iopener and IA-1
 (see http://m4i.homeip.net/)
 
